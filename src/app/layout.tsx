@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Space_Grotesk, Inter } from 'next/font/google'
+import { TierProvider } from '@/features/tier'
 import './globals.css'
 
 const spaceGrotesk = Space_Grotesk({
@@ -27,7 +28,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <body className={`${spaceGrotesk.variable} ${inter.variable} antialiased`}>{children}</body>
+      <body 
+        className={`${spaceGrotesk.variable} ${inter.variable} antialiased`}
+        suppressHydrationWarning
+      >
+        <TierProvider>{children}</TierProvider>
+      </body>
     </html>
   )
 }

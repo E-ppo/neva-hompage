@@ -1,1 +1,5 @@
-// tier feature barrel export
+export { TierProvider } from './TierProvider'
+export { useTierStore } from './useTierStore'
+export { detectTier } from './useTierDetection'
+export { TIER } from './tier.types'
+export type { TierType, TierState, DeviceInfo } from './tier.types'
