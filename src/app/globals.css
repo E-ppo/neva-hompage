@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+:root {
+  /* Background */
+  --bg-deep: #0f0d0b;
+  --bg-surface: #1a1412;
+  --bg-elevated: #241e19;
+
+  /* Text */
+  --text-primary: #f0ebe3;
+  --text-secondary: #b8a99a;
+
+  /* Accent */
+  --accent: #e8933b;
+  --accent-glow: #f5a623;
+  --accent-subtle: rgba(232, 147, 59, 0.15);
+
+  /* Glass */
+  --glass-bg: rgba(245, 166, 35, 0.06);
+  --glass-border: rgba(240, 235, 227, 0.1);
+
+  /* Spacing */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 40px;
+  --space-2xl: 64px;
+}
+
+@theme inline {
+  /* Colors */
+  --color-bg-deep: var(--bg-deep);
+  --color-bg-surface: var(--bg-surface);
+  --color-bg-elevated: var(--bg-elevated);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-accent: var(--accent);
+  --color-accent-glow: var(--accent-glow);
+
+  /* Fonts */
+  --font-heading: var(--font-space-grotesk);
+  --font-body: var(--font-inter);
+}
+
+body {
+  background: var(--bg-deep);
+  color: var(--text-primary);
+  font-family: var(--font-body), system-ui, sans-serif;
+}
