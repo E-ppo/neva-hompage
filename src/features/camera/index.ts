@@ -1,1 +1,5 @@
-// camera feature barrel export
+export { CameraController } from './CameraController'
+export { useCameraStore } from './useCameraStore'
+export { CAMERA_POSITIONS, getPositionForProgress, getSectionForProgress } from './cameraPositions'
+export { SECTION } from './camera.types'
+export type { SectionId, CameraPosition, CameraStore } from './camera.types'
