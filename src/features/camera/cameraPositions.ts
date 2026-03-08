@@ -2,20 +2,20 @@ import { SECTION, type SectionId, type CameraPosition } from './camera.types'
 
 export const CAMERA_POSITIONS: Record<SectionId, CameraPosition> = {
   [SECTION.HERO]: {
-    position: [0, 2, 8],
-    lookAt: [0, 1.5, 0],
+    position: [15, 15, 25],
+    lookAt: [0, 3, 0],
   },
   [SECTION.ABOUT]: {
-    position: [-4, 2, 4],
-    lookAt: [-4, 1.5, 0],
+    position: [-5, 4, 5],
+    lookAt: [-1, 2, 0],
   },
   [SECTION.PROJECTS]: {
-    position: [4, 2, 3],
-    lookAt: [4, 1.5, 0],
+    position: [4, 3, 3],
+    lookAt: [1, 2, -1],
   },
   [SECTION.CONTACT]: {
-    position: [0, 2, -2],
-    lookAt: [0, 1.5, -5],
+    position: [0, 6, -4],
+    lookAt: [0, 2, -1],
   },
 }
 

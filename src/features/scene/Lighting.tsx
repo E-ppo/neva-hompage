@@ -4,7 +4,7 @@ export function Lighting() {
   return (
     <>
       {/* Ambient: warm base light */}
-      <ambientLight intensity={0.3} color="#f5c472" />
+      <ambientLight intensity={0.8} color="#f5c472" />
 
       {/* Main directional: golden hour sunlight through window */}
       <directionalLight
