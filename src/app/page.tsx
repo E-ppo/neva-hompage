@@ -28,7 +28,8 @@ export default function Home() {
 
   return (
     <main className="relative bg-bg-deep text-text-primary">
-      <IntroLayer isSceneReady={sceneReady} />
+      {/* TODO: 배치 완료 후 IntroLayer, scroll-container 복원 */}
+      {/* <IntroLayer isSceneReady={sceneReady} /> */}
 
       {!isMobile && (
         <ErrorBoundary3D>
@@ -38,17 +39,16 @@ export default function Home() {
         </ErrorBoundary3D>
       )}
 
-      {/* Scroll container for ScrollTrigger */}
-      <div
+      {/* Scroll container - 개발 중 비활성화 */}
+      {/* <div
         id="scroll-container"
         style={{ height: `${SECTION_COUNT * 100}vh` }}
         className="relative z-10"
       >
-        {/* Section placeholders for scroll height */}
         {Array.from({ length: SECTION_COUNT }).map((_, i) => (
           <section key={i} className="h-screen" />
         ))}
-      </div>
+      </div> */}
     </main>
   )
 }
