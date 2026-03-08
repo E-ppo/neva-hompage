@@ -38,7 +38,7 @@ export function SceneCanvas() {
       role="img"
       aria-label="eppo의 작업실 3D 포트폴리오 공간"
     >
-      <color attach="background" args={['#2a2520']} />
+      <color attach="background" args={['#f5e6d3']} />
       <CameraSetup />
       <StudioScene tier={tier} />
       {/* <OrbitControls target={[0, 3, 0]} /> */}
