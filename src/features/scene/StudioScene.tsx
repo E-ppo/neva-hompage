@@ -28,7 +28,7 @@ function CoffeeShop() {
     fixMaterials(scene)
   }, [scene])
 
-  return <primitive object={scene} scale={1.5} position={[-2, 0.5, 0]} />
+  return <primitive object={scene} scale={1.5} position={[-3.5, 0, 0]} />
 }
 
 export function StudioScene(_props: SceneProps) {
