@@ -12,6 +12,8 @@ import {
 } from 'three'
 import { Lighting } from './Lighting'
 import { RingPulse } from './RingPulse'
+import { useCameraStore } from '@/features/camera'
+import { events } from '@/lib/events'
 import type { SceneProps } from './scene.types'
 import type { ThreeEvent } from '@react-three/fiber'
 
@@ -19,6 +21,7 @@ const MODEL_PATH = '/models/coffee-shop/coffee-shop.glb'
 // 인터랙티브 오브젝트 매핑 (메시이름 → 섹션)
 const INTERACTIVE_OBJECTS: Record<string, string> = {
   SM_menu_board002: 'projects',
+  SM_laptop: 'blog',
   SM_cell_phone: 'contact',
 }
 
@@ -83,13 +86,17 @@ function CoffeeShop() {
     fixMaterials(scene)
   }, [scene])
 
-  const ringPositions = useMemo(() => collectRingPositions(scene), [scene])
+  const currentSection = useCameraStore((s) => s.currentSection)
+
+  const ringPositions = useMemo(() => {
+    return collectRingPositions(scene)
+  }, [scene])
 
   const handleClick = useCallback((e: ThreeEvent<MouseEvent>) => {
     const section = isInteractive(e.object.name)
     if (section) {
       e.stopPropagation()
-      // TODO: 카메라 flyTo 구현 시 여기서 섹션별 이동
+      events.emit('camera:flyTo', section)
     }
   }, [])
 
@@ -114,7 +121,7 @@ function CoffeeShop() {
         onPointerOver={handlePointerOver}
         onPointerOut={handlePointerOut}
       />
-      {ringPositions.map((rp) => (
+      {currentSection === 'hero' && ringPositions.map((rp) => (
         <RingPulse key={rp.section} position={rp.position} />
       ))}
     </group>

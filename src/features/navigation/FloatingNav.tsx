@@ -1,15 +1,22 @@
 'use client'
 
-import { useState } from 'react'
+import { events } from '@/lib/events'
+import { useCameraStore } from '@/features/camera'
 
 const NAV_ITEMS = [
+  { id: 'hero', label: 'Home' },
   { id: 'about', label: 'About' },
   { id: 'projects', label: 'Projects' },
+  { id: 'blog', label: 'Blog' },
   { id: 'contact', label: 'Contact' },
 ] as const
 
 export function FloatingNav() {
-  const [active, setActive] = useState<string | null>(null)
+  const currentSection = useCameraStore((s) => s.currentSection)
+
+  const handleClick = (id: string) => {
+    events.emit('camera:flyTo', id)
+  }
 
   return (
     <nav
@@ -20,14 +27,14 @@ export function FloatingNav() {
         {NAV_ITEMS.map((item) => (
           <li key={item.id}>
             <button
-              onClick={() => setActive(item.id)}
+              onClick={() => handleClick(item.id)}
               className="group flex items-center gap-2.5 transition-opacity duration-300 hover:opacity-100"
-              style={{ opacity: active === item.id ? 1 : 0.6 }}
+              style={{ opacity: currentSection === item.id ? 1 : 0.6 }}
             >
               <span
                 className={`
                   text-sm tracking-wide transition-all duration-300
-                  ${active === item.id ? 'text-gray-900 font-semibold' : 'text-gray-600 font-medium group-hover:text-gray-800'}
+                  ${currentSection === item.id ? 'text-gray-900 font-semibold' : 'text-gray-600 font-medium group-hover:text-gray-800'}
                 `}
               >
                 {item.label}
@@ -36,7 +43,7 @@ export function FloatingNav() {
                 className={`
                   rounded-full transition-all duration-300
                   ${
-                    active === item.id
+                    currentSection === item.id
                       ? 'w-2.5 h-2.5 bg-gray-800'
                       : 'w-1.5 h-1.5 bg-gray-400 group-hover:bg-gray-600'
                   }

@@ -4,6 +4,7 @@ export const SECTION = {
   HERO: 'hero',
   ABOUT: 'about',
   PROJECTS: 'projects',
+  BLOG: 'blog',
   CONTACT: 'contact',
 } as const
 

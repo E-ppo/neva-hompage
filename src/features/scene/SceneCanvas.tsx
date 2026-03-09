@@ -1,25 +1,13 @@
 'use client'
 
 import { useEffect } from 'react'
-import { Canvas, useThree } from '@react-three/fiber'
-import { OrbitControls } from '@react-three/drei'
+import { Canvas } from '@react-three/fiber'
 import { StudioScene } from './StudioScene'
 import { GradientBackground } from './GradientBackground'
+import { CameraController } from '@/features/camera/CameraController'
 import { useTierStore } from '@/features/tier'
 import { TIER } from '@/features/tier'
 import { events } from '@/lib/events'
-
-function CameraSetup() {
-  const { camera, size } = useThree()
-  useEffect(() => {
-    const aspect = size.width / size.height
-    // 기준 비율 16:9(1.78) 이상일 때 카메라를 오른쪽으로 밀어 모델이 좌측에 붙게
-    const offsetX = Math.max(0, (aspect - 1.78) * 3)
-    camera.position.set(6 + offsetX, 6, 10)
-    camera.lookAt(offsetX, 3, 0)
-  }, [camera, size])
-  return null
-}
 
 export function SceneCanvas() {
   const currentTier = useTierStore((s) => s.currentTier)
@@ -42,9 +30,8 @@ export function SceneCanvas() {
       <color attach="background" args={['#e8ddd0']} />
       <fog attach="fog" args={['#d8dfe4', 15, 40]} />
       <GradientBackground topColor="#e8f0f8" bottomColor="#e8ddd0" />
-      <CameraSetup />
+      <CameraController />
       <StudioScene tier={tier} />
-      {/* <OrbitControls target={[0, 3, 0]} /> */}
     </Canvas>
   )
 }
