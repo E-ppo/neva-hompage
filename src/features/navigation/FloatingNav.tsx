@@ -13,33 +13,35 @@ export function FloatingNav() {
 
   return (
     <nav
-      className="fixed right-8 top-1/2 z-50 -translate-y-1/2"
+      className="fixed right-12 top-1/2 z-50 -translate-y-1/2"
       aria-label="Section navigation"
     >
-      <ul className="flex flex-col gap-3">
+      <ul className="flex flex-col gap-4">
         {NAV_ITEMS.map((item) => (
           <li key={item.id}>
             <button
               onClick={() => setActive(item.id)}
-              className={`
-                group flex items-center gap-3 px-4 py-2.5 rounded-full
-                backdrop-blur-md border transition-all duration-300
-                ${
-                  active === item.id
-                    ? 'bg-accent/20 border-accent/40 text-text-primary'
-                    : 'bg-[var(--glass-bg)] border-[var(--glass-border)] text-text-secondary hover:text-text-primary hover:border-accent/30'
-                }
-              `}
+              className="group flex items-center gap-2.5 transition-opacity duration-300 hover:opacity-100"
+              style={{ opacity: active === item.id ? 1 : 0.6 }}
             >
               <span
                 className={`
-                  w-2 h-2 rounded-full transition-all duration-300
-                  ${active === item.id ? 'bg-accent scale-125' : 'bg-text-secondary/50 group-hover:bg-accent/60'}
+                  text-sm tracking-wide transition-all duration-300
+                  ${active === item.id ? 'text-gray-900 font-semibold' : 'text-gray-600 font-medium group-hover:text-gray-800'}
                 `}
-              />
-              <span className="text-sm font-heading tracking-wide">
+              >
                 {item.label}
               </span>
+              <span
+                className={`
+                  rounded-full transition-all duration-300
+                  ${
+                    active === item.id
+                      ? 'w-2.5 h-2.5 bg-gray-800'
+                      : 'w-1.5 h-1.5 bg-gray-400 group-hover:bg-gray-600'
+                  }
+                `}
+              />
             </button>
           </li>
         ))}
