@@ -3,41 +3,32 @@
 export function Lighting() {
   return (
     <>
-      {/* Ambient: warm base light */}
-      <ambientLight intensity={0.8} color="#f5c472" />
+      {/* Ambient: 전체를 밝게 */}
+      <ambientLight intensity={1.8} color="#ffffff" />
 
-      {/* Main directional: golden hour sunlight through window */}
+      {/* Main directional: 위에서 내려오는 밝은 조명 */}
       <directionalLight
-        position={[5, 8, 3]}
-        intensity={1.2}
-        color="#e8933b"
+        position={[5, 10, 5]}
+        intensity={2.0}
+        color="#fff5e6"
         castShadow
         shadow-mapSize-width={1024}
         shadow-mapSize-height={1024}
       />
 
-      {/* Fill light: softer warm fill from opposite side */}
+      {/* Fill light: 반대쪽 보조 */}
       <directionalLight
-        position={[-3, 4, -2]}
-        intensity={0.4}
+        position={[-5, 6, -3]}
+        intensity={1.0}
         color="#f0ebe3"
       />
 
-      {/* Point light: desk lamp effect */}
+      {/* Point light: 정면 보조광 */}
       <pointLight
-        position={[0, 3, 2]}
-        intensity={0.6}
-        color="#f5c472"
-        distance={10}
-        decay={2}
-      />
-
-      {/* Subtle rim light for depth */}
-      <pointLight
-        position={[0, 5, -5]}
-        intensity={0.3}
-        color="#e8933b"
-        distance={15}
+        position={[0, 4, 6]}
+        intensity={1.0}
+        color="#ffffff"
+        distance={20}
         decay={2}
       />
     </>
