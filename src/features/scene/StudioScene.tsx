@@ -1,16 +1,17 @@
 'use client'
 
-import { useEffect, useCallback } from 'react'
+import { useEffect, useCallback, useMemo } from 'react'
 import { useGLTF } from '@react-three/drei'
-import { useFrame } from '@react-three/fiber'
 import {
   Mesh,
   MeshStandardMaterial,
   DoubleSide,
   Object3D,
-  Color,
+  Vector3,
+  Box3,
 } from 'three'
 import { Lighting } from './Lighting'
+import { RingPulse } from './RingPulse'
 import type { SceneProps } from './scene.types'
 import type { ThreeEvent } from '@react-three/fiber'
 
@@ -41,99 +42,82 @@ function fixMaterials(root: Object3D) {
   })
 }
 
-/** 액자(menu_board) 메시에 emissive 설정 */
-function setupFrameGlow(root: Object3D, meshes: Mesh[]) {
+// 링 펄스 위치 정보
+interface RingPosition {
+  section: string
+  position: [number, number, number]
+}
+
+/** 인터랙티브 오브젝트의 바닥 중심 월드 좌표 수집 (섹션별 1개) */
+function collectRingPositions(root: Object3D): RingPosition[] {
+  const sectionBounds: Record<string, Box3> = {}
+
   root.traverse((child) => {
-    if (
-      child instanceof Mesh &&
-      child.material instanceof MeshStandardMaterial &&
-      isInteractive(child.name) !== null
-    ) {
-      const cloned = child.material.clone()
-      cloned.emissive = new Color('#e8933b')
-      cloned.emissiveIntensity = 0.3
-      cloned.needsUpdate = true
-      child.material = cloned
-      meshes.push(child)
+    if (child instanceof Mesh) {
+      const section = isInteractive(child.name)
+      if (!section) return
+      child.updateWorldMatrix(true, false)
+      const box = new Box3().setFromObject(child)
+      if (sectionBounds[section]) {
+        sectionBounds[section].union(box)
+      } else {
+        sectionBounds[section] = box
+      }
+    }
+  })
+
+  return Object.entries(sectionBounds).map(([section, box]) => {
+    const center = new Vector3()
+    box.getCenter(center)
+    return {
+      section,
+      position: [center.x, box.min.y + 0.05, center.z] as [number, number, number],
     }
   })
 }
-
-// module-level to avoid react-hooks/immutability lint rule
-let frameMeshesCache: Mesh[] = []
-let isHovered = false
 
 function CoffeeShop() {
   const { scene } = useGLTF(MODEL_PATH)
 
   useEffect(() => {
-    // 이전 클론 머티리얼 정리 (HMR/strict mode 대응)
-    for (const mesh of frameMeshesCache) {
-      if (mesh.material instanceof MeshStandardMaterial) {
-        mesh.material.dispose()
-      }
-    }
     fixMaterials(scene)
-    frameMeshesCache = []
-    setupFrameGlow(scene, frameMeshesCache)
-    return () => {
-      for (const mesh of frameMeshesCache) {
-        if (mesh.material instanceof MeshStandardMaterial) {
-          mesh.material.dispose()
-        }
-      }
-    }
   }, [scene])
 
-  // 글로우 펄스 + bunny 머리 흔들기 애니메이션
-  useFrame(({ clock }) => {
-    const t = clock.getElapsedTime()
-
-    // 글로우 펄스
-    const intensity = 0.3 + Math.sin(t * 2) * 0.2
-    for (const mesh of frameMeshesCache) {
-      if (mesh.material instanceof MeshStandardMaterial) {
-        mesh.material.emissiveIntensity = isHovered ? intensity + 0.3 : intensity
-      }
-    }
-
-  })
-
-  const isFrameMesh = (name: string) => isInteractive(name) !== null
+  const ringPositions = useMemo(() => collectRingPositions(scene), [scene])
 
   const handleClick = useCallback((e: ThreeEvent<MouseEvent>) => {
     const section = isInteractive(e.object.name)
     if (section) {
       e.stopPropagation()
-      console.log('[DEBUG] clicked section:', section, e.object.name)
       // TODO: 카메라 flyTo 구현 시 여기서 섹션별 이동
     }
   }, [])
 
   const handlePointerOver = useCallback((e: ThreeEvent<PointerEvent>) => {
-    if (isFrameMesh(e.object.name)) {
+    if (isInteractive(e.object.name)) {
       e.stopPropagation()
-      isHovered = true
       document.body.style.cursor = 'pointer'
     }
   }, [])
 
   const handlePointerOut = useCallback((e: ThreeEvent<PointerEvent>) => {
-    if (isFrameMesh(e.object.name)) {
-      isHovered = false
+    if (isInteractive(e.object.name)) {
       document.body.style.cursor = 'auto'
     }
   }, [])
 
   return (
-    <primitive
-      object={scene}
-      scale={1.5}
-      position={[-3.5, 0, 0]}
-      onClick={handleClick}
-      onPointerOver={handlePointerOver}
-      onPointerOut={handlePointerOut}
-    />
+    <group scale={1.5} position={[-3.5, 0, 0]}>
+      <primitive
+        object={scene}
+        onClick={handleClick}
+        onPointerOver={handlePointerOver}
+        onPointerOut={handlePointerOut}
+      />
+      {ringPositions.map((rp) => (
+        <RingPulse key={rp.section} position={rp.position} />
+      ))}
+    </group>
   )
 }
 
