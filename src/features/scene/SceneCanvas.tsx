@@ -4,6 +4,7 @@ import { useEffect } from 'react'
 import { Canvas, useThree } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei'
 import { StudioScene } from './StudioScene'
+import { GradientBackground } from './GradientBackground'
 import { useTierStore } from '@/features/tier'
 import { TIER } from '@/features/tier'
 import { events } from '@/lib/events'
@@ -38,7 +39,9 @@ export function SceneCanvas() {
       role="img"
       aria-label="eppo의 작업실 3D 포트폴리오 공간"
     >
-      <color attach="background" args={['#f5e6d3']} />
+      <color attach="background" args={['#e8ddd0']} />
+      <fog attach="fog" args={['#d8dfe4', 15, 40]} />
+      <GradientBackground topColor="#e8f0f8" bottomColor="#e8ddd0" />
       <CameraSetup />
       <StudioScene tier={tier} />
       {/* <OrbitControls target={[0, 3, 0]} /> */}
