@@ -6,6 +6,7 @@ import { ErrorBoundary3D } from '@/components/ErrorBoundary3D'
 import { useTierStore } from '@/features/tier'
 import { TIER } from '@/features/tier'
 import { events } from '@/lib/events'
+import { FloatingNav } from '@/features/navigation'
 
 const SceneCanvas = lazy(() =>
   import('@/features/scene/SceneCanvas').then((m) => ({ default: m.SceneCanvas })),
@@ -38,6 +39,8 @@ export default function Home() {
           </Suspense>
         </ErrorBoundary3D>
       )}
+
+      <FloatingNav />
 
       {/* Scroll container - 개발 중 비활성화 */}
       {/* <div

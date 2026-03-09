@@ -1,1 +1,1 @@
-// navigation feature barrel export
+export { FloatingNav } from './FloatingNav'
