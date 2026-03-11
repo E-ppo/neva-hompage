@@ -7,7 +7,7 @@ import { useTierStore } from '@/features/tier'
 import { TIER } from '@/features/tier'
 
 const LAYER2_DEADLINE_MS = 1500
-const MIN_DISPLAY_MS = 2500
+const MIN_DISPLAY_MS = 1000
 const FADE_OUT_MS = 700
 
 interface IntroLayerProps {
@@ -46,15 +46,17 @@ export function IntroLayer({ isSceneReady = false, onComplete }: IntroLayerProps
     }
   }, [isMobile])
 
-  // 페이드아웃 후 완료 처리 (setTimeout으로 확실하게)
+  // 페이드아웃 시작 시 즉시 Nav 표시, 페이드아웃 완료 후 DOM 제거
   const shouldFadeOut = state === INTRO_STATE.TRANSITIONING || state === INTRO_STATE.FALLBACK
   useEffect(() => {
     if (!shouldFadeOut) return
 
+    // Nav를 바로 띄워서 인트로 페이드아웃과 동시에 슬라이드 인
+    onComplete?.()
+
     const timer = setTimeout(() => {
       setTransitionComplete(true)
-      onComplete?.()
-    }, FADE_OUT_MS + 100)
+    }, FADE_OUT_MS + 50)
 
     return () => clearTimeout(timer)
   }, [shouldFadeOut, onComplete])

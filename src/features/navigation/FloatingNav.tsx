@@ -25,8 +25,12 @@ export function FloatingNav() {
       aria-label="Section navigation"
     >
       <ul className="flex flex-col gap-4">
-        {NAV_ITEMS.map((item) => (
-          <li key={item.id}>
+        {NAV_ITEMS.map((item, index) => (
+          <li
+            key={item.id}
+            className="animate-nav-slide-in opacity-0"
+            style={{ animationDelay: `${index * 100}ms` }}
+          >
             <button
               onClick={() => handleClick(item.id)}
               className="group flex items-center gap-2.5 transition-opacity duration-300 hover:opacity-100"
