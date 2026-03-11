@@ -5,7 +5,10 @@ const SKILLS = [
   { category: 'Frontend', items: ['React', 'Next.js', 'React Native', 'Three.js'] },
   { category: 'State', items: ['TanStack Query', 'Zustand', 'Valtio', 'Redux'] },
   { category: 'Backend', items: ['Node.js', 'Express', 'Supabase'] },
-  { category: 'Deploy', items: ['AWS (S3, Amplify)', 'GitHub Actions', 'Google Play', 'App Store'] },
+  {
+    category: 'Deploy',
+    items: ['AWS (S3, Amplify)', 'GitHub Actions', 'Google Play', 'App Store'],
+  },
 ]
 
 export function AboutPanel() {
@@ -18,15 +21,21 @@ export function AboutPanel() {
         About
       </h2>
 
-      <p className="font-body text-text-secondary leading-relaxed" style={{ fontSize: '0.9rem' }}>
-        TypeScript와 JavaScript를 기반으로 React Native를 활용한 크로스 플랫폼 앱 개발과
-        Next.js 기반의 웹 애플리케이션 개발 경험을 보유하고 있습니다. 특히 사용자 경험 최적화에
-        중점을 두어 효율적인 상태관리와 퍼포먼스 개선에 강점이 있습니다. 새로운 기술 습득과
-        팀 내 지식 공유를 통해 함께 성장하는 개발 문화를 지향합니다.
+      <p
+        className="font-body text-text-secondary leading-relaxed whitespace-pre-line"
+        style={{ fontSize: '0.9rem' }}
+      >
+        {`동작하는 기능 너머, 사용자가 다시 찾게 되는 서비스를 지향합니다.\n프로토타입 단계부터 직접 써보며 사용성을 검증하고, 
+        기획자·디자이너와 적극적으로 소통하며 "만들기 쉬운 것"보다 
+        "쓰기 좋은 것"을 만드는 데 집중합니다.\nReact Native와 React.js/Next.js를 기반으로 
+        앱과 웹을 넘나들며 개발합니다.`}
       </p>
 
       <div>
-        <h3 className="font-heading text-text-primary text-sm tracking-wide mb-2" style={{ fontWeight: 500 }}>
+        <h3
+          className="font-heading text-text-primary text-sm tracking-wide mb-2"
+          style={{ fontWeight: 500 }}
+        >
           Experience
         </h3>
         <div className="flex items-baseline gap-3">
@@ -34,13 +43,14 @@ export function AboutPanel() {
           <span className="h-px flex-1 bg-text-secondary/20" />
           <span className="text-text-secondary text-xs">모바일 앱 & 웹 앱 개발</span>
         </div>
-        <p className="text-text-secondary/60 text-xs mt-1">
-          2022.10 ~ 2025.02 · 총 3년 5개월
-        </p>
+        <p className="text-text-secondary/60 text-xs mt-1">2022.10 ~ 2025.02 · 총 3년 5개월</p>
       </div>
 
       <div>
-        <h3 className="font-heading text-text-primary text-sm tracking-wide mb-3" style={{ fontWeight: 500 }}>
+        <h3
+          className="font-heading text-text-primary text-sm tracking-wide mb-3"
+          style={{ fontWeight: 500 }}
+        >
           Skills
         </h3>
         <div className="flex flex-col gap-2">
