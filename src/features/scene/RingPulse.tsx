@@ -1,7 +1,7 @@
 'use client'
 
 import { useRef } from 'react'
-import { useFrame } from '@react-three/fiber'
+import { useFrame, useThree } from '@react-three/fiber'
 import { MeshBasicMaterial, Mesh } from 'three'
 
 interface RingPulseProps {
@@ -19,8 +19,10 @@ export function RingPulse({
 }: RingPulseProps) {
   const ring1 = useRef<Mesh>(null)
   const ring2 = useRef<Mesh>(null)
+  const invalidate = useThree((s) => s.invalidate)
 
   useFrame(({ clock }) => {
+    invalidate()
     const t = clock.getElapsedTime() * speed
 
     // 두 개의 링이 시차를 두고 펄스

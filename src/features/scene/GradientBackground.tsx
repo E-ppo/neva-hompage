@@ -1,6 +1,6 @@
 'use client'
 
-import { useMemo } from 'react'
+import { useEffect, useMemo } from 'react'
 import { Color, ShaderMaterial, PlaneGeometry } from 'three'
 
 const vertexShader = `
@@ -41,6 +41,13 @@ export function GradientBackground({
   }, [topColor, bottomColor])
 
   const geometry = useMemo(() => new PlaneGeometry(2, 2), [])
+
+  useEffect(() => {
+    return () => {
+      geometry.dispose()
+      material.dispose()
+    }
+  }, [geometry, material])
 
   return (
     <mesh geometry={geometry} material={material} renderOrder={-1} frustumCulled={false} />

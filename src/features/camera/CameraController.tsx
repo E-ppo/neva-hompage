@@ -12,7 +12,7 @@ import type { SectionId } from './camera.types'
 const FLY_TO_DURATION = 1.5
 
 export function CameraController() {
-  const { camera, size } = useThree()
+  const { camera, size, invalidate } = useThree()
   const flyTweenPosRef = useRef<gsap.core.Tween | null>(null)
   const flyTweenLookRef = useRef<gsap.core.Tween | null>(null)
   const posProxy = useRef({ x: 0, y: 0, z: 0 })
@@ -30,7 +30,8 @@ export function CameraController() {
 
     posProxy.current = { x: camera.position.x, y: camera.position.y, z: camera.position.z }
     lookProxy.current = { x: currentLookAtRef.current.x, y: currentLookAtRef.current.y, z: currentLookAtRef.current.z }
-  }, [camera, size])
+    invalidate()
+  }, [camera, size, invalidate])
 
   // flyTo + 휠 스크롤 이벤트
   useEffect(() => {
@@ -112,6 +113,7 @@ export function CameraController() {
       camera.position.set(posProxy.current.x, posProxy.current.y, posProxy.current.z)
       currentLookAtRef.current.set(lookProxy.current.x, lookProxy.current.y, lookProxy.current.z)
       camera.lookAt(currentLookAtRef.current)
+      invalidate()
     }
   })
 

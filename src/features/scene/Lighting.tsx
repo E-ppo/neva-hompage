@@ -11,9 +11,6 @@ export function Lighting() {
         position={[5, 10, 5]}
         intensity={1.4}
         color="#fff5e6"
-        castShadow
-        shadow-mapSize-width={1024}
-        shadow-mapSize-height={1024}
       />
 
       {/* Fill light: 반대쪽 보조 */}
