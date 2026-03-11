@@ -1,5 +1,7 @@
+import type { SectionId } from '@/features/camera/camera.types'
+
 type EventMap = {
-  'camera:flyTo': [section: string]
+  'camera:flyTo': [section: SectionId]
   'camera:reset': []
   'scene:loaded': []
 }

@@ -2,19 +2,20 @@
 
 import { events } from '@/lib/events'
 import { useCameraStore } from '@/features/camera'
+import type { SectionId } from '@/features/camera'
 
-const NAV_ITEMS = [
+const NAV_ITEMS: { id: SectionId; label: string }[] = [
   { id: 'hero', label: 'Home' },
   { id: 'about', label: 'About' },
   { id: 'projects', label: 'Projects' },
   { id: 'blog', label: 'Blog' },
   { id: 'contact', label: 'Contact' },
-] as const
+]
 
 export function FloatingNav() {
   const currentSection = useCameraStore((s) => s.currentSection)
 
-  const handleClick = (id: string) => {
+  const handleClick = (id: SectionId) => {
     events.emit('camera:flyTo', id)
   }
 

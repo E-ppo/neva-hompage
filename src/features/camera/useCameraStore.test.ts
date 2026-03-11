@@ -4,14 +4,16 @@ import { SECTION } from './camera.types'
 
 describe('useCameraStore', () => {
   beforeEach(() => {
-    useCameraStore.getState().reset()
+    useCameraStore.setState({
+      currentSection: SECTION.HERO,
+      isTransitioning: false,
+    })
   })
 
   it('has correct initial state', () => {
     const state = useCameraStore.getState()
     expect(state.currentSection).toBe(SECTION.HERO)
     expect(state.isTransitioning).toBe(false)
-    expect(state.scrollProgress).toBe(0)
   })
 
   it('flyTo sets section and marks transitioning', () => {
@@ -22,27 +24,11 @@ describe('useCameraStore', () => {
     expect(state.isTransitioning).toBe(true)
   })
 
-  it('setProgress updates scroll progress', () => {
-    useCameraStore.getState().setProgress(0.5)
-    expect(useCameraStore.getState().scrollProgress).toBe(0.5)
-  })
-
-  it('setTransitioning updates transition flag', () => {
-    useCameraStore.getState().setTransitioning(true)
+  it('can manually clear transitioning via setState', () => {
+    useCameraStore.getState().flyTo(SECTION.CONTACT)
     expect(useCameraStore.getState().isTransitioning).toBe(true)
 
-    useCameraStore.getState().setTransitioning(false)
+    useCameraStore.setState({ isTransitioning: false })
     expect(useCameraStore.getState().isTransitioning).toBe(false)
-  })
-
-  it('reset restores initial state', () => {
-    useCameraStore.getState().flyTo(SECTION.CONTACT)
-    useCameraStore.getState().setProgress(0.8)
-    useCameraStore.getState().reset()
-
-    const state = useCameraStore.getState()
-    expect(state.currentSection).toBe(SECTION.HERO)
-    expect(state.isTransitioning).toBe(false)
-    expect(state.scrollProgress).toBe(0)
   })
 })

@@ -1,5 +1,5 @@
 export { CameraController } from './CameraController'
 export { useCameraStore } from './useCameraStore'
-export { CAMERA_POSITIONS, getPositionForProgress, getSectionForProgress } from './cameraPositions'
+export { CAMERA_POSITIONS, SECTION_ORDER } from './cameraPositions'
 export { SECTION } from './camera.types'
-export type { SectionId, CameraPosition, CameraStore } from './camera.types'
+export type { SectionId, CameraPosition } from './camera.types'

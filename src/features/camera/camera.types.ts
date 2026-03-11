@@ -14,18 +14,3 @@ export interface CameraPosition {
   position: Vector3Tuple
   lookAt: Vector3Tuple
 }
-
-export interface CameraStoreState {
-  currentSection: SectionId
-  isTransitioning: boolean
-  scrollProgress: number
-}
-
-export interface CameraStoreActions {
-  flyTo: (section: SectionId) => void
-  setProgress: (progress: number) => void
-  setTransitioning: (transitioning: boolean) => void
-  reset: () => void
-}
-
-export type CameraStore = CameraStoreState & CameraStoreActions

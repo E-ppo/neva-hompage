@@ -1,24 +1,17 @@
 import { create } from 'zustand'
-import { SECTION, type CameraStore } from './camera.types'
+import { SECTION } from './camera.types'
+import type { SectionId } from './camera.types'
+
+interface CameraStore {
+  currentSection: SectionId
+  isTransitioning: boolean
+  flyTo: (section: SectionId) => void
+}
 
 export const useCameraStore = create<CameraStore>((set) => ({
   currentSection: SECTION.HERO,
   isTransitioning: false,
-  scrollProgress: 0,
 
   flyTo: (section) =>
     set({ currentSection: section, isTransitioning: true }),
-
-  setProgress: (progress) =>
-    set({ scrollProgress: progress }),
-
-  setTransitioning: (transitioning) =>
-    set({ isTransitioning: transitioning }),
-
-  reset: () =>
-    set({
-      currentSection: SECTION.HERO,
-      isTransitioning: false,
-      scrollProgress: 0,
-    }),
 }))

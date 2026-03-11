@@ -13,20 +13,21 @@ import {
 import { Lighting } from './Lighting'
 import { RingPulse } from './RingPulse'
 import { useCameraStore } from '@/features/camera'
+import type { SectionId } from '@/features/camera'
 import { events } from '@/lib/events'
 import type { SceneProps } from './scene.types'
 import type { ThreeEvent } from '@react-three/fiber'
 
 const MODEL_PATH = '/models/coffee-shop/coffee-shop.glb'
 // 인터랙티브 오브젝트 매핑 (메시이름 → 섹션)
-const INTERACTIVE_OBJECTS: Record<string, string> = {
+const INTERACTIVE_OBJECTS: Record<string, SectionId> = {
   SM_menu_board002: 'projects',
   SM_laptop: 'blog',
   SM_cell_phone: 'contact',
 }
 
 // bunny 메시는 이름이 여러 개라 prefix로 매칭
-function isInteractive(name: string): string | null {
+function isInteractive(name: string): SectionId | null {
   if (name in INTERACTIVE_OBJECTS) return INTERACTIVE_OBJECTS[name]
   if (name.startsWith('bunny')) return 'about'
   return null
@@ -111,6 +112,10 @@ function CoffeeShop() {
     if (isInteractive(e.object.name)) {
       document.body.style.cursor = 'auto'
     }
+  }, [])
+
+  useEffect(() => {
+    return () => { document.body.style.cursor = 'auto' }
   }, [])
 
   return (
