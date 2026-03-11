@@ -19,6 +19,8 @@ export function CameraController() {
   const lookProxy = useRef({ x: 0, y: 0, z: 0 })
   const isFlyingRef = useRef(false)
   const currentLookAtRef = useRef(new Vector3())
+  const invalidateRef = useRef(invalidate)
+  invalidateRef.current = invalidate
 
   // 초기 카메라 위치 (와이드 화면 대응)
   useEffect(() => {
@@ -59,6 +61,7 @@ export function CameraController() {
         z: target.position[2],
         duration,
         ease: 'power2.inOut',
+        onUpdate: () => invalidateRef.current(),
       })
 
       flyTweenLookRef.current = gsap.to(lookProxy.current, {
@@ -73,6 +76,7 @@ export function CameraController() {
             isTransitioning: false,
             currentSection: section,
           })
+          invalidateRef.current()
         },
       })
     }
@@ -88,10 +92,8 @@ export function CameraController() {
       if (currentIndex === -1) return
 
       const nextIndex = e.deltaY > 0
-        ? Math.min(currentIndex + 1, SECTION_ORDER.length - 1)
-        : Math.max(currentIndex - 1, 0)
-
-      if (nextIndex === currentIndex) return
+        ? (currentIndex + 1) % SECTION_ORDER.length
+        : (currentIndex - 1 + SECTION_ORDER.length) % SECTION_ORDER.length
 
       handleFlyTo(SECTION_ORDER[nextIndex])
     }
