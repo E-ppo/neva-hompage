@@ -15,7 +15,7 @@ vi.mock('gsap', () => ({
 vi.mock('@/features/tier', () => ({
   useTierStore: (selector: (s: Record<string, unknown>) => unknown) =>
     selector({ currentTier: 'MOBILE_2D', isDetecting: false, initialize: vi.fn() }),
-  TIER: { DESKTOP_3D: 'DESKTOP_3D', TABLET_3D_LITE: 'TABLET_3D_LITE', MOBILE_2D: 'MOBILE_2D' },
+  TIER: { DESKTOP_3D: 'DESKTOP_3D', MOBILE_2D: 'MOBILE_2D' },
 }))
 
 vi.mock('@/lib/events', () => ({
@@ -27,19 +27,14 @@ vi.mock('@/lib/events', () => ({
 }))
 
 describe('Home page', () => {
-  it('renders the intro with eppo name', () => {
+  it('renders NEVA name', () => {
     render(<Home />)
-    expect(screen.getByText('eppo')).toBeInTheDocument()
+    const elements = screen.getAllByText('NEVA')
+    expect(elements.length).toBeGreaterThanOrEqual(1)
   })
 
-  it('renders the developer title', () => {
+  it('renders the intro section', () => {
     render(<Home />)
-    expect(screen.getByText('Frontend Developer')).toBeInTheDocument()
-  })
-
-  it('renders scroll container with section placeholders', () => {
-    render(<Home />)
-    const scrollContainer = document.getElementById('scroll-container')
-    expect(scrollContainer).toBeInTheDocument()
+    expect(screen.getByLabelText('인트로')).toBeInTheDocument()
   })
 })

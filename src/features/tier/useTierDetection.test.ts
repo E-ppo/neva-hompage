@@ -42,30 +42,23 @@ describe('detectTier', () => {
     expect(tier).toBe(TIER.DESKTOP_3D)
   })
 
-  it('returns TABLET_3D_LITE for tablet viewport with GPU support', () => {
-    setViewportWidth(800)
-    const { tier, deviceInfo } = detectTier()
-    expect(tier).toBe(TIER.TABLET_3D_LITE)
-    expect(deviceInfo.viewportWidth).toBe(800)
-  })
-
-  it('returns TABLET_3D_LITE for 768px viewport with GPU support', () => {
-    setViewportWidth(768)
+  it('returns MOBILE_2D for 1023px viewport', () => {
+    setViewportWidth(1023)
     const { tier } = detectTier()
-    expect(tier).toBe(TIER.TABLET_3D_LITE)
+    expect(tier).toBe(TIER.MOBILE_2D)
   })
 
-  it('returns MOBILE_2D for mobile viewport regardless of GPU', () => {
+  it('returns MOBILE_2D for tablet viewport', () => {
+    setViewportWidth(800)
+    const { tier } = detectTier()
+    expect(tier).toBe(TIER.MOBILE_2D)
+  })
+
+  it('returns MOBILE_2D for mobile viewport', () => {
     setViewportWidth(375)
     const { tier, deviceInfo } = detectTier()
     expect(tier).toBe(TIER.MOBILE_2D)
     expect(deviceInfo.viewportWidth).toBe(375)
-  })
-
-  it('returns MOBILE_2D for 767px viewport', () => {
-    setViewportWidth(767)
-    const { tier } = detectTier()
-    expect(tier).toBe(TIER.MOBILE_2D)
   })
 
   it('returns MOBILE_2D when GPU is not supported on desktop', () => {

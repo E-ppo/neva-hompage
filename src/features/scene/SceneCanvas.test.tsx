@@ -24,16 +24,6 @@ vi.mock('@/features/camera/CameraController', () => ({
   CameraController: () => null,
 }))
 
-vi.mock('@/features/tier', () => ({
-  useTierStore: (selector: (s: { currentTier: string }) => unknown) =>
-    selector({ currentTier: 'DESKTOP_3D' }),
-  TIER: {
-    DESKTOP_3D: 'DESKTOP_3D',
-    TABLET_3D_LITE: 'TABLET_3D_LITE',
-    MOBILE_2D: 'MOBILE_2D',
-  },
-}))
-
 vi.mock('@/lib/events', () => ({
   events: {
     emit: vi.fn(),

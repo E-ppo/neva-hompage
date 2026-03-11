@@ -7,6 +7,7 @@ import { useTierStore } from '@/features/tier'
 import { TIER } from '@/features/tier'
 import { events } from '@/lib/events'
 import { FloatingNav } from '@/features/navigation'
+import { MobileFallback } from '@/features/fallback'
 
 const SceneCanvas = lazy(() =>
   import('@/features/scene/SceneCanvas').then((m) => ({ default: m.SceneCanvas })),
@@ -30,7 +31,9 @@ export default function Home() {
     <main className="relative bg-bg-deep text-text-primary">
       <IntroLayer isSceneReady={sceneReady} onComplete={() => setIntroComplete(true)} />
 
-      {!isMobile && (
+      {isMobile ? (
+        introComplete && <MobileFallback />
+      ) : (
         <ErrorBoundary3D>
           <Suspense fallback={null}>
             <SceneCanvas />
@@ -38,7 +41,7 @@ export default function Home() {
         </ErrorBoundary3D>
       )}
 
-      {introComplete && <FloatingNav />}
+      {introComplete && !isMobile && <FloatingNav />}
     </main>
   )
 }

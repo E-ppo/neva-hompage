@@ -6,15 +6,9 @@ import type { RootState } from '@react-three/fiber'
 import { StudioScene } from './StudioScene'
 import { GradientBackground } from './GradientBackground'
 import { CameraController } from '@/features/camera/CameraController'
-import { useTierStore } from '@/features/tier'
-import { TIER } from '@/features/tier'
 import { events } from '@/lib/events'
 
 export function SceneCanvas() {
-  const currentTier = useTierStore((s) => s.currentTier)
-
-  const tier = currentTier === TIER.TABLET_3D_LITE ? 'lite' : 'full'
-
   useEffect(() => {
     events.emit('scene:loaded')
   }, [])
@@ -44,7 +38,7 @@ export function SceneCanvas() {
       <fog attach="fog" args={['#d8dfe4', 15, 40]} />
       <GradientBackground topColor="#e8f0f8" bottomColor="#e8ddd0" />
       <CameraController />
-      <StudioScene tier={tier} />
+      <StudioScene tier="full" />
     </Canvas>
   )
 }

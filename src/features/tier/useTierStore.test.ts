@@ -34,9 +34,6 @@ describe('useTierStore', () => {
     useTierStore.getState().initialize(TIER.DESKTOP_3D, info)
     expect(useTierStore.getState().currentTier).toBe(TIER.DESKTOP_3D)
 
-    useTierStore.getState().initialize(TIER.TABLET_3D_LITE, info)
-    expect(useTierStore.getState().currentTier).toBe(TIER.TABLET_3D_LITE)
-
     useTierStore.getState().initialize(TIER.MOBILE_2D, info)
     expect(useTierStore.getState().currentTier).toBe(TIER.MOBILE_2D)
   })

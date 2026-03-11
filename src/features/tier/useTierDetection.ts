@@ -1,9 +1,6 @@
 import { TIER, type TierType, type DeviceInfo } from './tier.types'
 
-const BREAKPOINTS = {
-  DESKTOP: 1024,
-  TABLET: 768,
-} as const
+const DESKTOP_BREAKPOINT = 1024
 
 function isSoftwareRenderer(gl: WebGLRenderingContext): boolean {
   const debugInfo = gl.getExtension('WEBGL_debug_renderer_info')
@@ -60,19 +57,11 @@ export function detectTier(): { tier: TierType; deviceInfo: DeviceInfo } {
       detectionMethod: gpu.method,
     }
 
-    if (viewportWidth < BREAKPOINTS.TABLET) {
+    if (viewportWidth < DESKTOP_BREAKPOINT || !gpu.supported) {
       return { tier: TIER.MOBILE_2D, deviceInfo }
     }
 
-    if (!gpu.supported) {
-      return { tier: TIER.MOBILE_2D, deviceInfo }
-    }
-
-    if (viewportWidth >= BREAKPOINTS.DESKTOP) {
-      return { tier: TIER.DESKTOP_3D, deviceInfo }
-    }
-
-    return { tier: TIER.TABLET_3D_LITE, deviceInfo }
+    return { tier: TIER.DESKTOP_3D, deviceInfo }
   } catch {
     return {
       tier: TIER.MOBILE_2D,
