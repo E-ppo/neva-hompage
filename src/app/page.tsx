@@ -8,6 +8,7 @@ import { TIER } from '@/features/tier'
 import { events } from '@/lib/events'
 import { FloatingNav } from '@/features/navigation'
 import { MobileFallback } from '@/features/fallback'
+import { SectionOverlay } from '@/features/sections'
 
 const SceneCanvas = lazy(() =>
   import('@/features/scene/SceneCanvas').then((m) => ({ default: m.SceneCanvas })),
@@ -42,6 +43,7 @@ export default function Home() {
       )}
 
       {introComplete && !isMobile && <FloatingNav />}
+      {introComplete && !isMobile && <SectionOverlay />}
     </main>
   )
 }
