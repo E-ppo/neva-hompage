@@ -12,10 +12,9 @@ const SceneCanvas = lazy(() =>
   import('@/features/scene/SceneCanvas').then((m) => ({ default: m.SceneCanvas })),
 )
 
-const SECTION_COUNT = 4
-
 export default function Home() {
   const [sceneReady, setSceneReady] = useState(false)
+  const [introComplete, setIntroComplete] = useState(false)
   const currentTier = useTierStore((s) => s.currentTier)
   const isDetecting = useTierStore((s) => s.isDetecting)
 
@@ -29,8 +28,7 @@ export default function Home() {
 
   return (
     <main className="relative bg-bg-deep text-text-primary">
-      {/* TODO: 배치 완료 후 IntroLayer, scroll-container 복원 */}
-      {/* <IntroLayer isSceneReady={sceneReady} /> */}
+      <IntroLayer isSceneReady={sceneReady} onComplete={() => setIntroComplete(true)} />
 
       {!isMobile && (
         <ErrorBoundary3D>
@@ -40,18 +38,7 @@ export default function Home() {
         </ErrorBoundary3D>
       )}
 
-      <FloatingNav />
-
-      {/* Scroll container - 개발 중 비활성화 */}
-      {/* <div
-        id="scroll-container"
-        style={{ height: `${SECTION_COUNT * 100}vh` }}
-        className="relative z-10"
-      >
-        {Array.from({ length: SECTION_COUNT }).map((_, i) => (
-          <section key={i} className="h-screen" />
-        ))}
-      </div> */}
+      {introComplete && <FloatingNav />}
     </main>
   )
 }

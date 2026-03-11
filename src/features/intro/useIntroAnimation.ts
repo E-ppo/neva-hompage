@@ -30,27 +30,16 @@ export function useIntroAnimation() {
         y: 0,
         duration: 0.6,
         ease: 'power3.out',
-      })
-        .to(
-          '[data-intro-animate="title"]',
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.5,
-            ease: 'power3.out',
-          },
-          '-=0.2',
-        )
-        .to(
-          '[data-intro-animate="keywords"]',
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.4,
-            ease: 'power2.out',
-          },
-          '-=0.1',
-        )
+      }).to(
+        '[data-intro-animate="title"]',
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.5,
+          ease: 'power3.out',
+        },
+        '-=0.2',
+      )
     }, containerRef)
 
     return () => ctx.revert()
