@@ -18,7 +18,7 @@ export function SectionOverlay() {
       {currentSection === 'about' && (
         <div className="absolute right-12 top-1/2 -translate-y-1/2 pointer-events-auto">
           <div
-            className="rounded-2xl p-8 backdrop-blur-md"
+            className="rounded-2xl p-6 backdrop-blur-md"
             style={{
               background: 'rgba(15, 13, 11, 0.75)',
               border: '1px solid var(--glass-border)',

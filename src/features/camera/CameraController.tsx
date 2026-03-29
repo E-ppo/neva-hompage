@@ -22,8 +22,11 @@ export function CameraController() {
   const invalidateRef = useRef(invalidate)
   invalidateRef.current = invalidate
 
-  // 초기 카메라 위치 (와이드 화면 대응)
+  // 초기 카메라 위치 (와이드 화면 대응) — Hero 섹션에서만 리셋
   useEffect(() => {
+    const { currentSection, isTransitioning } = useCameraStore.getState()
+    if (currentSection !== 'hero' || isTransitioning) return
+
     const aspect = size.width / size.height
     const offsetX = Math.max(0, (aspect - 1.78) * 3)
     camera.position.set(6 + offsetX, 6, 10)
