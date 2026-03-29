@@ -25,11 +25,17 @@ export function FloatingNav() {
       className={`fixed z-50 transition-all duration-500 ${
         isHome
           ? 'right-4 md:right-12 top-1/2 -translate-y-1/2'
-          : 'top-6 left-1/2 -translate-x-1/2'
+          : 'top-3 left-1/2 -translate-x-1/2'
       }`}
       aria-label="Section navigation"
     >
-      <ul className={`flex gap-4 ${isHome ? 'flex-col' : 'flex-row items-center'}`}>
+      <ul
+        className={`flex gap-4 ${
+          isHome
+            ? 'flex-col'
+            : 'flex-row items-center rounded-full bg-black/50 backdrop-blur-sm px-6 py-2'
+        }`}
+      >
         {NAV_ITEMS.map((item, index) => (
           <li
             key={item.id}
@@ -39,7 +45,7 @@ export function FloatingNav() {
             <button
               onClick={() => handleClick(item.id)}
               className={`group flex items-center gap-2 transition-all duration-300 hover:opacity-100 ${
-                isHome ? 'flex-row' : 'flex-col'
+                isHome ? 'flex-row' : ''
               }`}
               style={{ opacity: currentSection === item.id ? 1 : 0.8 }}
             >
@@ -48,6 +54,8 @@ export function FloatingNav() {
                   tracking-wide transition-all duration-300
                   ${isHome ? 'text-base md:text-lg' : 'text-sm'}
                   ${currentSection === item.id ? 'text-text-primary font-semibold' : 'text-text-secondary font-medium group-hover:text-text-primary'}
+                  ${!isHome && currentSection === item.id ? 'border-b-2 border-accent pb-0.5' : ''}
+                  ${!isHome && currentSection !== item.id ? 'border-b-2 border-transparent pb-0.5' : ''}
                 `}
                 style={{
                   textShadow: currentSection === item.id
@@ -57,16 +65,18 @@ export function FloatingNav() {
               >
                 {item.label}
               </span>
-              <span
-                className={`
-                  rounded-full transition-all duration-300
-                  ${
-                    currentSection === item.id
-                      ? 'w-2.5 h-2.5 bg-accent'
-                      : 'w-1.5 h-1.5 bg-text-secondary/40 group-hover:bg-text-secondary'
-                  }
-                `}
-              />
+              {isHome && (
+                <span
+                  className={`
+                    rounded-full transition-all duration-300
+                    ${
+                      currentSection === item.id
+                        ? 'w-2.5 h-2.5 bg-accent'
+                        : 'w-1.5 h-1.5 bg-text-secondary/40 group-hover:bg-text-secondary'
+                    }
+                  `}
+                />
+              )}
             </button>
           </li>
         ))}
