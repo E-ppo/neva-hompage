@@ -96,5 +96,4 @@ body {
 
 @utility animate-intro-fade-up {
   animation: intro-fade-up 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-  will-change: opacity, transform;
 }
