@@ -5,6 +5,7 @@ import { useCameraStore } from '@/features/camera'
 import { SECTION_ORDER } from '@/features/camera/cameraPositions'
 import { events } from '@/lib/events'
 import { AboutPanel } from './AboutPanel'
+import { ContactPanel } from './ContactPanel'
 
 export function SectionOverlay() {
   const currentSection = useCameraStore((s) => s.currentSection)
@@ -57,6 +58,16 @@ export function SectionOverlay() {
           >
             <AboutPanel />
           </div>
+        </div>
+      )}
+
+      {currentSection === 'contact' && !isTransitioning && (
+        <div
+          className="absolute inset-4 top-14 md:inset-auto md:left-1/2 md:top-1/2 md:-translate-y-1/2 pointer-events-auto flex items-center justify-center animate-intro-fade-up opacity-0"
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
+        >
+          <ContactPanel />
         </div>
       )}
     </div>
