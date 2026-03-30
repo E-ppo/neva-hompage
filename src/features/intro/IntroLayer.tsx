@@ -3,8 +3,8 @@
 import { useState, useEffect, useMemo } from 'react'
 import { INTRO_STATE, type IntroState } from './intro.types'
 
-const LAYER2_DEADLINE_MS = 1500
-const MIN_DISPLAY_MS = 1000
+const LAYER2_DEADLINE_MS = 3000
+const MIN_DISPLAY_MS = 2000
 const FADE_OUT_MS = 700
 
 interface IntroLayerProps {
@@ -83,6 +83,7 @@ export function IntroLayer({ isSceneReady = false, onComplete }: IntroLayerProps
         </p>
         <span className="h-px w-8 bg-text-secondary/40" />
       </div>
+
     </section>
   )
 }

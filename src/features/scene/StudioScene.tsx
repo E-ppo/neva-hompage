@@ -18,7 +18,7 @@ import { events } from '@/lib/events'
 import type { SceneProps } from './scene.types'
 import type { ThreeEvent } from '@react-three/fiber'
 
-const MODEL_PATH = '/models/coffee-shop/coffee-shop.glb'
+const MODEL_PATH = '/models/coffee-shop/coffee-shop-draco.glb'
 // 인터랙티브 오브젝트 매핑 (메시이름 → 섹션)
 const INTERACTIVE_OBJECTS: Record<string, SectionId> = {
   SM_menu_board002: 'projects',

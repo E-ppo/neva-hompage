@@ -1,11 +1,37 @@
 'use client'
 
+import { useRef } from 'react'
 import { useCameraStore } from '@/features/camera'
+import { SECTION_ORDER } from '@/features/camera/cameraPositions'
+import { events } from '@/lib/events'
 import { AboutPanel } from './AboutPanel'
 
 export function SectionOverlay() {
   const currentSection = useCameraStore((s) => s.currentSection)
   const isTransitioning = useCameraStore((s) => s.isTransitioning)
+  const touchStartY = useRef(0)
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartY.current = e.touches[0].clientY
+  }
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    const deltaY = touchStartY.current - e.changedTouches[0].clientY
+    if (Math.abs(deltaY) < 50) return
+
+    const store = useCameraStore.getState()
+    if (store.isTransitioning) return
+
+    const currentIndex = SECTION_ORDER.indexOf(store.currentSection)
+    if (currentIndex === -1) return
+
+    const nextIndex =
+      deltaY > 0
+        ? (currentIndex + 1) % SECTION_ORDER.length
+        : (currentIndex - 1 + SECTION_ORDER.length) % SECTION_ORDER.length
+
+    events.emit('camera:flyTo', SECTION_ORDER[nextIndex])
+  }
 
   const isVisible = currentSection !== 'hero' && !isTransitioning
 
@@ -16,7 +42,11 @@ export function SectionOverlay() {
       }`}
     >
       {currentSection === 'about' && (
-        <div className="absolute inset-4 top-14 md:inset-auto md:right-6 lg:right-12 md:top-14 md:bottom-4 pointer-events-auto flex items-center justify-center md:justify-end">
+        <div
+          className="absolute inset-4 top-14 md:inset-auto md:right-6 lg:right-12 md:top-14 md:bottom-4 pointer-events-auto flex items-center justify-center md:justify-end"
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
+        >
           <div
             className="rounded-2xl p-3 sm:p-4 lg:p-6 backdrop-blur-md max-h-full overflow-y-auto"
             style={{
