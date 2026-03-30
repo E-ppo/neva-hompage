@@ -30,10 +30,10 @@ export function FloatingNav() {
       aria-label="Section navigation"
     >
       <ul
-        className={`flex gap-4 ${
+        className={`flex ${
           isHome
-            ? 'flex-col'
-            : 'flex-row items-center rounded-full bg-black/50 backdrop-blur-sm px-6 py-2'
+            ? 'flex-col gap-4'
+            : 'flex-row items-center rounded-full bg-black/50 backdrop-blur-sm px-4 lg:px-6 py-2 gap-2 lg:gap-4'
         }`}
       >
         {NAV_ITEMS.map((item, index) => (
