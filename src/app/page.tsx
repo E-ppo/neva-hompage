@@ -3,11 +3,8 @@
 import { lazy, Suspense, useState, useEffect } from 'react'
 import { IntroLayer } from '@/features/intro'
 import { ErrorBoundary3D } from '@/components/ErrorBoundary3D'
-import { useTierStore } from '@/features/tier'
-import { TIER } from '@/features/tier'
 import { events } from '@/lib/events'
 import { FloatingNav } from '@/features/navigation'
-import { MobileFallback } from '@/features/fallback'
 import { SectionOverlay } from '@/features/sections'
 
 const SceneCanvas = lazy(() =>
@@ -17,10 +14,6 @@ const SceneCanvas = lazy(() =>
 export default function Home() {
   const [sceneReady, setSceneReady] = useState(false)
   const [introComplete, setIntroComplete] = useState(false)
-  const currentTier = useTierStore((s) => s.currentTier)
-  const isDetecting = useTierStore((s) => s.isDetecting)
-
-  const isMobile = !isDetecting && currentTier === TIER.MOBILE_2D
 
   useEffect(() => {
     const handler = () => setSceneReady(true)
@@ -32,18 +25,14 @@ export default function Home() {
     <main className="relative bg-bg-deep text-text-primary">
       <IntroLayer isSceneReady={sceneReady} onComplete={() => setIntroComplete(true)} />
 
-      {isMobile ? (
-        introComplete && <MobileFallback />
-      ) : (
-        <ErrorBoundary3D>
-          <Suspense fallback={null}>
-            <SceneCanvas />
-          </Suspense>
-        </ErrorBoundary3D>
-      )}
+      <ErrorBoundary3D>
+        <Suspense fallback={null}>
+          <SceneCanvas />
+        </Suspense>
+      </ErrorBoundary3D>
 
-      {introComplete && !isMobile && <FloatingNav />}
-      {introComplete && !isMobile && <SectionOverlay />}
+      {introComplete && <FloatingNav />}
+      {introComplete && <SectionOverlay />}
     </main>
   )
 }

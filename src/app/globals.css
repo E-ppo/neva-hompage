@@ -43,6 +43,10 @@
   --font-body: var(--font-inter);
 }
 
+html, body {
+  overscroll-behavior: none;
+}
+
 body {
   background: var(--bg-deep);
   color: var(--text-primary);
@@ -62,4 +66,35 @@ body {
 
 @utility animate-nav-slide-in {
   animation: nav-slide-in 0.5s ease-out forwards;
+}
+
+@keyframes nav-slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@utility animate-nav-slide-down {
+  animation: nav-slide-down 0.5s ease-out forwards;
+}
+
+@keyframes intro-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@utility animate-intro-fade-up {
+  animation: intro-fade-up 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  will-change: opacity, transform;
 }

@@ -30,6 +30,7 @@ export function useIntroAnimation() {
         y: 0,
         duration: 0.6,
         ease: 'power3.out',
+        force3D: true,
       }).to(
         '[data-intro-animate="title"]',
         {
@@ -37,6 +38,7 @@ export function useIntroAnimation() {
           y: 0,
           duration: 0.5,
           ease: 'power3.out',
+          force3D: true,
         },
         '-=0.2',
       )

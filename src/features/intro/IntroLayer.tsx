@@ -2,9 +2,6 @@
 
 import { useState, useEffect, useMemo } from 'react'
 import { INTRO_STATE, type IntroState } from './intro.types'
-import { useIntroAnimation } from './useIntroAnimation'
-import { useTierStore } from '@/features/tier'
-import { TIER } from '@/features/tier'
 
 const LAYER2_DEADLINE_MS = 1500
 const MIN_DISPLAY_MS = 1000
@@ -19,24 +16,16 @@ export function IntroLayer({ isSceneReady = false, onComplete }: IntroLayerProps
   const [deadlineExpired, setDeadlineExpired] = useState(false)
   const [minDisplayPassed, setMinDisplayPassed] = useState(false)
   const [transitionComplete, setTransitionComplete] = useState(false)
-  const { containerRef } = useIntroAnimation()
-  const currentTier = useTierStore((s) => s.currentTier)
-  const isDetecting = useTierStore((s) => s.isDetecting)
-
-  const isMobile = !isDetecting && currentTier === TIER.MOBILE_2D
 
   const state: IntroState = useMemo(() => {
     if (transitionComplete) return INTRO_STATE.COMPLETE
-    if (isMobile) return INTRO_STATE.FALLBACK
     if (isSceneReady && minDisplayPassed) return INTRO_STATE.TRANSITIONING
     if (deadlineExpired && minDisplayPassed) return INTRO_STATE.FALLBACK
     return INTRO_STATE.LAYER1_ACTIVE
-  }, [transitionComplete, isMobile, isSceneReady, minDisplayPassed, deadlineExpired])
+  }, [transitionComplete, isSceneReady, minDisplayPassed, deadlineExpired])
 
   // 최소 표시 시간 + deadline 타이머
   useEffect(() => {
-    if (isMobile) return
-
     const minTimer = setTimeout(() => setMinDisplayPassed(true), MIN_DISPLAY_MS)
     const deadlineTimer = setTimeout(() => setDeadlineExpired(true), LAYER2_DEADLINE_MS)
 
@@ -44,7 +33,7 @@ export function IntroLayer({ isSceneReady = false, onComplete }: IntroLayerProps
       clearTimeout(minTimer)
       clearTimeout(deadlineTimer)
     }
-  }, [isMobile])
+  }, [])
 
   // 페이드아웃 시작 시 즉시 Nav 표시, 페이드아웃 완료 후 DOM 제거
   const shouldFadeOut = state === INTRO_STATE.TRANSITIONING || state === INTRO_STATE.FALLBACK
@@ -65,15 +54,13 @@ export function IntroLayer({ isSceneReady = false, onComplete }: IntroLayerProps
 
   return (
     <section
-      ref={containerRef}
-      className={`fixed inset-0 z-50 flex min-h-screen flex-col items-center justify-center bg-bg-deep transition-opacity duration-700 ${
+      className={`fixed inset-0 z-[60] flex min-h-screen flex-col items-center justify-center md:pb-0 pb-[20vh] bg-bg-deep transition-opacity duration-700 ${
         shouldFadeOut ? 'opacity-0' : 'opacity-100'
       } ${isHidden ? 'pointer-events-none hidden' : ''}`}
       aria-label="인트로"
     >
       <h1
-        data-intro-animate="name"
-        className="font-heading text-text-primary opacity-0"
+        className="font-heading text-text-primary animate-intro-fade-up opacity-0"
         style={{
           fontSize: 'clamp(3rem, 8vw, 6rem)',
           letterSpacing: '0.3em',
@@ -84,8 +71,8 @@ export function IntroLayer({ isSceneReady = false, onComplete }: IntroLayerProps
         NEVA
       </h1>
       <div
-        data-intro-animate="title"
-        className="mt-8 flex items-center gap-4 opacity-0"
+        className="mt-8 flex items-center gap-4 animate-intro-fade-up opacity-0"
+        style={{ animationDelay: '0.6s' }}
       >
         <span className="h-px w-8 bg-text-secondary/40" />
         <p

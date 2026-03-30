@@ -6,6 +6,7 @@ import type { RootState } from '@react-three/fiber'
 import { StudioScene } from './StudioScene'
 import { GradientBackground } from './GradientBackground'
 import { CameraController } from '@/features/camera/CameraController'
+// import { CameraDebug } from '@/features/camera/CameraDebug'
 import { events } from '@/lib/events'
 
 export function SceneCanvas() {
@@ -38,6 +39,7 @@ export function SceneCanvas() {
       <fog attach="fog" args={['#d8dfe4', 15, 40]} />
       <GradientBackground topColor="#e8f0f8" bottomColor="#e8ddd0" />
       <CameraController />
+      {/* <CameraDebug /> */}
       <StudioScene tier="full" />
     </Canvas>
   )
