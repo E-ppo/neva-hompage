@@ -1,3 +1,4 @@
 export { SectionOverlay } from './SectionOverlay'
 export { AboutPanel } from './AboutPanel'
 export { ContactPanel } from './ContactPanel'
+export { BlogPanel } from './BlogPanel'

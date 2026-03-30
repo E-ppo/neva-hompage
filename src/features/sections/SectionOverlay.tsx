@@ -6,6 +6,7 @@ import { SECTION_ORDER } from '@/features/camera/cameraPositions'
 import { events } from '@/lib/events'
 import { AboutPanel } from './AboutPanel'
 import { ContactPanel } from './ContactPanel'
+import { BlogPanel } from './BlogPanel'
 
 export function SectionOverlay() {
   const currentSection = useCameraStore((s) => s.currentSection)
@@ -58,6 +59,16 @@ export function SectionOverlay() {
           >
             <AboutPanel />
           </div>
+        </div>
+      )}
+
+      {currentSection === 'blog' && !isTransitioning && (
+        <div
+          className="absolute inset-4 top-14 pointer-events-auto animate-intro-fade-up opacity-0"
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
+        >
+          <BlogPanel />
         </div>
       )}
 
