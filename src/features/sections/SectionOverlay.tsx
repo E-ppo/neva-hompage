@@ -8,7 +8,6 @@ import { AboutPanel } from './AboutPanel'
 import { ContactPanel } from './ContactPanel'
 import { BlogPanel } from './BlogPanel'
 import { ProjectsPanel } from './ProjectsPanel'
-import { useMeshScreenBounds } from '@/features/scene/useMeshScreenBounds'
 
 export function SectionOverlay() {
   const currentSection = useCameraStore((s) => s.currentSection)
@@ -37,7 +36,6 @@ export function SectionOverlay() {
     events.emit('camera:flyTo', SECTION_ORDER[nextIndex])
   }
 
-  const { bounds: boardBounds, isVisible: projectsVisible } = useMeshScreenBounds()
   const isVisible = currentSection !== 'hero' && !isTransitioning
 
   return (
@@ -65,16 +63,14 @@ export function SectionOverlay() {
         </div>
       )}
 
-      {projectsVisible && boardBounds && (
-        <ProjectsPanel
-          className="absolute pointer-events-auto"
-          style={{
-            left: boardBounds.left,
-            top: boardBounds.top,
-            width: boardBounds.width,
-            height: boardBounds.height,
-          }}
-        />
+      {currentSection === 'projects' && !isTransitioning && (
+        <div
+          className="absolute inset-4 top-14 pointer-events-auto animate-intro-fade-up opacity-0"
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
+        >
+          <ProjectsPanel />
+        </div>
       )}
 
       {currentSection === 'blog' && !isTransitioning && (
