@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { trackContactClick, trackOutboundLink } from '@/lib/analytics'
 
 const CONTACT_LINKS = [
   {
@@ -15,34 +16,6 @@ const CONTACT_LINKS = [
   },
 ]
 
-// 꼬리 포함 말풍선 — 꼬리 영역(4%)을 본체 안에 포함
-// 0,0 → 좌상단, 1,1 → 우하단
-// 꼬리: 좌측 중앙 (0~0.04 영역)
-const BUBBLE_CLIP = `polygon(
-  0.04em 0%,
-  100% 0%,
-  100% 100%,
-  0.04em 100%,
-  0.04em 58%,
-  0% 50%,
-  0.04em 42%
-)`
-
-// polygon은 %로
-const BUBBLE_CLIP_PCT = `polygon(
-  4% 0%,
-  96% 0%,
-  100% 4%,
-  100% 96%,
-  96% 100%,
-  4% 100%,
-  0% 100%,
-  0% 58%,
-  -4% 50%,
-  0% 42%,
-  0% 0%
-)`
-
 export function ContactPanel() {
   const [isMd, setIsMd] = useState(false)
 
@@ -54,7 +27,7 @@ export function ContactPanel() {
   }, [])
 
   return (
-    <div className="relative max-w-[280px] sm:max-w-sm lg:max-w-md">
+    <div className="relative max-w-[280px] sm:max-w-sm lg:max-w-md animate-intro-fade-up opacity-0">
       {/* PC: 배경 SVG 말풍선 */}
       {isMd && (
         <svg
@@ -121,6 +94,14 @@ export function ContactPanel() {
                 target={link.href.startsWith('mailto') ? undefined : '_blank'}
                 rel={link.href.startsWith('mailto') ? undefined : 'noopener noreferrer'}
                 className="group flex items-center gap-2 sm:gap-3 transition-all duration-300"
+                onClick={() => {
+                  // GA4: contact_click + outbound_link 이벤트
+                  const method = link.label.toLowerCase() as 'email' | 'github'
+                  trackContactClick(method)
+                  if (!link.href.startsWith('mailto')) {
+                    trackOutboundLink(link.href, link.display)
+                  }
+                }}
               >
                 <span className="text-accent text-xs sm:text-sm font-medium min-w-[50px] sm:min-w-[55px]">
                   {link.label}

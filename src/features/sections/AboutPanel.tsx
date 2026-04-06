@@ -13,7 +13,7 @@ const SKILLS = [
 
 export function AboutPanel() {
   return (
-    <div className="flex flex-col gap-2 sm:gap-4 lg:gap-6 max-w-[280px] sm:max-w-sm lg:max-w-md">
+    <div className="flex flex-col gap-2 sm:gap-4 lg:gap-6 max-w-[280px] sm:max-w-sm lg:max-w-md animate-intro-fade-up opacity-0">
       <h2
         className="font-heading text-text-primary tracking-wider"
         style={{ fontSize: 'clamp(1.1rem, 3vw, 2rem)', fontWeight: 600 }}

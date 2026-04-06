@@ -12,7 +12,6 @@ import {
 } from 'three'
 import { Lighting } from './Lighting'
 import { RingPulse } from './RingPulse'
-import { MenuBoardTracker } from './MenuBoardTracker'
 import { useCameraStore } from '@/features/camera'
 import type { SectionId } from '@/features/camera'
 import { events } from '@/lib/events'
@@ -130,7 +129,6 @@ function CoffeeShop() {
       {currentSection === 'hero' && ringPositions.map((rp) => (
         <RingPulse key={rp.section} position={rp.position} />
       ))}
-      <MenuBoardTracker scene={scene} />
     </group>
   )
 }

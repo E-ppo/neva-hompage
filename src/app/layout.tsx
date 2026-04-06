@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Space_Grotesk, Inter } from 'next/font/google'
 import { TierProvider } from '@/features/tier'
+import { GoogleAnalytics } from '@/components/GoogleAnalytics'
 import './globals.css'
 
 const spaceGrotesk = Space_Grotesk({
@@ -31,6 +32,7 @@ export default function RootLayout({
         className={`${spaceGrotesk.variable} ${inter.variable} antialiased`}
         suppressHydrationWarning
       >
+        <GoogleAnalytics />
         <TierProvider>{children}</TierProvider>
       </body>
     </html>

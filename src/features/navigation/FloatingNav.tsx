@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import { events } from '@/lib/events'
 import { useCameraStore } from '@/features/camera'
 import type { SectionId } from '@/features/camera'
+import { trackNavClick } from '@/lib/analytics'
 
 const NAV_ITEMS: { id: SectionId; label: string }[] = [
   { id: 'hero', label: 'Home' },
@@ -26,7 +27,9 @@ export function FloatingNav() {
 
   const isHome = currentSection === 'hero' && !isMobile
 
-  const handleClick = (id: SectionId) => {
+  const handleClick = (id: SectionId, navType: 'side' | 'top') => {
+    // GA4: nav_click 이벤트 전송
+    trackNavClick(id, navType)
     events.emit('camera:flyTo', id)
   }
 
@@ -47,7 +50,7 @@ export function FloatingNav() {
               style={{ animationDelay: `${index * 100}ms` }}
             >
               <button
-                onClick={() => handleClick(item.id)}
+                onClick={() => handleClick(item.id, 'side')}
                 className="group flex items-center flex-row gap-2 transition-all duration-300 hover:opacity-100"
                 style={{ opacity: currentSection === item.id ? 1 : 0.8 }}
               >
@@ -94,7 +97,7 @@ export function FloatingNav() {
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 <button
-                  onClick={() => handleClick(item.id)}
+                  onClick={() => handleClick(item.id, 'top')}
                   className="group flex items-center gap-2 transition-all duration-300 hover:opacity-100"
                   style={{ opacity: currentSection === item.id ? 1 : 0.8 }}
                 >

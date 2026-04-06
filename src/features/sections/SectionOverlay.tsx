@@ -1,9 +1,11 @@
 'use client'
 
-import { useRef } from 'react'
+import { useRef, useEffect } from 'react'
 import { useCameraStore } from '@/features/camera'
 import { SECTION_ORDER } from '@/features/camera/cameraPositions'
 import { events } from '@/lib/events'
+import { trackSectionView } from '@/lib/analytics'
+import { useScrollDepth } from '@/lib/useScrollDepth'
 import { AboutPanel } from './AboutPanel'
 import { ContactPanel } from './ContactPanel'
 import { BlogPanel } from './BlogPanel'
@@ -13,6 +15,16 @@ export function SectionOverlay() {
   const currentSection = useCameraStore((s) => s.currentSection)
   const isTransitioning = useCameraStore((s) => s.isTransitioning)
   const touchStartY = useRef(0)
+
+  // GA4: 섹션 기반 스크롤 깊이 추적
+  useScrollDepth()
+
+  // GA4: 섹션 진입 시 section_view 이벤트 전송
+  useEffect(() => {
+    if (currentSection && !isTransitioning) {
+      trackSectionView(currentSection)
+    }
+  }, [currentSection, isTransitioning])
 
   const handleTouchStart = (e: React.TouchEvent) => {
     touchStartY.current = e.touches[0].clientY
@@ -36,13 +48,10 @@ export function SectionOverlay() {
     events.emit('camera:flyTo', SECTION_ORDER[nextIndex])
   }
 
-  const isVisible = currentSection !== 'hero' && !isTransitioning
 
   return (
     <div
-      className={`fixed inset-0 z-30 pointer-events-none transition-opacity duration-500 ${
-        isVisible ? 'opacity-100' : 'opacity-0'
-      }`}
+      className="fixed inset-0 z-30 pointer-events-none"
     >
       {currentSection === 'about' && !isTransitioning && (
         <div
@@ -65,7 +74,18 @@ export function SectionOverlay() {
 
       {currentSection === 'projects' && !isTransitioning && (
         <div
-          className="absolute inset-4 top-14 pointer-events-auto animate-intro-fade-up opacity-0"
+          className="absolute inset-4 top-14 pointer-events-auto"
+          onWheel={(e) => {
+            const store = useCameraStore.getState()
+            if (store.isTransitioning) return
+            const currentIndex = SECTION_ORDER.indexOf(store.currentSection)
+            if (currentIndex === -1) return
+            const nextIndex =
+              e.deltaY > 0
+                ? (currentIndex + 1) % SECTION_ORDER.length
+                : (currentIndex - 1 + SECTION_ORDER.length) % SECTION_ORDER.length
+            events.emit('camera:flyTo', SECTION_ORDER[nextIndex])
+          }}
           onTouchStart={handleTouchStart}
           onTouchEnd={handleTouchEnd}
         >
@@ -75,7 +95,7 @@ export function SectionOverlay() {
 
       {currentSection === 'blog' && !isTransitioning && (
         <div
-          className="absolute inset-4 top-14 pointer-events-auto animate-intro-fade-up opacity-0"
+          className="absolute inset-4 top-14 pointer-events-auto"
           onTouchStart={handleTouchStart}
           onTouchEnd={handleTouchEnd}
         >
@@ -85,7 +105,7 @@ export function SectionOverlay() {
 
       {currentSection === 'contact' && !isTransitioning && (
         <div
-          className="absolute inset-4 top-14 md:inset-auto md:left-1/2 md:top-1/2 md:-translate-y-1/2 pointer-events-auto flex items-center justify-center animate-intro-fade-up opacity-0"
+          className="absolute inset-4 top-14 md:inset-auto md:left-1/2 md:top-1/2 md:-translate-y-1/2 pointer-events-auto flex items-center justify-center"
           onTouchStart={handleTouchStart}
           onTouchEnd={handleTouchEnd}
         >

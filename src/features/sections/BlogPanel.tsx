@@ -40,7 +40,7 @@ export function BlogPanel() {
   const nav = useSwipeNav()
 
   return (
-    <div className="w-full h-full flex flex-col" {...nav}>
+    <div className="w-full h-full flex flex-col animate-intro-fade-up opacity-0" {...nav}>
       {/* 타이틀바 */}
       <div
         className="flex items-center gap-1.5 px-3 py-2 rounded-t-lg"

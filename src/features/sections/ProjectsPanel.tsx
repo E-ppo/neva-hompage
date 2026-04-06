@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { trackProjectClick, trackCtaClick } from '@/lib/analytics'
 
 const PROJECTS = [
   {
@@ -14,13 +15,19 @@ const PROJECTS = [
 export function ProjectsPanel() {
   const [current, setCurrent] = useState(0)
 
-  const prev = () => setCurrent((c) => (c - 1 + PROJECTS.length) % PROJECTS.length)
-  const next = () => setCurrent((c) => (c + 1) % PROJECTS.length)
+  const prev = () => {
+    setCurrent((c) => (c - 1 + PROJECTS.length) % PROJECTS.length)
+    trackProjectClick(PROJECTS[(current - 1 + PROJECTS.length) % PROJECTS.length].title, 'prev')
+  }
+  const next = () => {
+    setCurrent((c) => (c + 1) % PROJECTS.length)
+    trackProjectClick(PROJECTS[(current + 1) % PROJECTS.length].title, 'next')
+  }
 
   const project = PROJECTS[current]
 
   return (
-    <div className="w-full h-full flex flex-col md:flex-row gap-10 sm:gap-16 lg:gap-24 items-center md:justify-start md:pl-[8%] justify-center p-2 sm:p-4">
+    <div className="w-full h-full flex flex-col md:flex-row gap-10 sm:gap-16 lg:gap-24 items-center md:justify-start md:pl-[8%] justify-center p-2 sm:p-4 animate-intro-fade-up opacity-0">
       {/* 좌측: 나무 액자 이미지 */}
       <div className="relative flex-shrink-0 w-full md:w-[60%] max-h-[55vh] md:max-h-[75vh]">
         {/* 나무 액자 프레임 */}
@@ -78,7 +85,10 @@ export function ProjectsPanel() {
                   className={`w-2 h-2 rounded-full transition-all cursor-pointer ${
                     i === current ? 'bg-accent scale-110' : 'bg-white/30 hover:bg-white/50'
                   }`}
-                  onClick={() => setCurrent(i)}
+                  onClick={() => {
+                    setCurrent(i)
+                    trackProjectClick(PROJECTS[i].title, 'dot')
+                  }}
                 />
               ))}
             </div>
@@ -87,14 +97,18 @@ export function ProjectsPanel() {
       </div>
 
       {/* 우측: 프로젝트 정보 */}
-      <div
-        className="flex flex-col gap-3 sm:gap-4 md:max-w-[35%] text-center md:text-left rounded-2xl p-4 sm:p-5 lg:p-6 backdrop-blur-xl"
-        style={{
-          background: 'rgba(15, 13, 11, 0.75)',
-          border: '1px solid var(--glass-border)',
-          boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)',
-        }}
-      >
+      <div className="relative md:max-w-[35%]">
+        {/* glass 배경 — 즉시 표시 */}
+        <div
+          className="absolute inset-0 rounded-2xl backdrop-blur-xl"
+          style={{
+            background: 'rgba(15, 13, 11, 0.75)',
+            border: '1px solid var(--glass-border)',
+            boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)',
+          }}
+        />
+        {/* 콘텐츠 — 페이드인 */}
+        <div className="relative flex flex-col gap-3 sm:gap-4 text-center md:text-left rounded-2xl p-4 sm:p-5 lg:p-6 animate-intro-fade-up opacity-0">
         <h2
           className="font-heading text-text-primary tracking-wider"
           style={{ fontSize: 'clamp(1.3rem, 3vw, 2.2rem)', fontWeight: 600 }}
@@ -128,10 +142,14 @@ export function ProjectsPanel() {
         {/* 자세히 보기 */}
         <button
           className="mt-1 sm:mt-2 text-accent text-xs sm:text-sm hover:text-accent-glow transition-colors self-center md:self-start"
-          onClick={() => alert('준비중이니 기다려주세요!')}
+          onClick={() => {
+            trackCtaClick('자세히 보기')
+            alert('준비중이니 기다려주세요!')
+          }}
         >
           자세히 보기 →
         </button>
+        </div>
       </div>
     </div>
   )
