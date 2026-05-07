@@ -19,9 +19,9 @@
         --tag-bg: #f5f5f5;
         --tag-border: #ddd;
         --font:
-          "Pretendard Variable", "SUIT Variable", "Noto Sans KR",
-          "Apple SD Gothic Neo", -apple-system, sans-serif;
-        --mono: "JetBrains Mono", "SF Mono", "Fira Code", monospace;
+          'Pretendard Variable', 'SUIT Variable', 'Noto Sans KR', 'Apple SD Gothic Neo',
+          -apple-system, sans-serif;
+        --mono: 'JetBrains Mono', 'SF Mono', 'Fira Code', monospace;
       }
 
       * {
@@ -91,7 +91,7 @@
         overflow: hidden;
       }
       .page::before {
-        content: "";
+        content: '';
         position: absolute;
         top: 0;
         left: 0;
@@ -159,23 +159,23 @@
         color: var(--accent);
       }
       .contact-item::before {
-        content: "";
+        content: '';
         display: inline-block;
         width: 1.1em;
         text-align: center;
         font-size: 0.9em;
       }
       .contact-item.email::before {
-        content: "✉️";
+        content: '✉️';
       }
       .contact-item.phone::before {
-        content: "📞";
+        content: '📞';
       }
       .contact-item.github::before {
-        content: "💻";
+        content: '💻';
       }
       .contact-item.homepage::before {
-        content: "🌐";
+        content: '🌐';
       }
       .hero-summary {
         margin-top: 14px;
@@ -663,7 +663,7 @@
           page-break-after: auto;
         }
         .page::before {
-          content: "";
+          content: '';
           position: absolute;
           top: 0;
           left: 0;
@@ -759,8 +759,8 @@
     <div class="screen-note">
       <strong>Renewed Edition</strong>
       <span
-        >주요 프로젝트는 종료 시점 역순으로 정렬했고, 단발 작업은 별도 섹션으로
-        분리했습니다. 인쇄하면 A4 9페이지로 나뉩니다.</span
+        >주요 프로젝트는 종료 시점 역순으로 정렬했고, 단발 작업은 별도 섹션으로 분리했습니다.
+        인쇄하면 A4 9페이지로 나뉩니다.</span
       >
     </div>
 
@@ -771,8 +771,7 @@
           <p class="section-label">Projects</p>
           <h2 class="section-title">주요 프로젝트</h2>
           <p class="skill-note" style="margin-top: 6px">
-            종료 시점 역순으로 정렬했습니다. 각 프로젝트군 헤더에 운영 상태를
-            함께 표기했습니다.
+            종료 시점 역순으로 정렬했습니다. 각 프로젝트군 헤더에 운영 상태를 함께 표기했습니다.
           </p>
         </div>
 
@@ -780,21 +779,18 @@
           <div class="service-header">
             <div class="service-name-row">
               <span class="service-name">AllBarLaw 법률 플랫폼</span>
-              <span class="status-badge status-badge--delivered"
-                >납품 완료 / 출시 대기</span
-              >
+              <span class="status-badge status-badge--delivered">납품 완료 / 출시 대기</span>
             </div>
             <span class="service-date">2025.04 — 2026.01 · 9개월</span>
           </div>
           <p class="service-desc">
-            사용자 서비스와 관리자 시스템을 한 사람이 9개월간 단독 개발한 법률
-            플랫폼입니다. 두 제품이
+            사용자 서비스와 관리자 시스템을 한 사람이 9개월간 단독 개발한 법률 플랫폼입니다. 두
+            제품이
             <strong
-              >같은 데이터 모델을 공유하면서 일반 유저·변호사·운영자라는 서로
-              다른 권한 워크플로우</strong
-            >로 분기하도록 설계했고, 실시간 채팅·소셜 로그인·AI 요약·RBAC·드래그
-            정렬 같은 핵심 기능을 직접 붙였습니다. 클라이언트 검수까지 마치고
-            출시 대기 중입니다.
+              >같은 데이터 모델을 공유하면서 일반 유저·변호사·운영자라는 서로 다른 권한
+              워크플로우</strong
+            >로 분기하도록 설계했고, 실시간 채팅·소셜 로그인·AI 요약·RBAC·드래그 정렬 같은 핵심
+            기능을 직접 붙였습니다. 클라이언트 검수까지 마치고 출시 대기 중입니다.
           </p>
           <div class="project-grid">
             <section class="project-card">
@@ -812,40 +808,35 @@
                 </div>
               </div>
               <p class="project-meta">
-                React 19, TypeScript, Vite, TanStack Query, Zustand, Socket.io,
-                React Hook Form, Zod, SCSS Modules
+                React 19, TypeScript, Vite, TanStack Query, Zustand, Socket.io, React Hook Form,
+                Zod, SCSS Modules
               </p>
               <ul class="compact-list">
                 <li>
                   <strong>Socket.io 기반 실시간 채팅(바로톡)</strong>에 낙관적
-                  업데이트(tempId)·채팅방별 메시지 캐시·지수 백오프 재연결을
-                  직접 설계해, 네트워크 지연에도 즉각 반응하는 UX를
-                  구현했습니다.
+                  업데이트(tempId)·채팅방별 메시지 캐시·지수 백오프 재연결을 직접 설계해, 네트워크
+                  지연에도 즉각 반응하는 UX를 구현했습니다.
                 </li>
                 <li>
-                  기획·디자인·기술 의사결정을 <strong>단일 책임자</strong>로
-                  진행했고, 같은 저장소 안에
-                  <strong>변호사 전용 어드민 대시보드</strong>를 권한 분기로
-                  함께 구현해 일반 유저/변호사 두 페르소나를 한 코드베이스로
-                  운영했습니다.
+                  기획·디자인·기술 의사결정을 <strong>단일 책임자</strong>로 진행했고, 같은 저장소
+                  안에 <strong>변호사 전용 어드민 대시보드</strong>를 권한 분기로 함께 구현해 일반
+                  유저/변호사 두 페르소나를 한 코드베이스로 운영했습니다.
                 </li>
                 <li>
                   <strong
-                    >JWT 인증 + 카카오·네이버·구글 소셜 로그인 + 일반
-                    유저/변호사 2단계 권한 구조</strong
-                  >를 통합 설계하고, AI 콘텐츠 요약·무한 스크롤·통합
-                  검색(블로그·영상·지식·변호사) 사용자 흐름을 붙였습니다.
+                    >JWT 인증 + 카카오·네이버·구글 소셜 로그인 + 일반 유저/변호사 2단계 권한
+                    구조</strong
+                  >를 통합 설계하고, AI 콘텐츠 요약·무한 스크롤·통합 검색(블로그·영상·지식·변호사)
+                  사용자 흐름을 붙였습니다.
                 </li>
                 <li>
-                  <strong
-                    >React Query(서버 상태) / Zustand(클라이언트 상태) 분리
-                    아키텍처</strong
-                  >를 의식적으로 적용하고, 17개 도메인별 API 서비스와 63개
-                  커스텀 훅으로 비즈니스 로직을 모듈화했습니다.
+                  <strong>React Query(서버 상태) / Zustand(클라이언트 상태) 분리 아키텍처</strong>를
+                  의식적으로 적용하고, 17개 도메인별 API 서비스와 63개 커스텀 훅으로 비즈니스 로직을
+                  모듈화했습니다.
                 </li>
                 <li>
-                  9개월간 <strong>960건 커밋</strong>으로 단독 개발하면서 GitHub
-                  Actions 기반 CI/CD 파이프라인까지 직접 구성했습니다.
+                  9개월간 <strong>960건 커밋</strong>으로 단독 개발하면서 GitHub Actions 기반 CI/CD
+                  파이프라인까지 직접 구성했습니다.
                 </li>
               </ul>
             </section>
@@ -865,30 +856,27 @@
                 </div>
               </div>
               <p class="project-meta">
-                React 18, TypeScript, TanStack Query v5, React Router 7, Ant
-                Design, @dnd-kit, Toast UI Editor, React Quill, xlsx
+                React 18, TypeScript, TanStack Query v5, React Router 7, Ant Design, @dnd-kit, Toast
+                UI Editor, React Quill, xlsx
               </p>
               <ul class="compact-list">
                 <li>
                   회원·변호사·콘텐츠·게시판·광고·배너·통계 등
-                  <strong>9개 도메인 통합 관리자 시스템</strong>을 단독
-                  구축했습니다.
+                  <strong>9개 도메인 통합 관리자 시스템</strong>을 단독 구축했습니다.
                 </li>
                 <li>
-                  <strong>JWT + RBAC(권한 ID 배열 기반 동적 메뉴)</strong>과
-                  33개 커스텀 훅으로 비즈니스 로직을 모듈화하여, 새 페이지 추가
-                  시 권한 등록만으로 메뉴·접근 제어가 동작하도록 만들었습니다.
+                  <strong>JWT + RBAC(권한 ID 배열 기반 동적 메뉴)</strong>과 33개 커스텀 훅으로
+                  비즈니스 로직을 모듈화하여, 새 페이지 추가 시 권한 등록만으로 메뉴·접근 제어가
+                  동작하도록 만들었습니다.
                 </li>
                 <li>
-                  <strong>@dnd-kit 드래그앤드롭 정렬</strong>에 옵티미스틱
-                  업데이트 + 변경된 항목만 필터링한 배치 API 호출 + 실패 시
-                  롤백까지 흐름을 정리했습니다.
+                  <strong>@dnd-kit 드래그앤드롭 정렬</strong>에 옵티미스틱 업데이트 + 변경된 항목만
+                  필터링한 배치 API 호출 + 실패 시 롤백까지 흐름을 정리했습니다.
                 </li>
                 <li>
-                  <strong>URL 파라미터를 Single Source of Truth</strong>로
-                  사용한 검색 상태 관리(공유·새로고침·뒤로가기 호환), 요구사항별
-                  리치 에디터 분리(Toast UI Editor·React Quill), xlsx 엑셀
-                  내보내기까지 어드민 핵심 기능을 붙였습니다.
+                  <strong>URL 파라미터를 Single Source of Truth</strong>로 사용한 검색 상태
+                  관리(공유·새로고침·뒤로가기 호환), 요구사항별 리치 에디터 분리(Toast UI
+                  Editor·React Quill), xlsx 엑셀 내보내기까지 어드민 핵심 기능을 붙였습니다.
                 </li>
               </ul>
             </section>
@@ -907,21 +895,18 @@
           <div class="service-header">
             <div class="service-name-row">
               <span class="service-name">Live Review Suite</span>
-              <span class="status-badge status-badge--b2b"
-                >B2B 도입 / 운영 중</span
-              >
+              <span class="status-badge status-badge--b2b">B2B 도입 / 운영 중</span>
             </div>
             <span class="service-date">2024.05 — 2026.01 · 1년 8개월</span>
           </div>
           <p class="service-desc">
             전시·매장 운영을 위한
-            <strong>분석 대시보드, 3D 시각화, 리포트 모듈</strong>까지 한
-            제품군을 1년 8개월간 함께 만들고 운영한 B2B 솔루션입니다. React
-            Three Fiber InstancedMesh로 <strong>1,000개 객체를 60FPS</strong>에
-            맞춘 3D 시각화가 가장 깊이 있게 작업한 영역이고,
+            <strong>분석 대시보드, 3D 시각화, 리포트 모듈</strong>까지 한 제품군을 1년 8개월간 함께
+            만들고 운영한 B2B 솔루션입니다. React Three Fiber InstancedMesh로
+            <strong>1,000개 객체를 60FPS</strong>에 맞춘 3D 시각화가 가장 깊이 있게 작업한 영역이고,
             <strong
-              >프론트엔드 본업에 인접한 백엔드 도구(Express·Puppeteer)에도
-              거리감 없이 들어가</strong
+              >프론트엔드 본업에 인접한 백엔드 도구(Express·Puppeteer)에도 거리감 없이
+              들어가</strong
             >
             다운로드 흐름까지 직접 마무리했습니다. (B2B 특성상 데모 링크로 노출)
           </p>
@@ -934,17 +919,14 @@
                 <span class="project-cat">Data Export</span>
               </div>
               <div class="project-top">
-                <h3 class="project-title">
-                  Live Review Dashboard — B2B 분석 대시보드
-                </h3>
+                <h3 class="project-title">Live Review Dashboard — B2B 분석 대시보드</h3>
                 <div class="project-info">
                   <span class="project-role-text">프론트엔드 40%</span>
                   <span>2024.05 — 2025.02</span>
                 </div>
               </div>
               <p class="project-meta">
-                Next.js 14, TanStack Query, Valtio, ECharts, ExcelJS, jsPDF,
-                html2canvas
+                Next.js 14, TanStack Query, Valtio, ECharts, ExcelJS, jsPDF, html2canvas
               </p>
               <div class="project-links">
                 <a
@@ -953,33 +935,29 @@
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <span class="live-link-label">Demo</span> Live Review
-                  Dashboard
+                  <span class="live-link-label">Demo</span> Live Review Dashboard
                 </a>
               </div>
               <ul class="compact-list">
                 <li>
                   9개월 운영한 B2B 분석 대시보드의 다양한 카드·차트를
-                  <strong>데이터 기반 통합 컴포넌트로 모듈화</strong>해, 새
-                  항목을 <strong>데이터만으로 화면에 추가</strong>할 수 있는
-                  추상화 인터페이스를 설계했습니다.
+                  <strong>데이터 기반 통합 컴포넌트로 모듈화</strong>해, 새 항목을
+                  <strong>데이터만으로 화면에 추가</strong>할 수 있는 추상화 인터페이스를
+                  설계했습니다.
                 </li>
                 <li>
-                  <strong>통합 카드 컴포넌트</strong>: 들어오는 데이터 형태에
-                  따라 동적으로 적합한 카드 레이아웃을 선택해 렌더링하도록
-                  설계해, 같은 컴포넌트 하나로 다양한 통계·요약·KPI 카드를
-                  처리할 수 있게 만들었습니다.
+                  <strong>통합 카드 컴포넌트</strong>: 들어오는 데이터 형태에 따라 동적으로 적합한
+                  카드 레이아웃을 선택해 렌더링하도록 설계해, 같은 컴포넌트 하나로 다양한
+                  통계·요약·KPI 카드를 처리할 수 있게 만들었습니다.
                 </li>
                 <li>
-                  <strong>차트 모듈</strong>: "차트 종류 + 데이터" 두 가지만
-                  props로 받아 ECharts 옵션을 공통 로직에서 생성하도록 추상화해,
-                  Bar / Line / Donut 등 다양한 차트를 동일한 인터페이스로 그릴
-                  수 있게 했습니다.
+                  <strong>차트 모듈</strong>: "차트 종류 + 데이터" 두 가지만 props로 받아 ECharts
+                  옵션을 공통 로직에서 생성하도록 추상화해, Bar / Line / Donut 등 다양한 차트를
+                  동일한 인터페이스로 그릴 수 있게 했습니다.
                 </li>
                 <li>
                   같은 추상화 위에서
-                  <strong>PDF·Excel·CSV export와 html2canvas 캡처 리포트</strong
-                  >까지 처리했습니다.
+                  <strong>PDF·Excel·CSV export와 html2canvas 캡처 리포트</strong>까지 처리했습니다.
                 </li>
               </ul>
             </section>
@@ -999,8 +977,7 @@
                 </div>
               </div>
               <p class="project-meta">
-                React 19, TypeScript, Three.js, React Three Fiber, Drei,
-                ECharts, i18next
+                React 19, TypeScript, Three.js, React Three Fiber, Drei, ECharts, i18next
               </p>
               <div class="project-links">
                 <a
@@ -1016,31 +993,25 @@
               <ul class="compact-list">
                 <li>
                   박람회 AIoT 센서 30대로 수집한
-                  <strong>395만 프레임 데이터</strong>를 4일간 방문자
-                  동선·체류·성별·재방문 흐름으로 시각화하는
-                  <strong>인터랙티브 3D 랜딩</strong>을 단독 개발했습니다.
+                  <strong>395만 프레임 데이터</strong>를 4일간 방문자 동선·체류·성별·재방문 흐름으로
+                  시각화하는 <strong>인터랙티브 3D 랜딩</strong>을 단독 개발했습니다.
                 </li>
                 <li>
-                  <strong
-                    >InstancedMesh로 1,000개 객체를 단일 draw call로
-                    렌더링</strong
-                  >해 일반 노트북에서도 60FPS를 유지했고,
-                  <strong>frameloop='demand'</strong>로 정지 상태일 때 GPU
-                  연산을 차단해 발열·배터리 비용까지 줄였습니다.
+                  <strong>InstancedMesh로 1,000개 객체를 단일 draw call로 렌더링</strong>해 일반
+                  노트북에서도 60FPS를 유지했고, <strong>frameloop='demand'</strong>로 정지 상태일
+                  때 GPU 연산을 차단해 발열·배터리 비용까지 줄였습니다.
                 </li>
                 <li>
-                  <strong>useSmoothTimeline 훅</strong>(RAF 기반, 0.5x~4x 배속,
-                  600ms 페이드 전환)으로 4일치 데이터 타임라인 재생을 구현했고,
-                  <strong
-                    >useRef로 애니메이션 상태를 React 재렌더링과 분리</strong
-                  >해 구체 등장·소멸 시 깜빡임 문제를 해결했습니다.
+                  <strong>useSmoothTimeline 훅</strong>(RAF 기반, 0.5x~4x 배속, 600ms 페이드
+                  전환)으로 4일치 데이터 타임라인 재생을 구현했고,
+                  <strong>useRef로 애니메이션 상태를 React 재렌더링과 분리</strong>해 구체 등장·소멸
+                  시 깜빡임 문제를 해결했습니다.
                 </li>
                 <li>
                   InstancedMesh 인스턴스 단위
-                  <strong>Raycasting을 직접 구현</strong>(Matrix에서 위치 추출 →
-                  Sphere 충돌 테스트)했고, 4가지 시각화
-                  모드(성별·재방문·체류시간·기본)를 Context API + setColorAt으로
-                  동적 색상 매핑했습니다.
+                  <strong>Raycasting을 직접 구현</strong>(Matrix에서 위치 추출 → Sphere 충돌
+                  테스트)했고, 4가지 시각화 모드(성별·재방문·체류시간·기본)를 Context API +
+                  setColorAt으로 동적 색상 매핑했습니다.
                 </li>
               </ul>
             </section>
@@ -1058,23 +1029,21 @@
                   <span>2025.02 — 2025.04</span>
                 </div>
               </div>
-              <p class="project-meta">
-                Express, TypeScript, Puppeteer, PDF-lib, ECharts
-              </p>
+              <p class="project-meta">Express, TypeScript, Puppeteer, PDF-lib, ECharts</p>
               <ul class="compact-list">
                 <li>
                   3D 대시보드 PDF 다운로드를 위해
-                  <strong>Express + Puppeteer 기반 리포트 생성 모듈</strong>을
-                  직접 작성하고, 차트 통합·다중 페이지 병합 구조를 만들었습니다.
+                  <strong>Express + Puppeteer 기반 리포트 생성 모듈</strong>을 직접 작성하고, 차트
+                  통합·다중 페이지 병합 구조를 만들었습니다.
                 </li>
                 <li>
-                  스트림 응답과 비동기·메모리 최적화를 적용해 운영 환경에 배포
-                  가능한 모듈로 마무리했습니다.
+                  스트림 응답과 비동기·메모리 최적화를 적용해 운영 환경에 배포 가능한 모듈로
+                  마무리했습니다.
                 </li>
                 <li>
                   프론트엔드 위주로 일하지만
-                  <strong>백엔드 생태계에 거리감 없이</strong> 들어가 필요한
-                  만큼 도구를 만들 수 있다는 인접 영역 작업입니다.
+                  <strong>백엔드 생태계에 거리감 없이</strong> 들어가 필요한 만큼 도구를 만들 수
+                  있다는 인접 영역 작업입니다.
                 </li>
               </ul>
             </section>
@@ -1093,20 +1062,16 @@
           <div class="service-header">
             <div class="service-name-row">
               <span class="service-name">Face Recognition Stack</span>
-              <span class="status-badge status-badge--internal"
-                >자사 도입 / 운영 중</span
-              >
+              <span class="status-badge status-badge--internal">자사 도입 / 운영 중</span>
             </div>
             <span class="service-date">2025.04 — 2025.11 · 6개월 발전</span>
           </div>
           <p class="service-desc">
             자사 서비스의 안면 인식 흐름을
-            <strong>V1 → V2 → BlazeFace 마이그레이션</strong>까지 6개월간
-            단계적으로 발전시킨 도메인 작업입니다.
-            <strong>MediaPipe → TensorFlow.js BlazeFace</strong>로 모델을
-            전환하고, MediaStream API 연사 캡처와 PWA 운영 패턴을 같은 골격으로
-            여러 제품에 이식했습니다. (이 흐름이 실 매장으로 확장된 사례는 다음
-            페이지의 MIYABI 외식 운영 참조)
+            <strong>V1 → V2 → BlazeFace 마이그레이션</strong>까지 6개월간 단계적으로 발전시킨 도메인
+            작업입니다. <strong>MediaPipe → TensorFlow.js BlazeFace</strong>로 모델을 전환하고,
+            MediaStream API 연사 캡처와 PWA 운영 패턴을 같은 골격으로 여러 제품에 이식했습니다. (이
+            흐름이 실 매장으로 확장된 사례는 다음 페이지의 MIYABI 외식 운영 참조)
           </p>
           <div class="project-grid">
             <section class="project-card">
@@ -1117,17 +1082,14 @@
                 <span class="project-cat">다중 → 단일 인식</span>
               </div>
               <div class="project-top">
-                <h3 class="project-title">
-                  LIVE-POINT (V1 → V2) — 얼굴 인식 포인트 적립
-                </h3>
+                <h3 class="project-title">LIVE-POINT (V1 → V2) — 얼굴 인식 포인트 적립</h3>
                 <div class="project-info">
-                  <span class="project-role-text">프론트엔드 100% / 95%</span>
+                  <span class="project-role-text">프론트엔드 100%</span>
                   <span>2025.04 — 2025.07</span>
                 </div>
               </div>
               <p class="project-meta">
-                React 18 → 19, TypeScript, Vite, MediaPipe, Workbox,
-                vite-plugin-pwa
+                React 18 → 19, TypeScript, Vite, MediaPipe, Workbox, vite-plugin-pwa
               </p>
               <div class="project-links">
                 <a
@@ -1142,39 +1104,31 @@
               </div>
               <ul class="compact-list">
                 <li>
-                  <strong>V1 — 태블릿 / 다중 인식</strong>: MediaStream API +
-                  Canvas로 1920×1080 웹캠을 제어하고
-                  <strong>15ms 5장 연사 캡처</strong>를 기반으로, MediaPipe로
-                  <strong>여러 사람을 동시에 인식해 각자에게 바운딩박스</strong
-                  >를 표시했습니다. 박스를 터치하면 해당 인물에 대해 신규/기존
-                  고객 흐름으로 분기되도록 만들었고, 터치 시점에
-                  <strong>좌표 기반 이미지 크롭</strong>을 직접 구현했습니다.
+                  <strong>V1 — 태블릿 / 다중 인식</strong>: MediaStream API + Canvas로 1920×1080
+                  웹캠을 제어하고 <strong>15ms 5장 연사 캡처</strong>를 기반으로, MediaPipe로
+                  <strong>여러 사람을 동시에 인식해 각자에게 바운딩박스</strong>를 표시했습니다.
+                  박스를 터치하면 해당 인물에 대해 신규/기존 고객 흐름으로 분기되도록 만들었고, 터치
+                  시점에 <strong>좌표 기반 이미지 크롭</strong>을 직접 구현했습니다.
                 </li>
                 <li>
-                  <strong>V2 — 모바일 / 단일 인식</strong>: 인식 대상을 한
-                  명으로 단순화하고 모바일 환경에 맞게 다듬어, 50ms 4장 연사 +
-                  JPEG 95% + <strong>3단계 로딩 UX(5:3:2 시간 비율)</strong>로
-                  체감 대기 시간을 줄였습니다.
-                  <strong>HTTP 상태 코드 6종</strong>(얼굴
-                  각도·움직임·스푸핑·미감지·다중 얼굴·권한)별로 행동 유도형
-                  메시지를 매핑해 사용자가 무엇을 고쳐야 할지 즉시 알 수 있게
-                  했습니다.
+                  <strong>V2 — 모바일 / 단일 인식</strong>: 인식 대상을 한 명으로 단순화하고 모바일
+                  환경에 맞게 다듬어, 50ms 4장 연사 + JPEG 95% +
+                  <strong>3단계 로딩 UX(5:3:2 시간 비율)</strong>로 체감 대기 시간을 줄였습니다.
+                  <strong>HTTP 상태 코드 6종</strong>(얼굴 각도·움직임·스푸핑·미감지·다중
+                  얼굴·권한)별로 행동 유도형 메시지를 매핑해 사용자가 무엇을 고쳐야 할지 즉시 알 수
+                  있게 했습니다.
                 </li>
                 <li>
-                  <strong>PWA 운영 디테일</strong>: Workbox 캐싱 전략(이미지
-                  CacheFirst 30일 / API NetworkFirst 24시간),
-                  <code>display: standalone</code> 키오스크/모바일 풀스크린
+                  <strong>PWA 운영 디테일</strong>: Workbox 캐싱 전략(이미지 CacheFirst 30일 / API
+                  NetworkFirst 24시간), <code>display: standalone</code> 키오스크/모바일 풀스크린
                   모드,
-                  <strong
-                    >localStorage + History API로 기기당 1회 가입 제한 +
-                    뒤로가기 차단</strong
+                  <strong>localStorage + History API로 기기당 1회 가입 제한 + 뒤로가기 차단</strong
                   >까지 디테일을 다듬었습니다.
                 </li>
                 <li>
                   <strong>카메라 제약 조건 폴백</strong>:
-                  <code>facingMode: { exact: 'user' }</code> 실패 시 일반
-                  제약으로 점진적 폴백하는 전략으로 iOS Safari·Android 다양한
-                  기기 호환성을 확보했습니다.
+                  <code>facingMode: { exact: 'user' }</code> 실패 시 일반 제약으로 점진적 폴백하는
+                  전략으로 iOS Safari·Android 다양한 기기 호환성을 확보했습니다.
                 </li>
               </ul>
             </section>
@@ -1186,17 +1140,14 @@
                 <span class="project-cat">Refactor</span>
               </div>
               <div class="project-top">
-                <h3 class="project-title">
-                  FaceRecognition — BlazeFace 마이그레이션 + 리팩터
-                </h3>
+                <h3 class="project-title">FaceRecognition — BlazeFace 마이그레이션 + 리팩터</h3>
                 <div class="project-info">
                   <span class="project-role-text">프론트엔드 100%</span>
                   <span>2025.09 — 2025.10</span>
                 </div>
               </div>
               <p class="project-meta">
-                React 19, TypeScript, TensorFlow.js BlazeFace, Vite 7, PWA,
-                React Compiler
+                React 19, TypeScript, TensorFlow.js BlazeFace, Vite 7, PWA, React Compiler
               </p>
               <div class="project-links">
                 <a
@@ -1211,29 +1162,26 @@
               </div>
               <ul class="compact-list">
                 <li>
-                  <strong>모델 선택 의사결정</strong>: YuNet(OpenCV.js 브라우저
-                  빌드 API 부족), MediaPipe FaceMesh(468 랜드마크가 조명·각도에
-                  민감) 시도 끝에
-                  <strong>웹 최적화된 TensorFlow.js BlazeFace(~1MB)</strong>로
-                  최종 결정해 실시간 처리 안정성을 확보했습니다.
+                  <strong>모델 선택 의사결정</strong>: YuNet(OpenCV.js 브라우저 빌드 API 부족),
+                  MediaPipe FaceMesh(468 랜드마크가 조명·각도에 민감) 시도 끝에
+                  <strong>웹 최적화된 TensorFlow.js BlazeFace(~1MB)</strong>로 최종 결정해 실시간
+                  처리 안정성을 확보했습니다.
                 </li>
                 <li>
-                  <strong>클라이언트 정면 감지</strong>: BlazeFace 6개
-                  랜드마크(양쪽 눈·코·입·양쪽 귀)에서 코 대칭성을 0.5초마다
-                  계산해 정면/측면을 판정하고, 가이드라인 색상(초록/빨강)으로
-                  즉각 시각 피드백을 줘
+                  <strong>클라이언트 정면 감지</strong>: BlazeFace 6개 랜드마크(양쪽 눈·코·입·양쪽
+                  귀)에서 코 대칭성을 0.5초마다 계산해 정면/측면을 판정하고, 가이드라인
+                  색상(초록/빨강)으로 즉각 시각 피드백을 줘
                   <strong>서버 요청 전에 실패 케이스를 걸러냈습니다</strong>.
                 </li>
                 <li>
-                  <strong>임계값 튜닝</strong>: 초기 얼굴 크기 15% / 대칭성 0.3
-                  설정에서는 항상 측면으로 판정 → 실제 웹캠 환경 측정값으로
-                  <strong>3% / 0.4</strong>로 완화해 실용적 균형점을 찾았습니다.
+                  <strong>임계값 튜닝</strong>: 초기 얼굴 크기 15% / 대칭성 0.3 설정에서는 항상
+                  측면으로 판정 → 실제 웹캠 환경 측정값으로 <strong>3% / 0.4</strong>로 완화해
+                  실용적 균형점을 찾았습니다.
                 </li>
                 <li>
                   <strong>13개 커스텀 훅 리팩터</strong>: 메인 컴포넌트를
-                  <strong>352줄 → 280줄(-20%)</strong>, 로컬 상태 9개 → 4개, 훅
-                  6개 → 13개로 관심사를 쪼개고 useCallback 8개로 자식
-                  리렌더링까지 최적화했습니다.
+                  <strong>352줄 → 280줄(-20%)</strong>, 로컬 상태 9개 → 4개, 훅 6개 → 13개로
+                  관심사를 쪼개고 useCallback 8개로 자식 리렌더링까지 최적화했습니다.
                 </li>
               </ul>
             </section>
@@ -1252,21 +1200,16 @@
           <div class="service-header">
             <div class="service-name-row">
               <span class="service-name">MIYABI 외식 운영</span>
-              <span class="status-badge status-badge--live"
-                >실서비스 운영 중</span
-              >
+              <span class="status-badge status-badge--live">실서비스 운영 중</span>
             </div>
             <span class="service-date">2025.11</span>
           </div>
           <p class="service-desc">
-            <strong>실 매장에 납품해 현재도 운영 중</strong>인 외식 통합 운영
-            시스템입니다.
-            <strong
-              >직원용 PWA(MIYABI Staff)와 얼굴 인식 태블릿(MIYABI Face)</strong
-            >이 한 매장 안에서 함께 동작하도록, 고객 입장 → 얼굴 인식 → CRM 연결
-            → Staff 알림·테이블 배정·주문 처리까지 흐름을 통합해서 만들었습니다.
-            (얼굴 인식은 이전 페이지 Face Recognition Stack에서 검증한 BlazeFace
-            흐름을 RN으로 이식)
+            <strong>실 매장에 납품해 현재도 운영 중</strong>인 외식 통합 운영 시스템입니다.
+            <strong>직원용 PWA(MIYABI Staff)와 얼굴 인식 태블릿(MIYABI Face)</strong>이 한 매장
+            안에서 함께 동작하도록, 고객 입장 → 얼굴 인식 → CRM 연결 → Staff 알림·테이블 배정·주문
+            처리까지 흐름을 통합해서 만들었습니다. (얼굴 인식은 이전 페이지 Face Recognition
+            Stack에서 검증한 BlazeFace 흐름을 RN으로 이식)
           </p>
           <div class="project-grid">
             <section class="project-card">
@@ -1284,8 +1227,7 @@
                 </div>
               </div>
               <p class="project-meta">
-                React 19, TypeScript, Vite 7, TanStack Query, Zustand,
-                Socket.io, Ant Design, Tailwind CSS 4
+                React 19, TypeScript, TanStack Query, Zustand, Socket.io, Ant Design, Tailwind CSS 4
               </p>
               <div class="project-links">
                 <a
@@ -1300,29 +1242,26 @@
               </div>
               <ul class="compact-list">
                 <li>
-                  <strong>Socket.io 9개 이벤트</strong>(customer.entered,
-                  table.assigned, order.created 등)로 고객 입장 → 테이블 배정 →
-                  주문 생성/취소를 실시간 동기화하고,
-                  <strong>Singleton 소켓 패턴</strong>으로 React 18 Strict
-                  Mode의 중복 연결을 방지했습니다.
+                  <strong>Socket.io 9개 이벤트</strong>(customer.entered, table.assigned,
+                  order.created 등)로 고객 입장 → 테이블 배정 → 주문 생성/취소를 실시간 동기화하고,
+                  <strong>Singleton 소켓 패턴</strong>으로 React 18 Strict Mode의 중복 연결을
+                  방지했습니다.
                 </li>
                 <li>
-                  <strong>API 응답이 아닌 소켓 이벤트만 신뢰</strong>하는 동기화
-                  전략을 의식적으로 선택해(낙관적 업데이트 의도적 미사용), 다중
-                  직원 태블릿이 같은 데이터를 일관되게 보도록 설계했습니다.
-                  setQueryData로 캐시를 직접 업데이트해 refetch 없이 즉시 UI에
+                  <strong>API 응답이 아닌 소켓 이벤트만 신뢰</strong>하는 동기화 전략을 의식적으로
+                  선택해(낙관적 업데이트 의도적 미사용), 다중 직원 태블릿이 같은 데이터를 일관되게
+                  보도록 설계했습니다. setQueryData로 캐시를 직접 업데이트해 refetch 없이 즉시 UI에
                   반영합니다.
                 </li>
                 <li>
-                  <strong>37개 테이블 + 다중 고객 장바구니</strong> — 한 테이블
-                  안 여러 고객을 customerId 키로 분리한 장바구니
-                  구조(Record&lt;customerId, CartItem[]&gt;)로 얼굴 인식 CRM의
-                  개인별 주문 이력을 정확히 기록할 수 있게 만들었습니다.
+                  <strong>37개 테이블 + 다중 고객 장바구니</strong> — 한 테이블 안 여러 고객을
+                  customerId 키로 분리한 장바구니 구조(Record&lt;customerId, CartItem[]&gt;)로 얼굴
+                  인식 CRM의 개인별 주문 이력을 정확히 기록할 수 있게 만들었습니다.
                 </li>
                 <li>
-                  <strong>JWT + RBAC</strong>(PrivateRoute / AdminRoute) 인증,
-                  신규 입장 시 벨 알림음, Toast UI 피드백, PWA 태블릿 배포까지
-                  4,882줄 / 18 커스텀 훅 규모로 단독 구축했습니다.
+                  <strong>JWT + RBAC</strong>(PrivateRoute / AdminRoute) 인증, 신규 입장 시 벨
+                  알림음, Toast UI 피드백, PWA 태블릿 배포까지 4,882줄 / 18 커스텀 훅 규모로 단독
+                  구축했습니다.
                 </li>
               </ul>
             </section>
@@ -1341,36 +1280,29 @@
                   <span>2025.11</span>
                 </div>
               </div>
-              <p class="project-meta">
-                React Native, TypeScript, TensorFlow.js BlazeFace
-              </p>
+              <p class="project-meta">React Native, TypeScript, TensorFlow.js BlazeFace</p>
               <ul class="compact-list">
                 <li>
                   광고 영상을 재생하면서
-                  <strong
-                    >사용자가 화면을 응시할 때 BlazeFace로 정면을 자동
-                    감지</strong
-                  >해 얼굴 이미지를 캡처하고, 자사
-                  <strong>AI 기기로 송출</strong>해 CRM·Staff PWA로 이어지는
+                  <strong>사용자가 화면을 응시할 때 BlazeFace로 정면을 자동 감지</strong>해 얼굴
+                  이미지를 캡처하고, 자사 <strong>AI 기기로 송출</strong>해 CRM·Staff PWA로 이어지는
                   매장 진입 플로우를 단독 구현했습니다.
                 </li>
                 <li>
                   웹(Face Recognition Stack)에서 검증한 BlazeFace 캡처 패턴을
-                  <strong>RN 태블릿 환경으로 이식</strong>하고, 같은 매장의
-                  Staff PWA와 데이터 계약을 맞춰 두 디바이스가 같은 고객·주문
-                  상태를 공유하도록 통합했습니다.
+                  <strong>RN 태블릿 환경으로 이식</strong>하고, 같은 매장의 Staff PWA와 데이터
+                  계약을 맞춰 두 디바이스가 같은 고객·주문 상태를 공유하도록 통합했습니다.
                 </li>
                 <li>
                   운영 중
-                  <strong>AI 내부 서버 IP가 바뀔 수 있는 환경 변동성</strong>을
-                  고려해 서버 주소·엔드포인트·관련 옵션을 설정 화면에서 모두
-                  변경할 수 있게 만들어, 재배포 없이 운영 환경 변화에 대응할 수
-                  있도록 했습니다.
+                  <strong>AI 내부 서버 IP가 바뀔 수 있는 환경 변동성</strong>을 고려해 서버
+                  주소·엔드포인트·관련 옵션을 설정 화면에서 모두 변경할 수 있게 만들어, 재배포 없이
+                  운영 환경 변화에 대응할 수 있도록 했습니다.
                 </li>
                 <li>
-                  <strong>안드로이드 화면 잠금 토글</strong>을 구현하고, 잠금
-                  상태에서는 터치가 다른 페이지로 전이되지 않도록 키오스크
-                  모드를 강제해 매장 운영 중 의도치 않은 화면 이탈을 막았습니다.
+                  <strong>안드로이드 화면 잠금 토글</strong>을 구현하고, 잠금 상태에서는 터치가 다른
+                  페이지로 전이되지 않도록 키오스크 모드를 강제해 매장 운영 중 의도치 않은 화면
+                  이탈을 막았습니다.
                 </li>
               </ul>
             </section>
@@ -1388,19 +1320,16 @@
         <div class="service-group">
           <div class="service-header">
             <div class="service-name-row">
-              <span class="service-name"
-                >BOTBOB 통합 (키오스크 · 모바일 · 매장 어드민)</span
-              >
+              <span class="service-name">BOTBOB 통합 (키오스크 · 모바일 · 매장 어드민)</span>
               <span class="status-badge status-badge--poc">POC 완료</span>
             </div>
             <span class="service-date">2025.07 — 2025.08</span>
           </div>
           <p class="service-desc">
             키오스크 → 모바일 주문 → 매장 어드민으로 이어지는
-            <strong>외식 통합 POC 3개 제품(KIOSK · USER · STORE)</strong>을
-            기획서 UI 설계부터 단독 구현했습니다. 세 제품이 같은 인증·세션·주문
-            데이터 모델을 공유하면서 서로 다른 디바이스·역할로 동작하도록 통합
-            설계했습니다.
+            <strong>외식 통합 POC 3개 제품(KIOSK · USER · STORE)</strong>을 기획서 UI 설계부터 단독
+            구현했습니다. 세 제품이 같은 인증·세션·주문 데이터 모델을 공유하면서 서로 다른
+            디바이스·역할로 동작하도록 통합 설계했습니다.
           </p>
           <div class="project-links" style="margin-bottom: 14px">
             <a
@@ -1421,40 +1350,35 @@
                 <span class="project-cat">반응형</span>
               </div>
               <div class="project-top">
-                <h3 class="project-title">
-                  BOTBOB KIOSK — 얼굴 인식 포인트 키오스크
-                </h3>
+                <h3 class="project-title">BOTBOB KIOSK — 얼굴 인식 포인트 키오스크</h3>
                 <div class="project-info">
                   <span class="project-role-text">프론트엔드 100%</span>
                   <span>2025.07 — 2025.08</span>
                 </div>
               </div>
               <p class="project-meta">
-                React 19, TypeScript, Vite 7, TanStack Query, Tailwind CSS 4,
-                Ant Design, vite-plugin-pwa
+                React 19, TypeScript, Vite 7, TanStack Query, Tailwind CSS 4, Ant Design,
+                vite-plugin-pwa
               </p>
               <ul class="compact-list">
                 <li>
-                  매장 키오스크의 얼굴 인식 → 전화번호 인증 → 포인트 적립 + 주문
-                  링크 문자 발송 흐름을 단독 구현했습니다.
-                  <strong
-                    >라이브러리 없이 MediaStream API + Canvas + 15ms 5장 연사
-                    캡처</strong
-                  >로 인식 정확도를 끌어올렸습니다.
+                  매장 키오스크의 얼굴 인식 → 전화번호 인증 → 포인트 적립 + 주문 링크 문자 발송
+                  흐름을 단독 구현했습니다.
+                  <strong>라이브러리 없이 MediaStream API + Canvas + 15ms 5장 연사 캡처</strong>로
+                  인식 정확도를 끌어올렸습니다.
                 </li>
                 <li>
                   <strong
-                    >회원가입(8자리 + 010 자동 prefix + 중복 체크) / 로그인(끝
-                    4자리 + 자동 제출)</strong
+                    >회원가입(8자리 + 010 자동 prefix + 중복 체크) / 로그인(끝 4자리 + 자동
+                    제출)</strong
                   >
-                  분기 플로우를 키오스크 환경에 맞게 다듬어 버튼 클릭 없이 빠른
-                  인증이 되도록 했습니다.
+                  분기 플로우를 키오스크 환경에 맞게 다듬어 버튼 클릭 없이 빠른 인증이 되도록
+                  했습니다.
                 </li>
                 <li>
-                  <strong>커스텀 에러 코드 7종</strong>(미등록·중복
-                  번호·미감지·다중 얼굴·정면 아님·움직임 과다·카메라 권한)별
-                  행동 유도형 메시지와 최대 3회 재시도 흐름을 매장 환경에 맞게
-                  정리했습니다.
+                  <strong>커스텀 에러 코드 7종</strong>(미등록·중복 번호·미감지·다중 얼굴·정면
+                  아님·움직임 과다·카메라 권한)별 행동 유도형 메시지와 최대 3회 재시도 흐름을 매장
+                  환경에 맞게 정리했습니다.
                 </li>
               </ul>
             </section>
@@ -1474,36 +1398,30 @@
                 </div>
               </div>
               <p class="project-meta">
-                React 18, TypeScript, TanStack Query, Zustand (persist),
-                Tailwind CSS, Ant Design Mobile
+                React 18, TypeScript, TanStack Query, Zustand (persist), Tailwind CSS, Ant Design
+                Mobile
               </p>
               <ul class="compact-list">
                 <li>
-                  키오스크에서 발급된 <code>?session=xxx</code>를
-                  sessionStorage에 저장하고,
-                  <strong
-                    >Axios Request Interceptor가 모든 API에 세션을 자동
-                    주입</strong
-                  >해 키오스크 → 모바일 QR 테이블 오더 흐름을 일회성 세션으로
-                  깔끔하게 매듭지었습니다.
+                  키오스크에서 발급된 <code>?session=xxx</code>를 sessionStorage에 저장하고,
+                  <strong>Axios Request Interceptor가 모든 API에 세션을 자동 주입</strong>해
+                  키오스크 → 모바일 QR 테이블 오더 흐름을 일회성 세션으로 깔끔하게 매듭지었습니다.
                 </li>
                 <li>
-                  <strong>포인트 기반 메뉴 필터링·정렬</strong> — useMemo로 보유
-                  포인트 대비 구매 가능 메뉴를 상단 정렬, 불가 메뉴는 grayscale
-                  + 클릭 비활성, 수량 증가 버튼은 포인트 초과 시 비활성화 +
-                  툴팁으로 사유 안내했습니다.
+                  <strong>포인트 기반 메뉴 필터링·정렬</strong> — useMemo로 보유 포인트 대비 구매
+                  가능 메뉴를 상단 정렬, 불가 메뉴는 grayscale + 클릭 비활성, 수량 증가 버튼은
+                  포인트 초과 시 비활성화 + 툴팁으로 사유 안내했습니다.
                 </li>
                 <li>
-                  <strong>Zustand + persist(sessionStorage) 장바구니</strong>로
-                  새로고침에도 유지되도록 영속화하고, 주문 성공 시
-                  <strong>invalidateQueries</strong>로 사용자 포인트 쿼리를
-                  무효화해 헤더 잔여 포인트가 자동 갱신되도록 만들었습니다.
+                  <strong>Zustand + persist(sessionStorage) 장바구니</strong>로 새로고침에도
+                  유지되도록 영속화하고, 주문 성공 시 <strong>invalidateQueries</strong>로 사용자
+                  포인트 쿼리를 무효화해 헤더 잔여 포인트가 자동 갱신되도록 만들었습니다.
                 </li>
                 <li>
                   모바일 최적화 — Ant Design Mobile 바텀시트 패턴,
-                  <code>inputMode="numeric"</code> 모바일 키패드, 44×44px 최소
-                  터치 영역, 고정 헤더/푸터로 스크롤 영역을 분리해
-                  키오스크-스마트폰 컨텍스트 전환을 자연스럽게 했습니다.
+                  <code>inputMode="numeric"</code> 모바일 키패드, 44×44px 최소 터치 영역, 고정
+                  헤더/푸터로 스크롤 영역을 분리해 키오스크-스마트폰 컨텍스트 전환을 자연스럽게
+                  했습니다.
                 </li>
               </ul>
             </section>
@@ -1516,36 +1434,31 @@
                 <span class="project-cat">Realtime</span>
               </div>
               <div class="project-top">
-                <h3 class="project-title">
-                  BOTBOB STORE — 점주 실시간 주문 대시보드
-                </h3>
+                <h3 class="project-title">BOTBOB STORE — 점주 실시간 주문 대시보드</h3>
                 <div class="project-info">
                   <span class="project-role-text">프론트엔드 100%</span>
                   <span>2025.07 — 2025.08</span>
                 </div>
               </div>
               <p class="project-meta">
-                React 18, TypeScript, Zustand, TanStack Query, Native WebSocket,
-                Tailwind CSS, Ant Design
+                React 18, TypeScript, Zustand, TanStack Query, Native WebSocket, Tailwind CSS, Ant
+                Design
               </p>
               <ul class="compact-list">
                 <li>
-                  <strong>지수 백오프 재연결</strong>(1초 → 2초 → 4초 → ... 최대
-                  30초, 최대 5회)으로 서버 장애 시 동시 재연결 폭주를 방지하고,
-                  useRef로 WebSocket 인스턴스·재시도 횟수를 관리하면서 클로저 내
-                  최신값 참조 문제를 해결했습니다.
+                  <strong>지수 백오프 재연결</strong>(1초 → 2초 → 4초 → ... 최대 30초, 최대 5회)으로
+                  서버 장애 시 동시 재연결 폭주를 방지하고, useRef로 WebSocket 인스턴스·재시도
+                  횟수를 관리하면서 클로저 내 최신값 참조 문제를 해결했습니다.
                 </li>
                 <li>
-                  <strong>Web Audio API로 모바일 자동재생 정책 우회</strong> —
-                  사용자 첫 상호작용(click·touch·keydown·scroll·mousemove) 감지
-                  → AudioContext suspended → running 활성화로 모바일
-                  브라우저에서도 새 주문 벨 알림이 재생되도록 했습니다.
+                  <strong>Web Audio API로 모바일 자동재생 정책 우회</strong> — 사용자 첫
+                  상호작용(click·touch·keydown·scroll·mousemove) 감지 → AudioContext suspended →
+                  running 활성화로 모바일 브라우저에서도 새 주문 벨 알림이 재생되도록 했습니다.
                 </li>
                 <li>
-                  <strong>Zustand + LocalStorage 직접 동기화</strong>(persist
-                  미들웨어 대신) 로 주문 완료 시 특정 주문만 제거·테이블 데이터
-                  정리 같은 세밀한 제어를 구현했고, useMemo 테이블 정렬로
-                  처리해야 할 주문(pending)을 항상 상단에 배치했습니다.
+                  <strong>Zustand + LocalStorage 직접 동기화</strong>(persist 미들웨어 대신) 로 주문
+                  완료 시 특정 주문만 제거·테이블 데이터 정리 같은 세밀한 제어를 구현했고, useMemo
+                  테이블 정렬로 처리해야 할 주문(pending)을 항상 상단에 배치했습니다.
                 </li>
               </ul>
             </section>
@@ -1564,20 +1477,15 @@
           <div class="service-header">
             <div class="service-name-row">
               <span class="service-name">A-MAZE 브랜드 시리즈</span>
-              <span class="status-badge status-badge--released"
-                >상용 앱 스토어 출시</span
-              >
+              <span class="status-badge status-badge--released">상용 앱 스토어 출시</span>
             </div>
             <span class="service-date">2022.10 — 2024.08 · 1년 10개월</span>
           </div>
           <p class="service-desc">
-            고객 앱(Smart Order), 점주 앱(Merchant), B2B 주문
-            대시보드(BEANS)까지
-            <strong>한 브랜드 안에서 3개 제품을 1년 10개월간</strong> 만든
-            프로젝트군입니다. iOS / Android
-            <strong>상용 앱 스토어 출시</strong>와
-            <strong>IAMPORT 결제 + CodePush 무중단 배포 운영</strong> 경험이
-            포함됩니다.
+            고객 앱(Smart Order), 점주 앱(Merchant), B2B 주문 대시보드(BEANS)까지
+            <strong>한 브랜드 안에서 3개 제품을 1년 10개월간</strong> 만든 프로젝트군입니다. iOS /
+            Android <strong>상용 앱 스토어 출시</strong>와
+            <strong>IAMPORT 결제 + CodePush 무중단 배포 운영</strong> 경험이 포함됩니다.
           </p>
           <div class="project-grid">
             <section class="project-card">
@@ -1595,13 +1503,12 @@
                 </div>
               </div>
               <p class="project-meta">
-                React Native 0.74.2, TypeScript, React Native Skia, Lottie,
-                Firebase, IAMPORT, IAP
+                React Native 0.74.2, TypeScript, React Native Skia, Lottie, Firebase, IAMPORT, IAP
               </p>
               <div class="project-links">
                 <a
                   class="live-link"
-                  href="https://play.google.com/store"
+                  href="https://play.google.com/store/apps/details?id=com.mobileapp03"
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -1609,7 +1516,7 @@
                 </a>
                 <a
                   class="live-link"
-                  href="https://apps.apple.com/"
+                  href="https://apps.apple.com/kr/app/a-maze/id6447344420"
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -1618,25 +1525,22 @@
               </div>
               <ul class="compact-list">
                 <li>
-                  <strong>디자인 시스템 구축</strong> — 컬러
-                  팔레트·타이포그래피·재사용 Button 컴포넌트 라이브러리를 만들어
-                  일관된 사용자 경험의 기초를 다졌고, 로그인/회원가입/이용약관
-                  흐름의 UI/UX를 다듬었습니다.
+                  <strong>디자인 시스템 구축</strong> — 컬러 팔레트·타이포그래피·재사용 Button
+                  컴포넌트 라이브러리를 만들어 일관된 사용자 경험의 기초를 다졌고,
+                  로그인/회원가입/이용약관 흐름의 UI/UX를 다듬었습니다.
                 </li>
                 <li>
-                  <strong>다중 로그인 + 권한 시스템</strong> — Google + Apple +
-                  Kakao 통합 인증과 위치·카메라·알림 권한 관리, 사용자 온보딩
-                  플로우를 설계했습니다.
+                  <strong>다중 로그인 + 권한 시스템</strong> — Google + Apple + Kakao 통합 인증과
+                  위치·카메라·알림 권한 관리, 사용자 온보딩 플로우를 설계했습니다.
                 </li>
                 <li>
-                  <strong>GPS 위치 기반</strong> — Geolocation 권한·좌표
-                  추출·서버 전송 흐름을 카페 검색에 붙였습니다.
+                  <strong>GPS 위치 기반</strong> — Geolocation 권한·좌표 추출·서버 전송 흐름을 카페
+                  검색에 붙였습니다.
                 </li>
                 <li>
-                  <strong>전역 변수 기반 테마 시스템</strong> — CSS 전역 변수로
-                  컬러·타이포·간격 토큰을 정의하고 동적 브랜드 테마를 적용해, 한
-                  코드베이스에서 여러 브랜드의 룩앤필을 전환할 수 있도록 전역
-                  스타일 시스템을 정리했습니다.
+                  <strong>전역 변수 기반 테마 시스템</strong> — CSS 전역 변수로 컬러·타이포·간격
+                  토큰을 정의하고 동적 브랜드 테마를 적용해, 한 코드베이스에서 여러 브랜드의
+                  룩앤필을 전환할 수 있도록 전역 스타일 시스템을 정리했습니다.
                 </li>
               </ul>
             </section>
@@ -1656,13 +1560,13 @@
                 </div>
               </div>
               <p class="project-meta">
-                RN 0.71.7, TypeScript, TanStack Query, Valtio, MMKV, RN Skia,
-                IAMPORT, Firebase, FCM, Notifee, CodePush, ECharts
+                RN 0.71.7, TypeScript, TanStack Query, Valtio, MMKV, RN Skia, IAMPORT, Firebase,
+                FCM, Notifee, CodePush, ECharts
               </p>
               <div class="project-links">
                 <a
                   class="live-link"
-                  href="https://play.google.com/store"
+                  href="https://play.google.com/store/apps/details?id=com.mazeMerchant&hl=ko"
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -1670,7 +1574,7 @@
                 </a>
                 <a
                   class="live-link"
-                  href="https://apps.apple.com/"
+                  href="https://apps.apple.com/kr/app/a-maze/id6449352231"
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -1679,30 +1583,23 @@
               </div>
               <ul class="compact-list">
                 <li>
-                  <strong>점주 운영 + 원두 도매 커머스 분기</strong> — 매장
-                  등록/수정, 카페 메뉴 CRUD, 주문 처리에 더해
-                  <strong
-                    >로그인 사용자 타입(일반 사용자 / 카페 사장님)에 따라 화면을
-                    분기</strong
-                  >하고 카페 사장님에게만 원두 도매 구매 기능을 제공했습니다.
-                  점주 워크플로우의 80%를 1년 5개월간 주도해 상용
-                  출시·운영했습니다.
+                  <strong>점주 운영 + 원두 도매 커머스 분기</strong> — 매장 등록/수정, 카페 메뉴
+                  CRUD, 주문 처리에 더해
+                  <strong>로그인 사용자 타입(일반 사용자 / 카페 사장님)에 따라 화면을 분기</strong
+                  >하고 카페 사장님에게만 원두 도매 구매 기능을 제공했습니다. 점주 워크플로우의
+                  80%를 1년 5개월간 주도해 상용 출시·운영했습니다.
                 </li>
                 <li>
-                  <strong>결제 + 송장 추적 + 무중단 배포</strong> — IAMPORT PG
-                  결제 연동, <strong>외부 택배사 API로 송장 위치 추적</strong>해
-                  원두 구매자가 배송 상태를 실시간 확인하도록 만들었습니다.
-                  iOS/Android 양쪽 CodePush 환경 직접 세팅, TouchID 생체 인증,
-                  FCM + Notifee 알림 통합도 포함합니다.
+                  <strong>결제 + 송장 추적 + 무중단 배포</strong> — IAMPORT PG 결제 연동,
+                  <strong>외부 택배사 API로 송장 위치 추적</strong>해 원두 구매자가 배송 상태를
+                  실시간 확인하도록 만들었습니다. iOS/Android 양쪽 CodePush 환경 직접 세팅, TouchID
+                  생체 인증, FCM + Notifee 알림 통합도 포함합니다.
                 </li>
                 <li>
-                  <strong>크레딧·매출 시스템</strong> — 크레딧 적립·사용·실시간
-                  갱신·트랜잭션 처리, ECharts 매출 통계 시각화, 기간별 필터,
-                  엑셀 출력,
-                  <strong
-                    >50kg 이상 구매 제한 도메인 룰을 useCountNum 훅으로
-                    추상화</strong
-                  >해 원두 도매 흐름에 적용했습니다.
+                  <strong>크레딧·매출 시스템</strong> — 크레딧 적립·사용·실시간 갱신·트랜잭션 처리,
+                  ECharts 매출 통계 시각화, 기간별 필터, 엑셀 출력,
+                  <strong>50kg 이상 구매 제한 도메인 룰을 useCountNum 훅으로 추상화</strong>해 원두
+                  도매 흐름에 적용했습니다.
                 </li>
               </ul>
             </section>
@@ -1715,9 +1612,7 @@
                 <span class="project-cat">반응형</span>
               </div>
               <div class="project-top">
-                <h3 class="project-title">
-                  A-MAZE-BEANS — B2B 주문 관리 대시보드
-                </h3>
+                <h3 class="project-title">A-MAZE-BEANS — B2B 주문 관리 대시보드</h3>
                 <div class="project-info">
                   <span class="project-role-text">프론트엔드 100%</span>
                   <span>2024.01 — 2024.07</span>
@@ -1729,14 +1624,14 @@
               </p>
               <ul class="compact-list">
                 <li>
-                  <strong>B2B 주문 관리 대시보드 단독 개발</strong> — Valtio
-                  전역 상태 + TanStack Query 캐시 + 재사용 가능한 useModal
-                  훅으로 운영 흐름을 정리해 2,248줄 규모로 단독 개발했습니다.
+                  <strong>B2B 주문 관리 대시보드 단독 개발</strong> — Valtio 전역 상태 + TanStack
+                  Query 캐시 + 재사용 가능한 useModal 훅으로 운영 흐름을 정리해 2,248줄 규모로 단독
+                  개발했습니다.
                 </li>
                 <li>
-                  <strong>WebSocket 실시간 주문 수신</strong> — 새 주문 접수 시
-                  즉시 화면 업데이트되도록 양방향 통신을 구성하고, 소켓 연결
-                  상태 관리·재연결 로직·이벤트 핸들링을 처리했습니다.
+                  <strong>WebSocket 실시간 주문 수신</strong> — 새 주문 접수 시 즉시 화면
+                  업데이트되도록 양방향 통신을 구성하고, 소켓 연결 상태 관리·재연결 로직·이벤트
+                  핸들링을 처리했습니다.
                 </li>
               </ul>
             </section>
@@ -1755,16 +1650,14 @@
           <div class="service-header">
             <div class="service-name-row">
               <span class="service-name">쉽게빼자 — 회원 / 트레이너</span>
-              <span class="status-badge status-badge--released"
-                >상용 앱 스토어 출시</span
-              >
+              <span class="status-badge status-badge--released">상용 앱 스토어 출시</span>
             </div>
             <span class="service-date">2023.06 — 2024.01</span>
           </div>
           <p class="service-desc">
             회원과 트레이너를 한 서비스 안에서 운영한 건강관리 앱입니다.
-            <strong>삼성헬스 / 애플 헬스킷 직접 연동</strong>, 자체 만보계,
-            카메라 통합, FCM·CodePush 운영 흐름을 다뤘습니다.
+            <strong>삼성헬스 / 애플 헬스킷 직접 연동</strong>, 자체 만보계, 카메라 통합,
+            FCM·CodePush 운영 흐름을 다뤘습니다.
           </p>
           <div class="project-grid">
             <section class="project-card">
@@ -1782,8 +1675,8 @@
                 </div>
               </div>
               <p class="project-meta">
-                RN 0.70.6, TypeScript, Valtio, RN Skia, Health Connect, Apple
-                HealthKit, ECharts Pro, MMKV, Firebase, CodePush
+                RN 0.70.6, TypeScript, Valtio, RN Skia, Health Connect, Apple HealthKit, ECharts
+                Pro, MMKV, Firebase, CodePush
               </p>
               <div class="project-links">
                 <a
@@ -1813,27 +1706,24 @@
               </div>
               <ul class="compact-list">
                 <li>
-                  <strong>걸음 수 측정 + 자체 만보계</strong> — 삼성헬스 / 애플
-                  헬스킷 API와 디바이스 센서를 연동해 걸음 수 측정·백그라운드
-                  데이터 처리를 구현하고, <strong>자체 Step Counter</strong>까지
-                  직접 개발했습니다.
+                  <strong>걸음 수 측정 + 자체 만보계</strong> — 삼성헬스 / 애플 헬스킷 API와
+                  디바이스 센서를 연동해 걸음 수 측정·백그라운드 데이터 처리를 구현하고,
+                  <strong>자체 Step Counter</strong>까지 직접 개발했습니다.
                 </li>
                 <li>
-                  <strong>이미지 캡처 + 카메라 통합</strong> — View Shot 화면
-                  캡처 기반 칼로리 워터마크, 카메라 통합, Image Resizer로 이미지
-                  리사이징·저장·전송 모듈을 구현했습니다.
+                  <strong>이미지 캡처 + 카메라 통합</strong> — View Shot 화면 캡처 기반 칼로리
+                  워터마크, 카메라 통합, Image Resizer로 이미지 리사이징·저장·전송 모듈을
+                  구현했습니다.
                 </li>
                 <li>
-                  <strong>플랫폼별 권한 관리</strong> — iOS / Android 권한
-                  흐름을 분기하고,
-                  <strong>iOS Sensors Background</strong> 권한을 별도 처리해
-                  백그라운드 센서 측정이 안정적으로 동작하도록 만들었습니다.
+                  <strong>플랫폼별 권한 관리</strong> — iOS / Android 권한 흐름을 분기하고,
+                  <strong>iOS Sensors Background</strong> 권한을 별도 처리해 백그라운드 센서 측정이
+                  안정적으로 동작하도록 만들었습니다.
                 </li>
                 <li>
-                  <strong>음식 검색 + 시각화</strong> — 실시간 음식
-                  검색·자동완성·즐겨찾기, ECharts Pro / SVG Charts 기반 데이터
-                  시각화, 신규 사용자 튜토리얼, 키보드 UX 최적화, 운영 이슈
-                  유지보수까지 담당했습니다.
+                  <strong>음식 검색 + 시각화</strong> — 실시간 음식 검색·자동완성·즐겨찾기, ECharts
+                  Pro / SVG Charts 기반 데이터 시각화, 신규 사용자 튜토리얼, 키보드 UX 최적화, 운영
+                  이슈 유지보수까지 담당했습니다.
                 </li>
               </ul>
             </section>
@@ -1846,17 +1736,15 @@
                 <span class="project-cat">알림 · CodePush</span>
               </div>
               <div class="project-top">
-                <h3 class="project-title">
-                  쉽게빼자 트레이너 앱 — 회원·일정 관리
-                </h3>
+                <h3 class="project-title">쉽게빼자 트레이너 앱 — 회원·일정 관리</h3>
                 <div class="project-info">
                   <span class="project-role-text">프론트엔드 50%</span>
                   <span>2023.08 — 2024.01 · 6개월</span>
                 </div>
               </div>
               <p class="project-meta">
-                RN 0.70.6, TypeScript, Valtio, RN Calendars, ECharts Pro,
-                Day.js, MMKV, Firebase, FCM, CodePush
+                RN 0.70.6, TypeScript, Valtio, RN Calendars, ECharts Pro, Day.js, MMKV, Firebase,
+                FCM, CodePush
               </p>
               <div class="project-links">
                 <a
@@ -1865,32 +1753,30 @@
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <span class="live-link-label">가이드</span> 트레이너 앱 사용
-                  흐름
+                  <span class="live-link-label">가이드</span> 트레이너 앱 사용 흐름
                 </a>
               </div>
               <ul class="compact-list">
                 <li>
-                  <strong>일정 관리 시스템</strong> — 캘린더 통합, Agenda 뷰,
-                  다중 일정 등록, 주간/월간 전환, OT(신규 회원) 일정 분기까지
-                  트레이너 일정 관리 흐름을 구현했습니다.
+                  <strong>일정 관리 시스템</strong> — 캘린더 통합, Agenda 뷰, 다중 일정 등록,
+                  주간/월간 전환, OT(신규 회원) 일정 분기까지 트레이너 일정 관리 흐름을
+                  구현했습니다.
                 </li>
                 <li>
-                  <strong>회원 검색 + 매칭 관리</strong> — 실시간 회원
-                  검색(키보드·스크롤 UX 최적화 포함), 매칭/해지 상태 처리,
-                  <strong>ECharts Pro 기반 회원 통계·식단 기록 시각화</strong>를
-                  개발했습니다.
+                  <strong>회원 검색 + 매칭 관리</strong> — 실시간 회원 검색(키보드·스크롤 UX 최적화
+                  포함), 매칭/해지 상태 처리,
+                  <strong>ECharts Pro 기반 회원 통계·식단 기록 시각화</strong>를 개발했습니다.
                 </li>
                 <li>
-                  <strong>푸시·로컬 알림 시스템</strong> — Firebase FCM 푸시 +
-                  로컬 알림 통합, 매칭 해지 시 사용자 푸시, 앱 종료 시 알림
-                  설정값 자동 초기화 같은 도메인 룰을 다듬었습니다.
+                  <strong>푸시·로컬 알림 시스템</strong> — Firebase FCM 푸시 + 로컬 알림 통합, 매칭
+                  해지 시 사용자 푸시, 앱 종료 시 알림 설정값 자동 초기화 같은 도메인 룰을
+                  다듬었습니다.
                 </li>
                 <li>
-                  <strong>온보딩 + 무중단 배포</strong> — 첫 사용 시 기능 설명
-                  온보딩 페이지, 다중 소셜 로그인(Google·Apple·Kakao·Naver),
-                  <strong>CodePush 무중단 배포 환경</strong>까지 세팅하고 운영
-                  이슈 유지보수도 담당했습니다.
+                  <strong>온보딩 + 무중단 배포</strong> — 첫 사용 시 기능 설명 온보딩 페이지, 다중
+                  소셜 로그인(Google·Apple·Kakao·Naver),
+                  <strong>CodePush 무중단 배포 환경</strong>까지 세팅하고 운영 이슈 유지보수도
+                  담당했습니다.
                 </li>
               </ul>
             </section>
@@ -1909,17 +1795,14 @@
           <div class="service-header">
             <div class="service-name-row">
               <span class="service-name">디플레닛 플러스</span>
-              <span class="status-badge status-badge--released"
-                >상용 앱 스토어 출시</span
-              >
+              <span class="status-badge status-badge--released">상용 앱 스토어 출시</span>
             </div>
             <span class="service-date">2023.01 — 2023.05</span>
           </div>
           <p class="service-desc">
             임산부 건강관리 앱입니다.
-            <strong>회원/병원 검색/임신·출산 기록/IAP 인앱 결제</strong>까지
-            모바일 건강관리 흐름을 다뤘으며, 5개월간 171건 커밋으로
-            운영했습니다.
+            <strong>회원/병원 검색/임신·출산 기록/IAP 인앱 결제</strong>까지 모바일 건강관리 흐름을
+            다뤘으며, 5개월간 171건 커밋으로 운영했습니다.
           </p>
           <div class="project-grid">
             <section class="project-card">
@@ -1937,8 +1820,8 @@
                 </div>
               </div>
               <p class="project-meta">
-                RN 0.70.6, JavaScript, Redux Toolkit, React Native Paper, RN
-                Calendars, Firebase Auth, FCM, React Native IAP
+                RN 0.70.6, JavaScript, Redux Toolkit, React Native Paper, RN Calendars, Firebase
+                Auth, FCM, React Native IAP
               </p>
               <div class="project-links">
                 <a
@@ -1953,23 +1836,19 @@
               </div>
               <ul class="compact-list">
                 <li>
-                  <strong>임산부 건강관리 도메인 흐름</strong> — 회원가입·프로필
-                  사진 업로드·약관 동의, 병원 검색 API 연동,
-                  <strong
-                    >임신/출산 기록·고위험 임신 진단명·난임 시술 이력·아기
-                    정보</strong
-                  >까지 도메인 데이터 입력·검증 흐름을 구현했습니다.
+                  <strong>임산부 건강관리 도메인 흐름</strong> — 회원가입·프로필 사진 업로드·약관
+                  동의, 병원 검색 API 연동,
+                  <strong>임신/출산 기록·고위험 임신 진단명·난임 시술 이력·아기 정보</strong>까지
+                  도메인 데이터 입력·검증 흐름을 구현했습니다.
                 </li>
                 <li>
-                  <strong>IAP 인앱 결제 + 코인 시스템</strong> — React Native
-                  IAP로 인앱 결제를 연동하고, 코인 획득·사용·트랜잭션 처리를
-                  Redux Toolkit으로 관리해 마이페이지에 실시간 반영되도록
-                  만들었습니다.
+                  <strong>IAP 인앱 결제 + 코인 시스템</strong> — React Native IAP로 인앱 결제를
+                  연동하고, 코인 획득·사용·트랜잭션 처리를 Redux Toolkit으로 관리해 마이페이지에
+                  실시간 반영되도록 만들었습니다.
                 </li>
                 <li>
-                  <strong>주차별 이미지 앨범 + 권한 관리</strong> — 주차별
-                  이미지 앨범 저장 흐름과 카메라/갤러리 권한을
-                  <strong>iOS / Android 별로 분기 처리</strong>해 미디어 저장
+                  <strong>주차별 이미지 앨범 + 권한 관리</strong> — 주차별 이미지 앨범 저장 흐름과
+                  카메라/갤러리 권한을 <strong>iOS / Android 별로 분기 처리</strong>해 미디어 저장
                   모듈을 완성했습니다.
                 </li>
               </ul>
@@ -1981,8 +1860,7 @@
           <p class="section-label">Additional Operations</p>
           <h2 class="section-title">추가 운영 프로젝트</h2>
           <p class="skill-note" style="margin-top: 4px; margin-bottom: 8px">
-            랜딩·데모 단발 프로젝트. 모두 자사 운영으로, 라이브 링크와 함께
-            정리합니다.
+            랜딩·데모 단발 프로젝트. 모두 자사 운영으로, 라이브 링크와 함께 정리합니다.
           </p>
           <div class="extra-grid">
             <div class="extra-row">
@@ -1992,13 +1870,9 @@
               </div>
               <div class="extra-date">자사 랜딩</div>
               <div class="extra-desc">
-                7페이지 SPA, 285+ 번역 키, 9종 스크롤 애니메이션, 75개 이미지
-                WebP 최적화, GitHub Actions → S3 / CloudFront 파이프라인.
-                <a
-                  class="extra-link"
-                  href="https://a-maze.ai/"
-                  target="_blank"
-                  rel="noreferrer"
+                7페이지 SPA, 285+ 번역 키, 9종 스크롤 애니메이션, 75개 이미지 WebP 최적화, GitHub
+                Actions → S3 / CloudFront 파이프라인.
+                <a class="extra-link" href="https://a-maze.ai/" target="_blank" rel="noreferrer"
                   >a-maze.ai ↗</a
                 >
               </div>
@@ -2010,8 +1884,8 @@
               </div>
               <div class="extra-date">자사 랜딩</div>
               <div class="extra-desc">
-                AWS S3 + CloudFront 정적 배포, 캐시 무효화 흐름 정리. 이미지
-                25개 WebP 전환 <strong>17MB → 1.7MB</strong> 최적화.
+                AWS S3 + CloudFront 정적 배포, 캐시 무효화 흐름 정리. 이미지 25개 WebP 전환
+                <strong>17MB → 1.7MB</strong> 최적화.
                 <a
                   class="extra-link"
                   href="https://live-guardian.com/"
@@ -2028,9 +1902,8 @@
               </div>
               <div class="extra-date">자사 랜딩 + 데모</div>
               <div class="extra-desc">
-                Intersection Observer 스크롤 애니메이션·양방향 마퀴
-                랜딩(2,325줄) + 7종 페르소나 추천·할인 넛지 태블릿 PWA
-                데모(2,341줄). UI/UX 직접 설계.
+                Intersection Observer 스크롤 애니메이션·양방향 마퀴 랜딩(2,325줄) + 7종 페르소나
+                추천·할인 넛지 태블릿 PWA 데모(2,341줄). UI/UX 직접 설계.
                 <a
                   class="extra-link"
                   href="https://live-sale.a-maze.ai/"
@@ -2054,8 +1927,8 @@
               </div>
               <div class="extra-date">자사 데모</div>
               <div class="extra-desc">
-                실시간 환자 상태 모니터링, KTAS 4단계 알림, 6페이지 의료
-                대시보드. Bar / Line / Donut 차트 직접 구현(3,221줄).
+                실시간 환자 상태 모니터링, KTAS 4단계 알림, 6페이지 의료 대시보드. Bar / Line /
+                Donut 차트 직접 구현(3,221줄).
                 <a
                   class="extra-link"
                   href="https://live-care-demo.netlify.app/"
@@ -2107,23 +1980,20 @@
               </div>
               <ul class="compact-list">
                 <li>
-                  <strong>Three.js 이소메트릭 3D 커피숍 씬</strong>과 원페이지
-                  탐색 구조로 사이트 자체가 역량 증명이 되도록 구현했고, About /
-                  Projects / Blog / Contact 흐름을 30초 안에 파악할 수 있게
-                  설계했습니다.
+                  <strong>Three.js 이소메트릭 3D 커피숍 씬</strong>과 원페이지 탐색 구조로 사이트
+                  자체가 역량 증명이 되도록 구현했고, About / Projects / Blog / Contact 흐름을 30초
+                  안에 파악할 수 있게 설계했습니다.
                 </li>
                 <li>
-                  <strong>디바이스 성능 차등(Tier 시스템)</strong> —
-                  useTierDetection으로 디바이스 성능을 감지해 차등 렌더링 품질을
-                  적용하고, <strong>ErrorBoundary3D + FallbackScene</strong>으로
-                  WebGL 실패 시 폴백 화면을 제공했습니다.
+                  <strong>디바이스 성능 차등(Tier 시스템)</strong> — useTierDetection으로 디바이스
+                  성능을 감지해 차등 렌더링 품질을 적용하고,
+                  <strong>ErrorBoundary3D + FallbackScene</strong>으로 WebGL 실패 시 폴백 화면을
+                  제공했습니다.
                 </li>
                 <li>
-                  <strong>Camera Controller + 섹션 전환 애니메이션</strong> —
-                  Zustand 기반 카메라 상태 관리로 섹션 클릭 시 3D 카메라가
-                  부드럽게 전환되도록 만들었고,
-                  <strong>GSAP + Framer Motion</strong> 두 애니메이션 도구를
-                  함께 활용했습니다.
+                  <strong>Camera Controller + 섹션 전환 애니메이션</strong> — Zustand 기반 카메라
+                  상태 관리로 섹션 클릭 시 3D 카메라가 부드럽게 전환되도록 만들었고,
+                  <strong>GSAP + Framer Motion</strong> 두 애니메이션 도구를 함께 활용했습니다.
                 </li>
               </ul>
             </section>
@@ -2132,9 +2002,7 @@
               <div class="project-cats">
                 <span class="project-cat">React Native</span>
                 <span class="project-cat">iOS</span>
-                <span class="status-badge status-badge--released"
-                  >iOS App Store 출시</span
-                >
+                <span class="status-badge status-badge--released">iOS App Store 출시</span>
               </div>
               <div class="project-top">
                 <h3 class="project-title">Blocky — 주간 플래너</h3>
@@ -2144,8 +2012,7 @@
                 </div>
               </div>
               <p class="project-meta">
-                RN (New Architecture), TypeScript, Zustand, Supabase,
-                Reanimated, Gesture Handler
+                RN (New Architecture), TypeScript, Zustand, Supabase, Reanimated, Gesture Handler
               </p>
               <div class="project-links">
                 <a
@@ -2160,32 +2027,25 @@
               </div>
               <ul class="compact-list">
                 <li>
-                  <strong>iOS App Store 출시</strong> — 주간 목표 → 블록 생성 →
-                  타임테이블 배치 흐름의 목표 기반 플래너를 단독
-                  설계·개발했습니다. 일간/주간 뷰·대시보드 히트맵·목표별
-                  진행률·루틴(반복 일정 자동 생성)까지 포함합니다.
+                  <strong>iOS App Store 출시</strong> — 주간 목표 → 블록 생성 → 타임테이블 배치
+                  흐름의 목표 기반 플래너를 단독 설계·개발했습니다. 일간/주간 뷰·대시보드
+                  히트맵·목표별 진행률·루틴(반복 일정 자동 생성)까지 포함합니다.
                 </li>
                 <li>
-                  <strong>로컬 우선 + 서버 동기화 아키텍처</strong> — 비로그인
-                  시 Zustand + AsyncStorage로 기기에만 저장(프라이버시 우선),
-                  로그인 시 Supabase로 동기화.
-                  <strong
-                    >syncQueue로 오프라인 작업을 큐잉하고 온라인 복귀 시
-                    재시도</strong
-                  >하는 흐름을 직접 설계했습니다.
+                  <strong>로컬 우선 + 서버 동기화 아키텍처</strong> — 비로그인 시 Zustand +
+                  AsyncStorage로 기기에만 저장(프라이버시 우선), 로그인 시 Supabase로 동기화.
+                  <strong>syncQueue로 오프라인 작업을 큐잉하고 온라인 복귀 시 재시도</strong>하는
+                  흐름을 직접 설계했습니다.
                 </li>
                 <li>
-                  <strong>드래그&드롭 + 리사이즈 인터랙션</strong> — Gesture
-                  Handler + Reanimated 4(New Architecture, Worklets)로 타임블록
-                  이동·리사이즈, 빈 셀 탭 즉시 생성 같은 정밀한 제스처 흐름을
-                  직접 구현했고, 햅틱 피드백까지 붙였습니다.
+                  <strong>드래그&드롭 + 리사이즈 인터랙션</strong> — Gesture Handler + Reanimated
+                  4(New Architecture, Worklets)로 타임블록 이동·리사이즈, 빈 셀 탭 즉시 생성 같은
+                  정밀한 제스처 흐름을 직접 구현했고, 햅틱 피드백까지 붙였습니다.
                 </li>
                 <li>
-                  <strong>인증 + 광고 + 출시 운영</strong> — Apple Sign In +
-                  Google OAuth(Supabase Auth 연동),
-                  <strong>Google AdMob 광고로 수익 모델</strong>까지 붙여 출시
-                  가능한 형태로 마무리했습니다. ATT(App Tracking Transparency)도
-                  포함.
+                  <strong>인증 + 광고 + 출시 운영</strong> — Apple Sign In + Google OAuth(Supabase
+                  Auth 연동), <strong>Google AdMob 광고로 수익 모델</strong>까지 붙여 출시 가능한
+                  형태로 마무리했습니다. ATT(App Tracking Transparency)도 포함.
                 </li>
               </ul>
             </section>
