@@ -1,19 +1,21 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { trackProjectClick, trackCtaClick } from '@/lib/analytics'
 
 const PROJECTS = [
   {
     title: 'Blocky',
     description: '흩어진 할 일, 시간 위에 놓는 순간 실행이 된다.',
-    image: '/images/projects/blocky/blocky-thumbnail.png',
+    image: '/images/projects/blocky/blocky-thumbnail.webp',
+    imageRatio: '1400 / 978',
     tags: ['React Native', 'TypeScript', 'Supabase'],
   },
 ]
 
 export function ProjectsPanel() {
   const [current, setCurrent] = useState(0)
+  const [loadedSrc, setLoadedSrc] = useState<string | null>(null)
 
   const prev = () => {
     setCurrent((c) => (c - 1 + PROJECTS.length) % PROJECTS.length)
@@ -25,41 +27,68 @@ export function ProjectsPanel() {
   }
 
   const project = PROJECTS[current]
+  const imageLoaded = loadedSrc === project.image
+
+  useEffect(() => {
+    const src = project.image
+    const img = new window.Image()
+    img.onload = () => setLoadedSrc(src)
+    img.src = src
+  }, [project.image])
 
   return (
     <div className="w-full h-full flex flex-col md:flex-row gap-10 sm:gap-16 lg:gap-24 items-center md:justify-start md:pl-[8%] justify-center p-2 sm:p-4 animate-intro-fade-up opacity-0">
       {/* 좌측: 나무 액자 이미지 */}
-      <div className="relative flex-shrink-0 w-full md:w-[60%] max-h-[55vh] md:max-h-[75vh]">
-        {/* 나무 액자 프레임 */}
-        <div
-          className="rounded-md p-2 sm:p-3"
-          style={{
-            background:
-              'linear-gradient(145deg, #c49a3c, #8B6914 30%, #D4A54A 50%, #8B6914 70%, #a07820)',
-            boxShadow: `
-              0 4px 20px rgba(0,0,0,0.5),
-              inset 0 1px 0 rgba(255,255,255,0.15),
-              inset 0 -1px 0 rgba(0,0,0,0.3)
-            `,
-          }}
-        >
-          {/* 내부 검은 매트 */}
-          <div className="rounded-sm p-1 sm:p-1.5" style={{ background: '#1a1410' }}>
-            <div className="relative overflow-hidden rounded-sm">
-              <img
-                src={project.image}
-                alt={project.title}
-                className="w-full h-auto object-contain"
-                draggable={false}
-              />
-              {/* 비네팅 */}
-              <div
-                className="absolute inset-0 pointer-events-none"
-                style={{ boxShadow: 'inset 0 0 6px 3px rgba(0,0,0,0.3)' }}
-              />
+      <div
+        className="relative shrink-0 w-full md:w-[60%] max-h-[55vh] md:max-h-[75vh]"
+        style={{ aspectRatio: project.imageRatio }}
+      >
+        {imageLoaded ? (
+          // 나무 액자 프레임
+          <div
+            className="absolute inset-0 rounded-md p-2 sm:p-3"
+            style={{
+              background:
+                'linear-gradient(145deg, #c49a3c, #8B6914 30%, #D4A54A 50%, #8B6914 70%, #a07820)',
+              boxShadow: `
+                0 4px 20px rgba(0,0,0,0.5),
+                inset 0 1px 0 rgba(255,255,255,0.15),
+                inset 0 -1px 0 rgba(0,0,0,0.3)
+              `,
+            }}
+          >
+            {/* 내부 검은 매트 */}
+            <div
+              className="w-full h-full rounded-sm p-1 sm:p-1.5"
+              style={{ background: '#1a1410' }}
+            >
+              <div className="relative w-full h-full overflow-hidden rounded-sm">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-contain animate-intro-fade-up"
+                  draggable={false}
+                />
+                {/* 비네팅 */}
+                <div
+                  className="absolute inset-0 pointer-events-none"
+                  style={{ boxShadow: 'inset 0 0 6px 3px rgba(0,0,0,0.3)' }}
+                />
+              </div>
             </div>
           </div>
-        </div>
+        ) : (
+          // 로딩 플레이스홀더 (액자와 동일 슬롯)
+          <div
+            className="absolute inset-0 flex items-center justify-center rounded-md"
+            style={{
+              background: 'rgba(15, 13, 11, 0.4)',
+              border: '1px solid var(--glass-border)',
+            }}
+          >
+            <div className="w-8 h-8 sm:w-10 sm:h-10 border-2 border-white/20 border-t-white/70 rounded-full animate-spin" />
+          </div>
+        )}
 
         {/* 화살표 (2개 이상일 때만) */}
         {PROJECTS.length > 1 && (
@@ -109,46 +138,46 @@ export function ProjectsPanel() {
         />
         {/* 콘텐츠 — 페이드인 */}
         <div className="relative flex flex-col gap-3 sm:gap-4 text-center md:text-left rounded-2xl p-4 sm:p-5 lg:p-6 animate-intro-fade-up opacity-0">
-        <h2
-          className="font-heading text-text-primary tracking-wider"
-          style={{ fontSize: 'clamp(1.3rem, 3vw, 2.2rem)', fontWeight: 600 }}
-        >
-          {project.title}
-        </h2>
+          <h2
+            className="font-heading text-text-primary tracking-wider"
+            style={{ fontSize: 'clamp(1.3rem, 3vw, 2.2rem)', fontWeight: 600 }}
+          >
+            {project.title}
+          </h2>
 
-        <p
-          className="font-body text-text-secondary leading-relaxed break-keep"
-          style={{ fontSize: 'clamp(0.75rem, 1.5vw, 0.95rem)' }}
-        >
-          {project.description}
-        </p>
+          <p
+            className="font-body text-text-secondary leading-relaxed break-keep"
+            style={{ fontSize: 'clamp(0.75rem, 1.5vw, 0.95rem)' }}
+          >
+            {project.description}
+          </p>
 
-        {/* 태그 */}
-        <div className="flex flex-wrap gap-1.5 justify-center md:justify-start">
-          {project.tags.map((tag) => (
-            <span
-              key={tag}
-              className="rounded-full px-2.5 py-0.5 text-[10px] sm:text-xs text-text-primary/80"
-              style={{
-                background: 'var(--glass-bg)',
-                border: '1px solid var(--glass-border)',
-              }}
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
+          {/* 태그 */}
+          <div className="flex flex-wrap gap-1.5 justify-center md:justify-start">
+            {project.tags.map((tag) => (
+              <span
+                key={tag}
+                className="rounded-full px-2.5 py-0.5 text-[10px] sm:text-xs text-text-primary/80"
+                style={{
+                  background: 'var(--glass-bg)',
+                  border: '1px solid var(--glass-border)',
+                }}
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
 
-        {/* 자세히 보기 */}
-        <button
-          className="mt-1 sm:mt-2 text-accent text-xs sm:text-sm hover:text-accent-glow transition-colors self-center md:self-start"
-          onClick={() => {
-            trackCtaClick('자세히 보기')
-            alert('준비중이니 기다려주세요!')
-          }}
-        >
-          자세히 보기 →
-        </button>
+          {/* 자세히 보기 */}
+          <button
+            className="mt-1 sm:mt-2 text-accent text-xs sm:text-sm hover:text-accent-glow transition-colors self-center md:self-start"
+            onClick={() => {
+              trackCtaClick('자세히 보기')
+              alert('준비중이니 기다려주세요!')
+            }}
+          >
+            자세히 보기 →
+          </button>
         </div>
       </div>
     </div>
