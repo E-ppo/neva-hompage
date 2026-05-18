@@ -29,8 +29,7 @@
         --purple: #8b5cf6;
         --purple-bg: #ede9fe;
         --font:
-          "Pretendard Variable", "Pretendard", "Apple SD Gothic Neo",
-          -apple-system, sans-serif;
+          'Pretendard Variable', 'Pretendard', 'Apple SD Gothic Neo', -apple-system, sans-serif;
       }
 
       * {
@@ -38,7 +37,9 @@
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
       }
-      html { font-size: 14px; }
+      html {
+        font-size: 14px;
+      }
       body {
         margin: 0;
         background: var(--bg);
@@ -46,8 +47,18 @@
         color: var(--ink);
         line-height: 1.55;
       }
-      a { color: inherit; text-decoration: none; }
-      h1, h2, h3, h4, p, ul { margin: 0; }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      p,
+      ul {
+        margin: 0;
+      }
 
       /* Screen note */
       .screen-note {
@@ -60,7 +71,9 @@
         font-size: 0.82rem;
         color: var(--muted);
       }
-      .screen-note strong { color: var(--ink); }
+      .screen-note strong {
+        color: var(--ink);
+      }
 
       /* Slide deck */
       .deck {
@@ -83,15 +96,18 @@
         overflow: hidden;
       }
       .slide::before {
-        content: "";
+        content: '';
         position: absolute;
-        top: 0; left: 0;
-        width: 100%; height: 8px;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 8px;
         background: linear-gradient(90deg, var(--accent-dark), var(--accent), #5b7ae6);
       }
       .slide-number {
         position: absolute;
-        right: 22mm; bottom: 12mm;
+        right: 22mm;
+        bottom: 12mm;
         font-size: 0.7rem;
         font-weight: 600;
         letter-spacing: 0.1em;
@@ -100,7 +116,8 @@
       }
       .slide-name {
         position: absolute;
-        left: 22mm; bottom: 12mm;
+        left: 22mm;
+        bottom: 12mm;
         font-size: 0.7rem;
         font-weight: 600;
         letter-spacing: 0.08em;
@@ -163,8 +180,13 @@
         font-size: 0.95rem;
         color: var(--muted);
       }
-      .title-contact a { color: var(--muted); }
-      .title-contact .sep { margin: 0 8px; color: var(--faint); }
+      .title-contact a {
+        color: var(--muted);
+      }
+      .title-contact .sep {
+        margin: 0 8px;
+        color: var(--faint);
+      }
       .title-footer {
         margin-top: 32px;
         font-size: 0.8rem;
@@ -235,9 +257,15 @@
         color: var(--accent);
         line-height: 1.1;
       }
-      .metric-card--green .metric-num { color: #047857; }
-      .metric-card--orange .metric-num { color: #b45309; }
-      .metric-card--pink .metric-num { color: #be185d; }
+      .metric-card--green .metric-num {
+        color: #047857;
+      }
+      .metric-card--orange .metric-num {
+        color: #b45309;
+      }
+      .metric-card--pink .metric-num {
+        color: #be185d;
+      }
       .metric-label {
         margin-top: 10px;
         font-size: 1.05rem;
@@ -293,8 +321,13 @@
         text-align: center;
         margin-top: 2px;
       }
-      .project-points--compact ul { gap: 8px; }
-      .project-points--compact li { font-size: 0.88rem; line-height: 1.5; }
+      .project-points--compact ul {
+        gap: 8px;
+      }
+      .project-points--compact li {
+        font-size: 0.88rem;
+        line-height: 1.5;
+      }
       .project-summary-block {
         display: flex;
         flex-direction: column;
@@ -310,11 +343,31 @@
         font-weight: 700;
         letter-spacing: 0.03em;
       }
-      .status-delivered { background: #f1f5f9; color: #475569; border: 1px solid #cbd5e1; }
-      .status-live { background: var(--green-bg); color: #047857; border: 1px solid #6ee7b7; }
-      .status-internal { background: var(--purple-bg); color: #6d28d9; border: 1px solid #c4b5fd; }
-      .status-b2b { background: var(--accent-bg); color: var(--accent); border: 1px solid #c5d2f0; }
-      .status-released { background: #e6f4f4; color: #0e7490; border: 1px solid #67e8f9; }
+      .status-delivered {
+        background: #f1f5f9;
+        color: #475569;
+        border: 1px solid #cbd5e1;
+      }
+      .status-live {
+        background: var(--green-bg);
+        color: #047857;
+        border: 1px solid #6ee7b7;
+      }
+      .status-internal {
+        background: var(--purple-bg);
+        color: #6d28d9;
+        border: 1px solid #c4b5fd;
+      }
+      .status-b2b {
+        background: var(--accent-bg);
+        color: var(--accent);
+        border: 1px solid #c5d2f0;
+      }
+      .status-released {
+        background: #e6f4f4;
+        color: #0e7490;
+        border: 1px solid #67e8f9;
+      }
 
       .project-headline {
         font-size: 1.3rem;
@@ -322,11 +375,13 @@
         line-height: 1.45;
         color: var(--ink);
       }
-      .project-headline strong { color: var(--accent); }
+      .project-headline strong {
+        color: var(--accent);
+      }
       .project-stack {
         font-size: 0.86rem;
         color: var(--muted);
-        font-family: "JetBrains Mono", "SF Mono", monospace;
+        font-family: 'JetBrains Mono', 'SF Mono', monospace;
         line-height: 1.6;
       }
       .project-link {
@@ -371,8 +426,13 @@
         line-height: 1.55;
         color: var(--sub);
       }
-      .project-points li strong { color: var(--ink); font-weight: 700; }
-      .project-points li::marker { color: var(--accent); }
+      .project-points li strong {
+        color: var(--ink);
+        font-weight: 700;
+      }
+      .project-points li::marker {
+        color: var(--accent);
+      }
 
       /* ============== Face Recognition special layout ============== */
       .fr-timeline {
@@ -429,10 +489,23 @@
         line-height: 1.6;
         margin-bottom: 6px;
       }
-      .fr-decision-col p strong { color: var(--ink); font-weight: 700; }
-      .fr-decision-col p.bad { color: var(--muted); }
-      .fr-decision-col p.bad::before { content: "✗ "; color: #ef4444; font-weight: 700; }
-      .fr-decision-col p.good::before { content: "✓ "; color: var(--green); font-weight: 700; }
+      .fr-decision-col p strong {
+        color: var(--ink);
+        font-weight: 700;
+      }
+      .fr-decision-col p.bad {
+        color: var(--muted);
+      }
+      .fr-decision-col p.bad::before {
+        content: '✗ ';
+        color: #ef4444;
+        font-weight: 700;
+      }
+      .fr-decision-col p.good::before {
+        content: '✓ ';
+        color: var(--green);
+        font-weight: 700;
+      }
 
       /* ============== Face Recognition — V1/V2 + BlazeFace slides ============== */
       /* Common image label */
@@ -449,8 +522,12 @@
         letter-spacing: 0.05em;
         z-index: 1;
       }
-      .fr-cap-label.bad  { background: #dc2626; }
-      .fr-cap-label.good { background: #059669; }
+      .fr-cap-label.bad {
+        background: #dc2626;
+      }
+      .fr-cap-label.good {
+        background: #059669;
+      }
 
       /* V1 → V2 step cards (slide 4) */
       .fr-step-card {
@@ -484,7 +561,10 @@
         color: var(--sub);
         line-height: 1.5;
       }
-      .fr-step-card-desc strong { color: var(--ink); font-weight: 700; }
+      .fr-step-card-desc strong {
+        color: var(--ink);
+        font-weight: 700;
+      }
 
       /* V1/V2 image grid (slide 4) */
       .fr-v1v2-grid {
@@ -492,8 +572,8 @@
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1.3fr 1fr;
         grid-template-areas:
-          "big big"
-          "s1  s2";
+          'big big'
+          's1  s2';
         gap: 10px;
         min-height: 0;
       }
@@ -514,9 +594,15 @@
         box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
         background: #fafafa;
       }
-      .fr-v1v2-big   { grid-area: big; }
-      .fr-v1v2-cap   { grid-area: s1; }
-      .fr-v1v2-crop  { grid-area: s2; }
+      .fr-v1v2-big {
+        grid-area: big;
+      }
+      .fr-v1v2-cap {
+        grid-area: s1;
+      }
+      .fr-v1v2-crop {
+        grid-area: s2;
+      }
 
       /* BlazeFace decision + tuning boxes (slide 5) */
       .fr-mini-box {
@@ -538,10 +624,23 @@
         line-height: 1.55;
         margin-bottom: 3px;
       }
-      .fr-mini-box p strong { color: var(--ink); font-weight: 700; }
-      .fr-mini-box p.bad { color: var(--muted); }
-      .fr-mini-box p.bad::before { content: "✗ "; color: #ef4444; font-weight: 700; }
-      .fr-mini-box p.good::before { content: "✓ "; color: var(--green); font-weight: 700; }
+      .fr-mini-box p strong {
+        color: var(--ink);
+        font-weight: 700;
+      }
+      .fr-mini-box p.bad {
+        color: var(--muted);
+      }
+      .fr-mini-box p.bad::before {
+        content: '✗ ';
+        color: #ef4444;
+        font-weight: 700;
+      }
+      .fr-mini-box p.good::before {
+        content: '✓ ';
+        color: var(--green);
+        font-weight: 700;
+      }
 
       /* 쉽게빼자 — 정사각형 3장 (2x2 grid, 한 칸 비움) */
       .eaziz-grid {
@@ -586,14 +685,20 @@
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 1.05fr;
         grid-template-areas:
-          "b1 b2"
-          "neva neva";
+          'b1 b2'
+          'neva neva';
         gap: 10px;
         min-height: 0;
       }
-      .side-image-grid figure:nth-of-type(1) { grid-area: b1; }
-      .side-image-grid figure:nth-of-type(2) { grid-area: b2; }
-      .side-image-grid figure:nth-of-type(3) { grid-area: neva; }
+      .side-image-grid figure:nth-of-type(1) {
+        grid-area: b1;
+      }
+      .side-image-grid figure:nth-of-type(2) {
+        grid-area: b2;
+      }
+      .side-image-grid figure:nth-of-type(3) {
+        grid-area: neva;
+      }
       .side-image-grid figure {
         margin: 0;
         position: relative;
@@ -696,7 +801,9 @@
         font-weight: 700;
         color: var(--accent);
       }
-      .store-link:hover { background: var(--accent-bg); }
+      .store-link:hover {
+        background: var(--accent-bg);
+      }
       .store-link--web {
         border-color: var(--muted);
         color: var(--sub);
@@ -709,14 +816,20 @@
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1.25fr 1fr;
         grid-template-areas:
-          "big big"
-          "s1  s2";
+          'big big'
+          's1  s2';
         gap: 10px;
         min-height: 0;
       }
-      .livereview-grid figure:nth-of-type(1) { grid-area: big; }
-      .livereview-grid figure:nth-of-type(2) { grid-area: s1; }
-      .livereview-grid figure:nth-of-type(3) { grid-area: s2; }
+      .livereview-grid figure:nth-of-type(1) {
+        grid-area: big;
+      }
+      .livereview-grid figure:nth-of-type(2) {
+        grid-area: s1;
+      }
+      .livereview-grid figure:nth-of-type(3) {
+        grid-area: s2;
+      }
 
       /* Inline link inside fr-step-card */
       .card-link {
@@ -727,7 +840,9 @@
         color: var(--accent);
         text-decoration: underline;
       }
-      .card-link:hover { color: var(--accent-dark); }
+      .card-link:hover {
+        color: var(--accent-dark);
+      }
 
       /* BOTBOB — 2x2 image grid */
       .botbob-grid {
@@ -743,17 +858,27 @@
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 1fr 0.9fr;
         grid-template-areas:
-          "c1 c2"
-          "c3 c4"
-          "c5 c5";
+          'c1 c2'
+          'c3 c4'
+          'c5 c5';
         gap: 10px;
         min-height: 0;
       }
-      .miyabi-grid figure:nth-of-type(1) { grid-area: c1; }
-      .miyabi-grid figure:nth-of-type(2) { grid-area: c2; }
-      .miyabi-grid figure:nth-of-type(3) { grid-area: c3; }
-      .miyabi-grid figure:nth-of-type(4) { grid-area: c4; }
-      .miyabi-grid figure:nth-of-type(5) { grid-area: c5; }
+      .miyabi-grid figure:nth-of-type(1) {
+        grid-area: c1;
+      }
+      .miyabi-grid figure:nth-of-type(2) {
+        grid-area: c2;
+      }
+      .miyabi-grid figure:nth-of-type(3) {
+        grid-area: c3;
+      }
+      .miyabi-grid figure:nth-of-type(4) {
+        grid-area: c4;
+      }
+      .miyabi-grid figure:nth-of-type(5) {
+        grid-area: c5;
+      }
       .botbob-grid figure,
       .miyabi-grid figure,
       .livereview-grid figure {
@@ -828,7 +953,9 @@
         color: var(--sub);
         line-height: 1.55;
       }
-      .stack-value strong { color: var(--ink); }
+      .stack-value strong {
+        color: var(--ink);
+      }
 
       /* ============== Closing slide ============== */
       .slide--closing {
@@ -842,7 +969,9 @@
         letter-spacing: -0.03em;
         line-height: 1.2;
       }
-      .closing-headline strong { color: var(--accent); }
+      .closing-headline strong {
+        color: var(--accent);
+      }
       .closing-sub {
         margin-top: 24px;
         font-size: 1.1rem;
@@ -863,7 +992,9 @@
       /* ============== Image Lightbox (screen only) ============== */
       .slide img {
         cursor: zoom-in;
-        transition: transform 0.15s ease, box-shadow 0.15s ease;
+        transition:
+          transform 0.15s ease,
+          box-shadow 0.15s ease;
       }
       .slide img:hover {
         transform: scale(1.015);
@@ -880,7 +1011,9 @@
         justify-content: center;
         padding: 40px;
       }
-      .img-modal.active { display: flex; }
+      .img-modal.active {
+        display: flex;
+      }
       .img-modal img {
         max-width: 95vw;
         max-height: 90vh;
@@ -904,7 +1037,9 @@
         cursor: pointer;
         line-height: 1;
       }
-      .img-modal-close:hover { background: rgba(255, 255, 255, 0.28); }
+      .img-modal-close:hover {
+        background: rgba(255, 255, 255, 0.28);
+      }
       .img-modal-caption {
         position: fixed;
         bottom: 20px;
@@ -917,11 +1052,21 @@
       }
 
       /* ============== Print ============== */
-      @page { size: A4 landscape; margin: 0; }
+      @page {
+        size: A4 landscape;
+        margin: 0;
+      }
       @media print {
-        body { background: white; }
-        .screen-note { display: none; }
-        .deck { max-width: none; margin: 0; }
+        body {
+          background: white;
+        }
+        .screen-note {
+          display: none;
+        }
+        .deck {
+          max-width: none;
+          margin: 0;
+        }
         .slide {
           margin: 0;
           box-shadow: none;
@@ -931,10 +1076,18 @@
           break-after: page;
           page-break-after: always;
         }
-        .slide:last-child { break-after: auto; page-break-after: auto; }
-        a, a:visited { color: inherit !important; }
+        .slide:last-child {
+          break-after: auto;
+          page-break-after: auto;
+        }
+        a,
+        a:visited {
+          color: inherit !important;
+        }
         /* Lightbox 완전 제거 (PDF 출력 시) */
-        .img-modal { display: none !important; }
+        .img-modal {
+          display: none !important;
+        }
         .slide img {
           cursor: default !important;
           transition: none !important;
@@ -946,8 +1099,8 @@
   <body>
     <div class="screen-note">
       <strong>면접용 포트폴리오 슬라이드</strong>
-      · 5월 19일 카운트다운에이아이 면접용
-      · 인쇄 시 <strong>가로(Landscape) 방향</strong> 선택, 여백 "없음"
+      · 5월 19일 카운트다운에이아이 면접용 · 인쇄 시 <strong>가로(Landscape) 방향</strong> 선택,
+      여백 "없음"
     </div>
 
     <main class="deck">
@@ -957,9 +1110,12 @@
         <h1 class="title-name">이보람</h1>
         <p class="title-tagline">React · React Native · 단독 운영 · 출시 완주</p>
         <p class="title-summary">
-          3년 5개월간 React Native와 React 기반 프론트엔드를 단독으로 설계·개발·배포해 온 엔지니어입니다.<br />
+          3년 5개월간 React Native와 React 기반 프론트엔드를 단독으로 설계·개발·배포해 온
+          엔지니어입니다.<br />
           60,000+ TS 라인 법률 플랫폼을 9개월간 단독 개발했고,<br />
-          자사 안면 인식 도메인을 <strong style="color:var(--accent);">V1 → V2 → BlazeFace 마이그레이션</strong>까지 점진 발전시켰습니다.
+          자사 안면 인식 도메인을
+          <strong style="color: var(--accent)">V1 → V2 → BlazeFace 마이그레이션</strong>까지 점진
+          발전시켰습니다.
         </p>
         <div class="title-tags">
           <span class="title-tag">단독 운영</span>
@@ -1002,8 +1158,8 @@
             <div class="metric-num">6개월 · 안면 인식 도메인</div>
             <div class="metric-label">V1 → V2 → BlazeFace 모델 마이그레이션</div>
             <div class="metric-detail">
-              MediaPipe → TF.js BlazeFace(~1MB) · 실측 기반 임계값 15%/0.3 → 3%/0.4 ·
-              정면 감지 커스텀 훅 공통 모듈화
+              TF.js BlazeFace(~1MB) · 실측 기반 임계값 15%/0.3 → 3%/0.4 · 정면 감지 커스텀 훅 공통
+              모듈화
             </div>
           </div>
           <div class="metric-card metric-card--orange">
@@ -1017,7 +1173,8 @@
             <div class="metric-num">395만 프레임 · 60FPS</div>
             <div class="metric-label">3D 데이터 시각화 (B2B)</div>
             <div class="metric-detail">
-              React Three Fiber · <strong>InstancedMesh 단일 draw call</strong> · frameloop='demand' + Custom Raycasting
+              React Three Fiber · <strong>InstancedMesh 단일 draw call</strong> · frameloop='demand'
+              + Custom Raycasting
             </div>
           </div>
         </div>
@@ -1039,32 +1196,107 @@
             <span class="project-status status-delivered">납품 완료 / 출시 대기</span>
             <p class="project-headline">
               한 사람이 9개월간 단독 개발한 <strong>60,000+ TS 라인</strong> 법률 플랫폼.
-              <strong>User 코드베이스에서 일반 유저 / 변호사 두 페르소나를 권한 분기</strong>로 운영하고,
-              <strong>운영자용 Admin은 별도 코드베이스</strong>로 함께 단독 구축.
-              AI 콘텐츠 요약 · 9개 도메인 RBAC · 실시간 채팅까지 단독 책임.
+              <strong>User 코드베이스에서 일반 유저 / 변호사 두 페르소나를 권한 분기</strong>로
+              운영하고, <strong>운영자용 Admin은 별도 코드베이스</strong>로 함께 단독 구축. AI
+              콘텐츠 요약 · 9개 도메인 RBAC · 실시간 채팅까지 단독 책임.
             </p>
-            <div class="project-points project-points--compact" style="margin-top: 6px;">
+            <div class="project-points project-points--compact" style="margin-top: 6px">
               <h4>Key Points</h4>
               <ul>
-                <li><strong>Socket.io 실시간 채팅(바로톡)</strong> — 낙관적 업데이트(tempId), 채팅방별 메시지 캐시, 지수 백오프 재연결.</li>
-                <li><strong>AI 콘텐츠 요약</strong> — 블로그·영상 URL → AI 요약 서버 → 사용자 화면 렌더링. <em>(카운트다운에이아이 fit)</em></li>
-                <li><strong>React Query / Zustand 분리 아키텍처</strong> — 17개 도메인별 API 서비스 + 63개 커스텀 훅으로 비즈니스 로직 모듈화.</li>
-                <li><strong>9개 도메인 통합 어드민 + RBAC 동적 메뉴</strong> — 권한 ID 배열 기반, dnd-kit 옵티미스틱 정렬 + 롤백, 두 에디터 분리, xlsx 내보내기.</li>
-                <li><strong>9개월간 960건 커밋 + GitHub Actions CI/CD 직접 구성</strong> — 단독 운영의 깊이.</li>
+                <li>
+                  <strong>Socket.io 실시간 채팅(바로톡)</strong> — 낙관적 업데이트(tempId), 채팅방별
+                  메시지 캐시, 지수 백오프 재연결.
+                </li>
+                <li>
+                  <strong>AI 콘텐츠 요약</strong> — 블로그·영상 URL → AI 요약 서버 → 사용자 화면
+                  렌더링.
+                </li>
+                <li>
+                  <strong>React Query / Zustand 분리 아키텍처</strong> — 17개 도메인별 API 서비스 +
+                  63개 커스텀 훅으로 비즈니스 로직 모듈화.
+                </li>
+                <li>
+                  <strong>9개 도메인 통합 어드민 + RBAC 동적 메뉴</strong> — 권한 ID 배열 기반,
+                  dnd-kit 옵티미스틱 정렬 + 롤백, 두 에디터 분리, xlsx 내보내기.
+                </li>
+                <li>
+                  <strong>9개월간 960건 커밋 + GitHub Actions CI/CD 직접 구성</strong> — 단독 운영의
+                  깊이.
+                </li>
               </ul>
             </div>
           </div>
           <div class="project-images">
-            <img src="img/allbarlaw-1.webp" alt="AllBarLaw User + Admin coexistence" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-            <div class="img-placeholder" style="display:none; background:#f1f5f9; border:2px dashed #cbd5e1; border-radius:8px; padding:20px; align-items:center; justify-content:center; color:#94a3b8; font-size:0.85rem;">
+            <img
+              src="img/allbarlaw-1.webp"
+              alt="AllBarLaw User + Admin coexistence"
+              onerror="
+                this.style.display = 'none'
+                this.nextElementSibling.style.display = 'flex'
+              "
+            />
+            <div
+              class="img-placeholder"
+              style="
+                display: none;
+                background: #f1f5f9;
+                border: 2px dashed #cbd5e1;
+                border-radius: 8px;
+                padding: 20px;
+                align-items: center;
+                justify-content: center;
+                color: #94a3b8;
+                font-size: 0.85rem;
+              "
+            >
               allbarlaw-1.png (User + Admin 두 창)
             </div>
-            <img src="img/allbarlaw-2.webp" alt="AllBarLaw Admin Editor" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-            <div class="img-placeholder" style="display:none; background:#f1f5f9; border:2px dashed #cbd5e1; border-radius:8px; padding:20px; align-items:center; justify-content:center; color:#94a3b8; font-size:0.85rem;">
+            <img
+              src="img/allbarlaw-2.webp"
+              alt="AllBarLaw Admin Editor"
+              onerror="
+                this.style.display = 'none'
+                this.nextElementSibling.style.display = 'flex'
+              "
+            />
+            <div
+              class="img-placeholder"
+              style="
+                display: none;
+                background: #f1f5f9;
+                border: 2px dashed #cbd5e1;
+                border-radius: 8px;
+                padding: 20px;
+                align-items: center;
+                justify-content: center;
+                color: #94a3b8;
+                font-size: 0.85rem;
+              "
+            >
               allbarlaw-2.png (Admin 에디터)
             </div>
-            <img src="img/allbarlaw-3.webp" alt="AllBarLaw rendered notice" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-            <div class="img-placeholder" style="display:none; background:#f1f5f9; border:2px dashed #cbd5e1; border-radius:8px; padding:20px; align-items:center; justify-content:center; color:#94a3b8; font-size:0.85rem;">
+            <img
+              src="img/allbarlaw-3.webp"
+              alt="AllBarLaw rendered notice"
+              onerror="
+                this.style.display = 'none'
+                this.nextElementSibling.style.display = 'flex'
+              "
+            />
+            <div
+              class="img-placeholder"
+              style="
+                display: none;
+                background: #f1f5f9;
+                border: 2px dashed #cbd5e1;
+                border-radius: 8px;
+                padding: 20px;
+                align-items: center;
+                justify-content: center;
+                color: #94a3b8;
+                font-size: 0.85rem;
+              "
+            >
               allbarlaw-3.png (사용자 렌더링)
             </div>
           </div>
@@ -1087,28 +1319,32 @@
           <div class="project-summary-block">
             <span class="project-status status-live">Live PWA 운영 중</span>
             <p class="project-headline">
-              <strong>V1 (태블릿 · 다중 인식)</strong>과
-              <strong>V2 (모바일 · 단일 인식)</strong>로
-              <strong>용도가 다른 두 안면 인식 PWA</strong>를 운영.
-              V2에서 <strong>HTTP 상태 6종 기반 행동 유도 메시지 + 3단계 로딩 UX</strong>를 추가해 사용자 피드백을 보강.
+              <strong>V1 (태블릿 · 다중 인식)</strong>과 <strong>V2 (모바일 · 단일 인식)</strong>로
+              <strong>용도가 다른 두 안면 인식 PWA</strong>를 운영. V2에서
+              <strong>HTTP 상태 6종 기반 행동 유도 메시지 + 3단계 로딩 UX</strong>를 추가해 사용자
+              피드백을 보강.
             </p>
             <p class="project-stack">
-              React 18→19 · Vite · MediaPipe · MediaStream API · Workbox · vite-plugin-pwa
+              React 18→19 · Vite · MediaStream API · Canvas · Workbox · vite-plugin-pwa
             </p>
-            <a class="project-link" href="https://live-point.netlify.app/" target="_blank">🔗 live-point.netlify.app</a>
+            <a class="project-link" href="https://live-point.netlify.app/" target="_blank"
+              >🔗 live-point.netlify.app</a
+            >
 
             <div class="fr-step-card">
               <span class="fr-step-tag">V1 · 태블릿 / 다중</span>
               <p class="fr-step-card-desc">
-                MediaPipe + <strong>15ms 5장 연사</strong> + 여러 명 동시 바운딩박스 →
-                박스 터치로 신규/기존 분기 + <strong>좌표 기반 얼굴 크롭 직접 구현</strong>
+                MediaStream API + Canvas로 <strong>15ms 5장 연사 캡처 직접 구현</strong> → 서버 검출
+                응답으로 받은 좌표로 <strong>Canvas에 다중 바운딩박스 그리기</strong> → 박스 터치로
+                신규/기존 분기
               </p>
             </div>
             <div class="fr-step-card">
               <span class="fr-step-tag">V2 · 모바일 / 단일</span>
               <p class="fr-step-card-desc">
-                50ms 4장 + JPEG 95% + <strong>3단계 로딩 UX (5:3:2)</strong>로 체감 대기 ↓ /
-                <strong>HTTP 상태 6종</strong>(각도·움직임·스푸핑·미감지·다중·권한) 행동 유도 메시지
+                50ms 4장 + JPEG 95% 압축 → 서버 전송 / <strong>3단계 로딩 UX (5:3:2)</strong>로 체감
+                대기 ↓ / <strong>HTTP 상태 6종</strong>(각도·움직임·스푸핑·미감지·다중·권한) 행동
+                유도 메시지
               </p>
             </div>
           </div>
@@ -1153,7 +1389,12 @@
             <p class="project-stack">
               React 19 · TypeScript · Vite 7 · TanStack Query · Tailwind 4 · Ant Design · PWA
             </p>
-            <a class="project-link" href="https://www.instagram.com/reel/DNkpzwCSnq4/?igsh=YndzZHh1a3czMWVk" target="_blank">🎬 매장 시연 영상 (Instagram)</a>
+            <a
+              class="project-link"
+              href="https://www.instagram.com/reel/DNkpzwCSnq4/?igsh=YndzZHh1a3czMWVk"
+              target="_blank"
+              >🎬 매장 시연 영상 (Instagram)</a
+            >
 
             <div class="fr-step-card">
               <span class="fr-step-tag">매장 POC</span>
@@ -1165,8 +1406,9 @@
             <div class="fr-step-card">
               <span class="fr-step-tag">키오스크 UX</span>
               <p class="fr-step-card-desc">
-                회원가입(<strong>8자리 + 010 자동 prefix + 중복 체크</strong>) /
-                로그인(<strong>끝 4자리 + 자동 제출</strong>) → 버튼 클릭 없이 빠른 인증
+                회원가입(<strong>8자리 + 010 자동 prefix + 중복 체크</strong>) / 로그인(<strong
+                  >끝 4자리 + 자동 제출</strong
+                >) → 버튼 클릭 없이 빠른 인증
               </p>
             </div>
             <div class="fr-step-card">
@@ -1216,20 +1458,28 @@
           <div class="project-summary-block">
             <span class="project-status status-live">Live · 자사 안면 인식</span>
             <p class="project-headline">
-              <strong>MediaPipe → BlazeFace</strong> 모델 전환과
-              <strong>실측 기반 임계값 튜닝</strong>으로
-              실시간 인식을 안정화했습니다.
+              서버 의존이던 안면 인식 처리를 <strong>클라이언트 BlazeFace로 직접 이전</strong>한
+              단계. 모델 선택과 <strong>실측 기반 임계값 튜닝</strong>으로 실시간 인식을
+              안정화했습니다.
             </p>
             <p class="project-stack">
               React 19 · TypeScript · TF.js BlazeFace · Vite 7 · PWA · React Compiler
             </p>
-            <a class="project-link" href="https://tabletdev.point-api.com/" target="_blank">🔗 tabletdev.point-api.com</a>
+            <a class="project-link" href="https://tabletdev.point-api.com/" target="_blank"
+              >🔗 tabletdev.point-api.com</a
+            >
 
             <div class="fr-mini-box">
               <h4>모델 선택 의사결정</h4>
-              <p class="bad"><strong>YuNet</strong> — OpenCV.js 브라우저 빌드에 FaceDetectorYN API 미포함</p>
-              <p class="bad"><strong>MediaPipe FaceMesh</strong> — 468 랜드마크가 조명·각도에 민감</p>
-              <p class="good"><strong>BlazeFace 채택</strong> — 웹 최적화, TF.js 통합, ~1MB, 실시간 안정</p>
+              <p class="bad">
+                <strong>YuNet</strong> — OpenCV.js 브라우저 빌드에 FaceDetectorYN API 미포함
+              </p>
+              <p class="bad">
+                <strong>MediaPipe FaceMesh</strong> — 468 랜드마크가 조명·각도에 민감
+              </p>
+              <p class="good">
+                <strong>BlazeFace 채택</strong> — 웹 최적화, TF.js 통합, ~1MB, 실시간 안정
+              </p>
             </div>
 
             <div class="fr-mini-box">
@@ -1241,8 +1491,8 @@
                 (서버 부하 ↓, UX 즉시 피드백)
               </p>
               <p>
-                정면 감지 판정 로직을 <strong>커스텀 훅 공통 모듈</strong>로 추출 →
-                V2 · MIYABI Face에서 재사용
+                정면 감지 판정 로직을 <strong>커스텀 훅 공통 모듈</strong>로 추출 → V2 · MIYABI
+                Face에서 재사용
               </p>
             </div>
           </div>
@@ -1277,8 +1527,8 @@
           <div class="project-summary-block">
             <span class="project-status status-live">실서비스 운영 중 · 실 매장 납품</span>
             <p class="project-headline">
-              <strong>직원용 PWA(Staff)</strong>와 <strong>얼굴 인식 태블릿(Face)</strong>이
-              한 매장에서 함께 동작하는 <strong>외식 통합 운영 시스템</strong>.
+              <strong>직원용 PWA(Staff)</strong>와 <strong>얼굴 인식 태블릿(Face)</strong>이 한
+              매장에서 함께 동작하는 <strong>외식 통합 운영 시스템</strong>.
             </p>
             <p class="project-stack">
               React 19 · React Native · Socket.io · Zustand · TanStack Query · BlazeFace
@@ -1294,14 +1544,15 @@
             <div class="fr-step-card">
               <span class="fr-step-tag">Face 태블릿 · RN</span>
               <p class="fr-step-card-desc">
-                광고 응시 → <strong>BlazeFace 자동 정면 감지 → AI 기기 송출</strong> →
-                Staff PWA로 입장 알림
+                광고 응시 → <strong>BlazeFace 자동 정면 감지 → AI 기기 송출</strong> → Staff PWA로
+                입장 알림
               </p>
             </div>
             <div class="fr-step-card">
               <span class="fr-step-tag">운영 환경</span>
               <p class="fr-step-card-desc">
-                AI 서버 IP <strong>설정에서 변경 가능</strong> · 안드로이드 화면 잠금 + 키오스크 모드 강제
+                AI 서버 IP <strong>설정에서 변경 가능</strong> · 안드로이드 화면 잠금 + 키오스크
+                모드 강제
               </p>
             </div>
           </div>
@@ -1348,23 +1599,36 @@
           <div class="project-summary-block">
             <span class="project-status status-b2b">B2B 도입 / 운영 중</span>
             <p class="project-headline">
-              전시·매장 분석 <strong>대시보드 + 60FPS 3D 시각화 + 리포트 모듈</strong>로 구성된 B2B 솔루션.
-              한 제품군을 1년 8개월간 함께 만들고 운영.
+              전시·매장 분석 <strong>대시보드 + 60FPS 3D 시각화 + 리포트 모듈</strong>로 구성된 B2B
+              솔루션. 한 제품군을 1년 8개월간 함께 만들고 운영.
             </p>
             <p class="project-stack">
-              Next.js 14 · React 19 · Three.js · React Three Fiber · ECharts · ExcelJS · jsPDF · Puppeteer
+              Next.js 14 · React 19 · Three.js · React Three Fiber · ECharts · ExcelJS · jsPDF ·
+              Puppeteer
             </p>
             <div class="project-links">
-              <a class="project-link" href="https://example.live-review.ai/exampleDashboard" target="_blank">🔗 Dashboard Demo</a>
-              <a class="project-link" href="https://showcase.live-review.ai/" target="_blank">🔗 3D ShowCase</a>
-              <a class="project-link" href="https://drive.usercontent.google.com/download?id=1ZevWGW-f0hH6jiK72qwMujWpIDJ573Jz&export=download&authuser=0" target="_blank">📄 PDF 리포트 샘플</a>
+              <a
+                class="project-link"
+                href="https://example.live-review.ai/exampleDashboard"
+                target="_blank"
+                >🔗 Dashboard Demo</a
+              >
+              <a class="project-link" href="https://showcase.live-review.ai/" target="_blank"
+                >🔗 3D ShowCase</a
+              >
+              <a
+                class="project-link"
+                href="https://drive.usercontent.google.com/download?id=1ZevWGW-f0hH6jiK72qwMujWpIDJ573Jz&export=download&authuser=0"
+                target="_blank"
+                >📄 PDF 리포트 샘플</a
+              >
             </div>
 
             <div class="fr-step-card">
               <span class="fr-step-tag">Dashboard</span>
               <p class="fr-step-card-desc">
-                카드/차트를 <strong>데이터 기반 통합 컴포넌트</strong>로 추상화 →
-                새 항목을 데이터만으로 추가
+                카드/차트를 <strong>데이터 기반 통합 컴포넌트</strong>로 추상화 → 새 항목을
+                데이터만으로 추가
               </p>
             </div>
             <div class="fr-step-card">
@@ -1377,8 +1641,8 @@
             <div class="fr-step-card">
               <span class="fr-step-tag">PDF Report</span>
               <p class="fr-step-card-desc">
-                <strong>Express + Puppeteer 리포트 모듈</strong> 직접 작성 ·
-                차트 통합 + 다중 페이지 병합 + 스트림 응답
+                <strong>Express + Puppeteer 리포트 모듈</strong> 직접 작성 · 차트 통합 + 다중 페이지
+                병합 + 스트림 응답
               </p>
             </div>
           </div>
@@ -1426,27 +1690,41 @@
                 <span class="fr-step-tag">① Smart Order · 고객 앱 · 30%</span>
                 <p class="fr-step-card-desc">
                   2022.10 – 2024.01 · 1년 3개월 · iOS / Android<br />
-                  <strong>디자인 시스템 구축</strong> (컬러·타이포·재사용 Button 컴포넌트 라이브러리)<br />
-                  <strong>Google + Apple + Kakao 통합 로그인</strong> + 위치·카메라·알림 권한 + 사용자 온보딩<br />
-                  GPS 좌표 기반 카페 검색 · <strong>동적 브랜드 테마</strong> (한 코드베이스 多브랜드 룩앤필)
+                  <strong>디자인 시스템 구축</strong> (컬러·타이포·재사용 Button 컴포넌트
+                  라이브러리)<br />
+                  <strong>Google + Apple + Kakao 통합 로그인</strong> + 위치·카메라·알림 권한 +
+                  사용자 온보딩<br />
+                  GPS 좌표 기반 카페 검색 · <strong>동적 브랜드 테마</strong> (한 코드베이스
+                  多브랜드 룩앤필)
                 </p>
                 <div class="amaze-store-links">
-                  <a class="store-link" href="https://apps.apple.com/" target="_blank">🍎 App Store</a>
-                  <a class="store-link" href="https://play.google.com/store" target="_blank">▶ Google Play</a>
+                  <a class="store-link" href="https://apps.apple.com/" target="_blank"
+                    >🍎 App Store</a
+                  >
+                  <a class="store-link" href="https://play.google.com/store" target="_blank"
+                    >▶ Google Play</a
+                  >
                 </div>
               </div>
               <div class="fr-step-card">
                 <span class="fr-step-tag">② Merchant · 점주 앱 · 80%</span>
                 <p class="fr-step-card-desc">
                   2023.04 – 2024.08 · 1년 5개월 · 점주 워크플로우 80% 주도 · iOS / Android<br />
-                  점주 운영(매장/메뉴/주문) + <strong>원두 도매 커머스 사용자 타입별 화면 분기</strong><br />
-                  <strong>IAMPORT PG 결제 + iOS/Android CodePush 무중단 배포 직접 세팅</strong><br />
+                  점주 운영(매장/메뉴/주문) +
+                  <strong>원두 도매 커머스 사용자 타입별 화면 분기</strong><br />
+                  <strong>IAMPORT PG 결제 + iOS/Android CodePush 무중단 배포 직접 세팅</strong
+                  ><br />
                   외부 택배사 API 송장 추적 · TouchID 생체 인증 · FCM + Notifee 알림<br />
-                  크레딧·매출 시스템 (ECharts 통계) · <strong>50kg 도메인 룰 useCountNum 훅 추상화</strong>
+                  크레딧·매출 시스템 (ECharts 통계) ·
+                  <strong>50kg 도메인 룰 useCountNum 훅 추상화</strong>
                 </p>
                 <div class="amaze-store-links">
-                  <a class="store-link" href="https://apps.apple.com/" target="_blank">🍎 App Store</a>
-                  <a class="store-link" href="https://play.google.com/store" target="_blank">▶ Google Play</a>
+                  <a class="store-link" href="https://apps.apple.com/" target="_blank"
+                    >🍎 App Store</a
+                  >
+                  <a class="store-link" href="https://play.google.com/store" target="_blank"
+                    >▶ Google Play</a
+                  >
                 </div>
               </div>
             </div>
@@ -1482,11 +1760,12 @@
           <div class="project-summary-block">
             <span class="project-status status-released">상용 앱 스토어 출시 · 헬스 도메인</span>
             <p class="project-headline">
-              <strong>삼성헬스 + Apple HealthKit + 자체 만보계</strong>까지 직접 연동한
-              다이어트 헬스 RN 앱. 디바이스 센서·카메라·이미지까지 모바일 통합 영역을 다뤘습니다.
+              <strong>삼성헬스 + Apple HealthKit + 자체 만보계</strong>까지 직접 연동한 다이어트
+              헬스 RN 앱. 디바이스 센서·카메라·이미지까지 모바일 통합 영역을 다뤘습니다.
             </p>
             <p class="project-stack">
-              RN 0.70 · TypeScript · Valtio · RN Skia · Health Connect · Apple HealthKit · ECharts Pro · MMKV · Firebase · CodePush
+              RN 0.70 · TypeScript · Valtio · RN Skia · Health Connect · Apple HealthKit · ECharts
+              Pro · MMKV · Firebase · CodePush
             </p>
 
             <div class="fr-step-card">
@@ -1499,22 +1778,22 @@
             <div class="fr-step-card">
               <span class="fr-step-tag">플랫폼 권한 + 백그라운드</span>
               <p class="fr-step-card-desc">
-                <strong>iOS Sensors Background 권한 별도 처리</strong>로 백그라운드 센서 측정 안정화 ·
-                iOS / Android 권한 흐름 분기
+                <strong>iOS Sensors Background 권한 별도 처리</strong>로 백그라운드 센서 측정 안정화
+                · iOS / Android 권한 흐름 분기
               </p>
             </div>
             <div class="fr-step-card">
               <span class="fr-step-tag">카메라 + 이미지</span>
               <p class="fr-step-card-desc">
-                <strong>View Shot 화면 캡처 + 칼로리 워터마크</strong> · Image Resizer 리사이징·저장·전송 모듈 ·
-                카메라 통합
+                <strong>View Shot 화면 캡처 + 칼로리 워터마크</strong> · Image Resizer
+                리사이징·저장·전송 모듈 · 카메라 통합
               </p>
             </div>
             <div class="fr-step-card">
               <span class="fr-step-tag">음식 검색 + 시각화</span>
               <p class="fr-step-card-desc">
-                실시간 음식 검색·자동완성·즐겨찾기 · ECharts Pro / SVG Charts 데이터 시각화 ·
-                신규 사용자 튜토리얼 · 키보드 UX 최적화
+                실시간 음식 검색·자동완성·즐겨찾기 · ECharts Pro / SVG Charts 데이터 시각화 · 신규
+                사용자 튜토리얼 · 키보드 UX 최적화
               </p>
             </div>
           </div>
@@ -1557,11 +1836,12 @@
           <div class="project-summary-block">
             <span class="project-status status-released">상용 앱 스토어 출시 · 헬스 도메인</span>
             <p class="project-headline">
-              회원 앱과 짝을 이루는 <strong>트레이너용 RN 앱</strong>.
-              일정 관리·회원 매칭·푸시 알림·통계 시각화 등 트레이너 워크플로우 전반을 다뤘습니다.
+              회원 앱과 짝을 이루는 <strong>트레이너용 RN 앱</strong>. 일정 관리·회원 매칭·푸시
+              알림·통계 시각화 등 트레이너 워크플로우 전반을 다뤘습니다.
             </p>
             <p class="project-stack">
-              RN 0.70 · TypeScript · Valtio · RN Calendars · ECharts Pro · Day.js · MMKV · Firebase · FCM · CodePush
+              RN 0.70 · TypeScript · Valtio · RN Calendars · ECharts Pro · Day.js · MMKV · Firebase
+              · FCM · CodePush
             </p>
 
             <div class="fr-step-card">
@@ -1581,14 +1861,15 @@
             <div class="fr-step-card">
               <span class="fr-step-tag">푸시 · 로컬 알림 시스템</span>
               <p class="fr-step-card-desc">
-                <strong>Firebase FCM 푸시 + 로컬 알림 통합</strong> · 매칭 해지 시 사용자 푸시 ·
-                앱 종료 시 알림 설정값 자동 초기화 도메인 룰
+                <strong>Firebase FCM 푸시 + 로컬 알림 통합</strong> · 매칭 해지 시 사용자 푸시 · 앱
+                종료 시 알림 설정값 자동 초기화 도메인 룰
               </p>
             </div>
             <div class="fr-step-card">
               <span class="fr-step-tag">온보딩 + 무중단 배포</span>
               <p class="fr-step-card-desc">
-                첫 사용 시 기능 설명 온보딩 · <strong>다중 소셜 로그인 (Google · Apple · Kakao · Naver)</strong> ·
+                첫 사용 시 기능 설명 온보딩 ·
+                <strong>다중 소셜 로그인 (Google · Apple · Kakao · Naver)</strong> ·
                 <strong>CodePush 무중단 배포 환경</strong> 세팅 + 운영 이슈 유지보수
               </p>
             </div>
@@ -1625,27 +1906,62 @@
         </div>
         <div class="project-body project-body--with-images">
           <div class="side-cards">
-            <div class="project-points" style="background: linear-gradient(135deg, var(--pink-bg), white); border-left: 6px solid var(--pink);">
-              <h4 style="color: #be185d;">🚀 Blocky — iOS App Store 출시</h4>
-              <p class="project-headline" style="font-size:1.05rem; margin-bottom: 10px;">
-                주간 목표 → 블록 → 타임테이블 배치 흐름의 RN 플래너를 <strong style="color:var(--pink);">단독 출시</strong>.
+            <div
+              class="project-points"
+              style="
+                background: linear-gradient(135deg, var(--pink-bg), white);
+                border-left: 6px solid var(--pink);
+              "
+            >
+              <h4 style="color: #be185d">🚀 Blocky — iOS App Store 출시</h4>
+              <p class="project-headline" style="font-size: 1.05rem; margin-bottom: 10px">
+                주간 목표 → 블록 → 타임테이블 배치 흐름의 RN 플래너를
+                <strong style="color: var(--pink)">단독 출시</strong>.
               </p>
               <ul>
-                <li><strong>Local-first + Supabase 동기화</strong> + syncQueue 오프라인 큐로 프라이버시·오프라인 대응.</li>
-                <li>Apple Sign In + Google OAuth, Reanimated 4 + Gesture Handler 드래그/리사이즈, AdMob 수익 모델.</li>
+                <li>
+                  <strong>Local-first + Supabase 동기화</strong> + syncQueue 오프라인 큐로
+                  프라이버시·오프라인 대응.
+                </li>
+                <li>
+                  Apple Sign In + Google OAuth, Reanimated 4 + Gesture Handler 드래그/리사이즈,
+                  AdMob 수익 모델.
+                </li>
               </ul>
-              <a class="project-link" href="https://apps.apple.com/kr/app/blocky/id6760616101" target="_blank" style="margin-top:10px; border-color: var(--pink); color: var(--pink);">📱 App Store · Blocky</a>
+              <a
+                class="project-link"
+                href="https://apps.apple.com/kr/app/blocky/id6760616101"
+                target="_blank"
+                style="margin-top: 10px; border-color: var(--pink); color: var(--pink)"
+                >📱 App Store · Blocky</a
+              >
             </div>
-            <div class="project-points" style="background: linear-gradient(135deg, var(--purple-bg), white); border-left: 6px solid var(--purple);">
-              <h4 style="color: #6d28d9;">🎨 by-neva — Three.js 포트폴리오</h4>
-              <p class="project-headline" style="font-size:1.05rem; margin-bottom: 10px;">
-                <strong style="color:var(--purple);">Three.js 이소메트릭 3D 커피숍 씬</strong> 기반 원페이지 포트폴리오.
+            <div
+              class="project-points"
+              style="
+                background: linear-gradient(135deg, var(--purple-bg), white);
+                border-left: 6px solid var(--purple);
+              "
+            >
+              <h4 style="color: #6d28d9">🎨 by-neva — Three.js 포트폴리오</h4>
+              <p class="project-headline" style="font-size: 1.05rem; margin-bottom: 10px">
+                <strong style="color: var(--purple)">Three.js 이소메트릭 3D 커피숍 씬</strong> 기반
+                원페이지 포트폴리오.
               </p>
               <ul>
-                <li><strong>디바이스 성능 차등(Tier 시스템)</strong> — useTierDetection으로 차등 렌더링 + ErrorBoundary3D 폴백.</li>
+                <li>
+                  <strong>디바이스 성능 차등(Tier 시스템)</strong> — useTierDetection으로 차등
+                  렌더링 + ErrorBoundary3D 폴백.
+                </li>
                 <li>Zustand 기반 Camera Controller로 섹션 전환, GSAP + Framer Motion 함께 활용.</li>
               </ul>
-              <a class="project-link" href="https://by-neva.vercel.app" target="_blank" style="margin-top:10px; border-color: var(--purple); color: var(--purple);">🌐 by-neva.vercel.app</a>
+              <a
+                class="project-link"
+                href="https://by-neva.vercel.app"
+                target="_blank"
+                style="margin-top: 10px; border-color: var(--purple); color: var(--purple)"
+                >🌐 by-neva.vercel.app</a
+              >
             </div>
           </div>
 
@@ -1688,11 +2004,16 @@
           </div>
           <div class="stack-row">
             <span class="stack-label">Mobile</span>
-            <span class="stack-value">React Native (CLI · New Architecture), Reanimated, Gesture Handler</span>
+            <span class="stack-value"
+              >React Native (CLI · New Architecture), Reanimated, Gesture Handler</span
+            >
           </div>
           <div class="stack-row">
             <span class="stack-label">State / Data</span>
-            <span class="stack-value"><strong>주력</strong> TanStack Query, Zustand · <strong>경험</strong> Valtio, Redux Toolkit</span>
+            <span class="stack-value"
+              ><strong>주력</strong> TanStack Query, Zustand · <strong>경험</strong> Valtio, Redux
+              Toolkit</span
+            >
           </div>
           <div class="stack-row">
             <span class="stack-label">AI / CV</span>
@@ -1700,7 +2021,9 @@
           </div>
           <div class="stack-row">
             <span class="stack-label">Realtime / Native</span>
-            <span class="stack-value">Socket.io, Native WebSocket, GPS, Camera, Health Connect, Apple HealthKit</span>
+            <span class="stack-value"
+              >Socket.io, Native WebSocket, GPS, Camera, Health Connect, Apple HealthKit</span
+            >
           </div>
           <div class="stack-row">
             <span class="stack-label">Auth / Payment</span>
@@ -1708,7 +2031,9 @@
           </div>
           <div class="stack-row">
             <span class="stack-label">Deploy / Infra</span>
-            <span class="stack-value">AWS S3, CloudFront, GitHub Actions, CodePush, Vercel, Firebase</span>
+            <span class="stack-value"
+              >AWS S3, CloudFront, GitHub Actions, CodePush, Vercel, Firebase</span
+            >
           </div>
         </div>
         <p class="slide-name">LEE BORAM</p>
@@ -1717,9 +2042,7 @@
 
       <!-- ═══════════════ Slide 14: Closing ═══════════════ -->
       <article class="slide slide--closing">
-        <h1 class="closing-headline">
-          감사합니다.
-        </h1>
+        <h1 class="closing-headline">감사합니다.</h1>
         <p class="closing-thanks">Thank you</p>
         <p class="slide-name">LEE BORAM</p>
         <p class="slide-number">14 / 14</p>
@@ -1734,43 +2057,43 @@
     </div>
 
     <script>
-      (function () {
-        const modal = document.getElementById('img-modal');
-        const modalImg = document.getElementById('img-modal-img');
-        const modalCap = document.getElementById('img-modal-caption');
+      ;(function () {
+        const modal = document.getElementById('img-modal')
+        const modalImg = document.getElementById('img-modal-img')
+        const modalCap = document.getElementById('img-modal-caption')
 
         function openImgModal(src, caption) {
-          modalImg.src = src;
-          modalCap.textContent = caption || '';
-          modal.classList.add('active');
-          document.body.style.overflow = 'hidden';
+          modalImg.src = src
+          modalCap.textContent = caption || ''
+          modal.classList.add('active')
+          document.body.style.overflow = 'hidden'
         }
         window.closeImgModal = function (e) {
-          if (e) e.stopPropagation();
-          modal.classList.remove('active');
-          document.body.style.overflow = '';
-          modalImg.src = '';
-        };
+          if (e) e.stopPropagation()
+          modal.classList.remove('active')
+          document.body.style.overflow = ''
+          modalImg.src = ''
+        }
 
         document.addEventListener('DOMContentLoaded', () => {
-          document.querySelectorAll('.slide img').forEach(img => {
-            img.addEventListener('click', e => {
-              e.stopPropagation();
-              const fig = img.closest('figure');
-              const label = fig ? fig.querySelector('.fr-cap-label') : null;
-              const caption = label ? label.textContent.trim() : (img.alt || '');
-              openImgModal(img.src, caption);
-            });
-          });
-        });
+          document.querySelectorAll('.slide img').forEach((img) => {
+            img.addEventListener('click', (e) => {
+              e.stopPropagation()
+              const fig = img.closest('figure')
+              const label = fig ? fig.querySelector('.fr-cap-label') : null
+              const caption = label ? label.textContent.trim() : img.alt || ''
+              openImgModal(img.src, caption)
+            })
+          })
+        })
 
         // ESC 키로 닫기
-        document.addEventListener('keydown', e => {
+        document.addEventListener('keydown', (e) => {
           if (e.key === 'Escape' && modal.classList.contains('active')) {
-            window.closeImgModal();
+            window.closeImgModal()
           }
-        });
-      })();
+        })
+      })()
     </script>
   </body>
 </html>
