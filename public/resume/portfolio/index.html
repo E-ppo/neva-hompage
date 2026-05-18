@@ -1089,7 +1089,7 @@
                 </div>
               </div>
               <p class="project-meta">
-                React 18 → 19, TypeScript, Vite, MediaPipe, Workbox, vite-plugin-pwa
+                React 18 → 19, TypeScript, Vite, MediaStream API, Canvas, Workbox, vite-plugin-pwa
               </p>
               <div class="project-links">
                 <a
@@ -1105,10 +1105,10 @@
               <ul class="compact-list">
                 <li>
                   <strong>V1 — 태블릿 / 다중 인식</strong>: MediaStream API + Canvas로 1920×1080
-                  웹캠을 제어하고 <strong>15ms 5장 연사 캡처</strong>를 기반으로, MediaPipe로
-                  <strong>여러 사람을 동시에 인식해 각자에게 바운딩박스</strong>를 표시했습니다.
-                  박스를 터치하면 해당 인물에 대해 신규/기존 고객 흐름으로 분기되도록 만들었고, 터치
-                  시점에 <strong>좌표 기반 이미지 크롭</strong>을 직접 구현했습니다.
+                  웹캠을 제어하고 <strong>15ms 5장 연사 캡처를 라이브러리 없이 직접 구현</strong>했습니다.
+                  캡처한 이미지를 서버로 전송하면 서버가 얼굴 검출·좌표를 반환, 받은 좌표로
+                  <strong>Canvas에 다중 바운딩박스를 그려 화면에 표시</strong>했습니다. 박스를 터치하면
+                  해당 인물에 대해 신규/기존 고객 흐름으로 분기되도록 만들었습니다.
                 </li>
                 <li>
                   <strong>V2 — 모바일 / 단일 인식</strong>: 인식 대상을 한 명으로 단순화하고 모바일
