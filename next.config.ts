@@ -8,6 +8,10 @@ const nextConfig: NextConfig = {
         source: "/resume/portfolio",
         destination: "/resume/portfolio/index.html",
       },
+      {
+        source: "/resume/portfolio-slide",
+        destination: "/resume/portfolio-slide/index.html",
+      },
     ];
   },
 };
